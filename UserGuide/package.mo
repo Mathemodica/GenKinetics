@@ -641,10 +641,15 @@ printing and shipping costs may be recovered.</p>
   end ModelicaLicense2;
 
   model ReleaseNotes
-    extends Modelica.Icons.Information;
+    extends Modelica.Icons.ReleaseNotes;
     annotation(
       Documentation(info = "<html><head></head><body><p><b><font style=\"color: #008000; \">R1.0 </font></b>September 2018</p>
 <p>first published release of the library with Basic phyiscial units, basic components for nodes and reactions both with parameterized and static number of connections. Examples are included. </p>
 </body></html>"));
   end ReleaseNotes;
+
+  model References
+    extends Modelica.Icons.References;
+  end References;
+
 end UserGuide;
