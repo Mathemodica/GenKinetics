@@ -652,4 +652,10 @@ printing and shipping costs may be recovered.</p>
     extends Modelica.Icons.References;
   end References;
 
+  model CopyRight
+    extends Modelica.Icons.Information;
+    annotation(
+      Documentation(info = "<html><head></head><body><p><span style=\"font-size: 12px;\">Licensed under the Modelica License 2</span></p><p><b style=\"color: rgb(170, 0, 0); font-size: x-large;\">Copyright © &lt;2018&gt;, &lt;Atiyah Elsheikh&gt;.</b></p><p><i>This Modelica package is&nbsp;<u>free</u>&nbsp;software and the use is completely at&nbsp;<u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the disclaimer of warranty) see&nbsp;<a href=\"modelica://Modelica.UsersGuide.ModelicaLicense2\">Modelica.UsersGuide.ModelicaLicense2</a>&nbsp;or visit<a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></body></html>"));
+  end CopyRight;
+
 end UserGuide;
