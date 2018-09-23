@@ -4,6 +4,8 @@ package StaticDeprecated
   extends Modelica.Icons.ObsoleteModel;
 
   partial model NodeConnections "Metabolite connections to reactions"
+    extends GenKinetics.Icons.Node;
+    
     GenKinetics.Interfaces.Ports.ChemicalPort rc1 annotation(
       extent = [-60, 80; -40, 100],
       Placement(transformation(extent = {{-84, 54}, {-14, 124}}), iconTransformation(extent = {{-86, 48}, {10, 148}})));
@@ -36,11 +38,9 @@ package StaticDeprecated
       Placement(transformation(extent = {{-30, 44}, {30, 104}}), iconTransformation(extent = {{70, -130}, {130, -70}})));
     GenKinetics.Interfaces.Ports.ModifierChemicalPort mc4 annotation(
       Placement(transformation(extent = {{-30, 44}, {30, 104}}), iconTransformation(extent = {{-130, -130}, {-70, -70}})));
-    annotation(
-      Line(points = {{-43, 73}, {-43, 90.5}, {-43, 90.5}, {-43, 73}}, color = {0, 0, 255}, smooth = Smooth.None),
-      Diagram(graphics),
-      Icon(graphics = {Rectangle(extent = {{-100, 100}, {100, -100}}, lineColor = {0, 0, 255})}));
   end NodeConnections;
+
+
 
   extends Modelica.Icons.ObsoleteModel;
   extends Modelica.Icons.ObsoleteModel;
