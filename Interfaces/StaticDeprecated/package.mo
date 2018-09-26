@@ -6,39 +6,40 @@ package StaticDeprecated
   partial model NodeConnections "Metabolite connections to reactions"
     extends GenKinetics.Icons.Node;
     
-    GenKinetics.Interfaces.Ports.ChemicalPort rc1 annotation(
+    GenKinetics.Interfaces.Ports.ChemicalPort_N rc1 annotation(
       extent = [-60, 80; -40, 100],
       Placement(transformation(extent = {{-84, 54}, {-14, 124}}), iconTransformation(extent = {{-86, 48}, {10, 148}})));
-    GenKinetics.Interfaces.Ports.ChemicalPort rc2 annotation(
+    GenKinetics.Interfaces.Ports.ChemicalPort_N rc2 annotation(
       extent = [-60, 80; -40, 100],
       Placement(transformation(extent = {{-84, 54}, {-14, 124}}), iconTransformation(extent = {{-8, 48}, {88, 148}})));
-    GenKinetics.Interfaces.Ports.ChemicalPort rc3 annotation(
+    GenKinetics.Interfaces.Ports.ChemicalPort_N rc3 annotation(
       extent = [-60, 80; -40, 100],
       Placement(transformation(extent = {{-84, 54}, {-14, 124}}), iconTransformation(extent = {{52, -12}, {148, 88}})));
-    GenKinetics.Interfaces.Ports.ChemicalPort rc4 annotation(
+    GenKinetics.Interfaces.Ports.ChemicalPort_N rc4 annotation(
       extent = [-60, 80; -40, 100],
       Placement(transformation(extent = {{-84, 54}, {-14, 124}}), iconTransformation(extent = {{52, -90}, {148, 10}})));
-    GenKinetics.Interfaces.Ports.ChemicalPort rc5 annotation(
+    GenKinetics.Interfaces.Ports.ChemicalPort_N rc5 annotation(
       extent = [-60, 80; -40, 100],
       Placement(transformation(extent = {{-84, 54}, {-14, 124}}), iconTransformation(extent = {{-8, -150}, {88, -50}})));
-    GenKinetics.Interfaces.Ports.ChemicalPort rc6 annotation(
+    GenKinetics.Interfaces.Ports.ChemicalPort_N rc6 annotation(
       extent = [-60, 80; -40, 100],
       Placement(transformation(extent = {{-84, 54}, {-14, 124}}), iconTransformation(extent = {{-86, -150}, {10, -50}})));
-    GenKinetics.Interfaces.Ports.ChemicalPort rc7 annotation(
+    GenKinetics.Interfaces.Ports.ChemicalPort_N rc7 annotation(
       extent = [-60, 80; -40, 100],
       Placement(transformation(extent = {{-84, 54}, {-14, 124}}), iconTransformation(extent = {{-146, -90}, {-50, 10}})));
-    GenKinetics.Interfaces.Ports.ChemicalPort rc8 annotation(
+    GenKinetics.Interfaces.Ports.ChemicalPort_N rc8 annotation(
       extent = [-60, 80; -40, 100],
       Placement(transformation(extent = {{-84, 54}, {-14, 124}}), iconTransformation(extent = {{-146, -12}, {-50, 88}})));
-    GenKinetics.Interfaces.Ports.ModifierChemicalPort mc1 annotation(
+    GenKinetics.Interfaces.Ports.ModifierChemicalPort_N mc1 annotation(
       Placement(transformation(extent = {{-30, 44}, {30, 104}}), iconTransformation(extent = {{-128, 68}, {-68, 128}})));
-    GenKinetics.Interfaces.Ports.ModifierChemicalPort mc2 annotation(
+    GenKinetics.Interfaces.Ports.ModifierChemicalPort_N mc2 annotation(
       Placement(transformation(extent = {{-30, 44}, {30, 104}}), iconTransformation(extent = {{72, 68}, {132, 128}})));
-    GenKinetics.Interfaces.Ports.ModifierChemicalPort mc3 annotation(
+    GenKinetics.Interfaces.Ports.ModifierChemicalPort_N mc3 annotation(
       Placement(transformation(extent = {{-30, 44}, {30, 104}}), iconTransformation(extent = {{70, -130}, {130, -70}})));
-    GenKinetics.Interfaces.Ports.ModifierChemicalPort mc4 annotation(
+    GenKinetics.Interfaces.Ports.ModifierChemicalPort_N mc4 annotation(
       Placement(transformation(extent = {{-30, 44}, {30, 104}}), iconTransformation(extent = {{-130, -130}, {-70, -70}})));
   end NodeConnections;
+
 
 
 
