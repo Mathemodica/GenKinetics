@@ -3,7 +3,7 @@ within GenKinetics.Interfaces;
 package Ports
   extends Modelica.Icons.BasesPackage;
 
-  partial connector ChemicalPort "reaction connector from a node to a reaction, declared within the node side"
+  connector ChemicalPort "reaction connector from a node to a reaction, declared within the node side"
     Units.Concentration c "concentration";
     flow Units.VolumetricReactionRate r "reaction rate";
   end ChemicalPort;
@@ -17,11 +17,13 @@ package Ports
 
 
 
-  partial connector ModifierChemicalPort "connector that connects a node to a reaction. The node is supposed to effects (activate or inhibit) the reaction"
+
+  connector ModifierChemicalPort "connector that connects a node to a reaction. The node is supposed to effects (activate or inhibit) the reaction"
      
     input Units.Concentration c "concentration";
    
   end ModifierChemicalPort;
+
 
 
 
