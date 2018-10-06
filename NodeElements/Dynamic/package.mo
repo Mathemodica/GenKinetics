@@ -14,34 +14,6 @@ package Dynamic
     mc.c = c;
   end BasicNode;
 
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-  extends Modelica.Icons.Package;
-
   model Node "Metabolite with dynamic rate"
     extends GenKinetics.NodeElements.Dynamic.BasicNode;
     //parameter Units.Concentration tolerance=1e-6;
