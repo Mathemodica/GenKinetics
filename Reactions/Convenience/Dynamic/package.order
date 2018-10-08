@@ -1,3 +1,5 @@
 BasicReaction
 ReactionActivation
 ReactionInhibition
+BasicIrrReaction
+BasicRevReaction
