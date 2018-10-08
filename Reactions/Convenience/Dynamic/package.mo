@@ -39,7 +39,6 @@ package Dynamic
   partial model BasicIrrReaction "basic declaration of an irreversible reaction "
     extends Reactions.Convenience.Dynamic.BasicReaction;
     extends Interfaces.Reversible.OneWay;
-    extends Icons.OneWay;
     
     Real S1 "Kinetic terms";
     Real S2;
@@ -55,10 +54,10 @@ package Dynamic
 //S2 = Vfwdmax * product({rc_S[i].c/rc_S[i].KmS + 1 for i in 1:NS});
   end BasicIrrReaction;
 
+
   partial model BasicRevReaction "basic declaration of a reversible reaction "
     extends Reactions.Convenience.Dynamic.BasicIrrReaction;
     extends Interfaces.Reversible.TwoWay;
-    extends Icons.TwoWay;
     
     Real P1;
     Real P2;
@@ -71,6 +70,7 @@ package Dynamic
 //P1 = Vbwdmax * product({rc_P[i].c/rc_P[i].KmP for i in 1:NP});
 //P2 = Vbwdmax * product({rc_P[i].c/rc_P[i].KmP + 1 for i in 1:NP});
   end BasicRevReaction;
+
 
 
 
