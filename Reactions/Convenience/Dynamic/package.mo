@@ -58,19 +58,32 @@ package Dynamic
     extends Interfaces.Reversible.OneWay;
   
     parameter Units.AffinityConst KmS[NS] = ones(NS) "affinity constants of the substrate nodes";
+  
+  protected 
      
     Real S1 "Kinetic terms";
     Real S2;
-    Real S3; 
   
   equation
   
-    S1 = Vfwdmax * S2;
-  
-    S2 = product({rc_S[i].c / KmS[i] for i in 1:NS});
+    // S1 = Vfwdmax * product({rc_S[i].c / KmS[i] for i in 1:NS});
     
-    S3 = product({rc_S[i].c / KmS[i] + 1 for i in 1:NS});
+    // S2 = product({rc_S[i].c / KmS[i] + 1 for i in 1:NS});
+    
+    S1 = Vfwdmax * product(rc_S.c ./ KmS);
+    
+    S2 = product(rc_S.c ./ KmS .+ 1);
   end BasicIrrReaction;
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -81,27 +94,30 @@ package Dynamic
     extends Reactions.Convenience.Dynamic.BasicIrrReaction;
     extends Interfaces.Reversible.TwoWay;
     
+    parameter Units.AffinityConst KmP[NP] = ones(NP) "affinity constants of the product node";
+  
+  protected 
+  
     Real P1;
     Real P2;
-    Real P3; 
-    
-    parameter Units.AffinityConst KmP[NP] = ones(NP) "affinity constants of the product node";
   
   equation
   
     P1 = Vbwdmax * product({rc_P[i].c / KmP[i] for i in 1:NP});
-    P2 = product({rc_P[i].c / KmP[i] for i in 1:NP});
-    P3 = product({rc_P[i].c / KmP[i] + 1 for i in 1:NP});
+    P2 = product({rc_P[i].c / KmP[i] + 1 for i in 1:NP});
    
   end BasicRevReaction;
 
 
 
-  class IrrKinetic "S1 + S2 + ... => P1 + P2 + ... "
+
+  model IrrKinetic "S1 + S2 + ... => P1 + P2 + ... "
     extends GenKinetics.Reactions.Convenience.Dynamic.BasicIrrReaction;
   equation
-    v = S1 / (S3-1);
+    v = S1 / (S2-1);
   end IrrKinetic;
+
+
 
 
   annotation(
