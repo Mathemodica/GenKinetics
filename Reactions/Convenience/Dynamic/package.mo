@@ -58,8 +58,6 @@ package Dynamic
     extends Interfaces.Reversible.OneWay;
   
     parameter Units.AffinityConst KmS[NS] = ones(NS) "affinity constants of the substrate nodes";
-  
-  protected 
      
     Real S1 "Kinetic terms";
     Real S2;
@@ -73,6 +71,9 @@ package Dynamic
     
     S3 = product({rc_S[i].c / KmS[i] + 1 for i in 1:NS});
   end BasicIrrReaction;
+
+
+
 
 
 
