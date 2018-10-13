@@ -15,54 +15,52 @@ package UserGuide
 <p></p><ul>
 <li><i>Interfaces</i>: connectors and icons </li>
 <li><i>NodeElements</i>: interfaces and components for nodes </li>
-<li><i>Reactions</i>: interfaces and components for reactions </li>
-<li><i>Derivatives</i>: for computing parameter sensitivities</li>
-<li><i>Examples</i>: biochemical network models</li>
+<li><i>Reactions</i>: interfaces and components for reactions</li>
+<li><i>Examples</i>: biochemical network models</li><li>UnitTests: unit tests for single components&nbsp;</li>
 </ul><p></p>
 <p>Further two subpackages within <i>NodeElements</i> and <i>Reactions</i> exist corresponding to two ways of declaration of connectors within components: </p>
 <p></p><ul>
-<li><i>dynamic</i>: dynamic parameterized number of connections </li>
-<li><i>static</i>: static fixed number of connections </li>
+<li><i>Dynamic</i>: dynamic parameterized number of connections </li>
+<li><i>Static</i>: static fixed number of connections </li>
 </ul><p></p>
 <p><br>The main differences of both ways and their advantages and disadvantages are emphasized in this section along with the given examples. </p>
 <p>Common interfaces and abstract classes are located above these packages. </p>
 <p></p><h4><font color=\"#008000\">Connections</font></h4><p></p>
-<p><br>That is concentration of a substance is the potential variable while the flow rate of materials (i.e. the chemical transformation process) represents the flow variables when connecting nodes and reactions together, cf. <i><a href=\"GenKinetics.Interfaces.ChemicalPort\">GenKinetics.Interfaces.ChemicalPort</a></i>. Further subtypes of connectors exist: </p>
+<p><br>That is concentration of a substance is the potential variable while the flow rate of materials (i.e. the chemical transformation process) represents the flow variables when connecting nodes and reactions together, cf. <i><a href=\"GenKinetics.Interfaces.Ports.ChemicalPort\">GenKinetics.Interfaces.Ports.ChemicalPort</a></i>. Further subtypes of connectors exist: </p>
 <p></p><ul>
 <li><i><a href=\"
-GenKinetics.Intefaces.ChemicalPort_S\">GenKinetics.Intefaces.ChemicalPort_S</a></i>: for reactions from the substrate side</li>
+GenKinetics.Intefaces.Ports.ChemicalPort_S\">GenKinetics.Intefaces.Ports.ChemicalPort_S</a></i>: for reactions from the substrate side</li>
 <li><i><a href=\"
-GenKinetics.Interfaces.ChemicalPort_P\">GenKinetics.Interfaces.ChemicalPort_P</a></i>: for reactions from the product side</li>
+GenKinetics.Interfaces.Ports.ChemicalPort_P\">GenKinetics.Interfaces.Ports.ChemicalPort_P</a></i>: for reactions from the product side</li>
 <li><i><a href=\"
-GenKinetics.Interfaces.ModifierChemicalPort\">GenKinetics.Interfaces.ModifierChemicalPort</a></i>: connecting reactions and effector nodes</li>
+GenKinetics.Interfaces.Ports.ModifierChemicalPort\">GenKinetics.Interfaces.Ports.ModifierChemicalPort</a></i>: connecting reactions and effector nodes</li>
 <li><i><a href=\"
-GenKinetics.Interfaces.MModifierChemicalPort_I\">GenKinetics.Interfaces.ModifierChemicalPort_I</a></i>: for inhibiting reactions</li>
+GenKinetics.Interfaces.Ports.MModifierChemicalPort_I\">GenKinetics.Interfaces.Ports.ModifierChemicalPort_I</a></i>: for inhibiting reactions</li>
 <li><i><a href=\"
-GenKinetics.Interfaces.MModifierChemicalPort_A\">GenKinetics.Interfaces.MModifierChemicalPort_A</a></i>: for activating reactions<br></li>
+GenKinetics.Interfaces.Ports.MModifierChemicalPort_A\">GenKinetics.Interfaces.Ports.MModifierChemicalPort_A</a></i>: for activating reactions<br></li>
 </ul><p></p>
 <p></p><h4><font color=\"#008000\">Interfaces and abstract classes</font></h4><p></p>
 <p><br>Further interfaces and abstract classes are used within implemented reactions for simplifying their implementations and emphasizing their classification. The most important of which are: </p>
 <p><i><a href=\"GenKinetics.Interfaces.Reversible.ReactionReversibility\">GenKinetics.Interfaces.Reversible.ReactionReversibility</a></i>: for determining the reversibility of reactions. The extended interfaces OneWay, TwoWay are used for irreversible, reversible reactions, respectively:</p>
 <p></p><ul>
 <li><i><a href=\"
-GenKinetics.Interfaces.static.NodeConnections\">GenKinetics.Interfaces.static.NodeConnections</a></i>: fixed number of connections for nodes</li>
+GenKinetics.Interfaces.Static.NodeConnections\">GenKinetics.Interfaces.Static.NodeConnections</a></i>: fixed number of connections for nodes</li>
 <li><i><a href=\"
-GenKinetics.Interfaces.dynamic.NodeConnections\">GenKinetics.Interfaces.dynamic.NodeConnections</a></i>: parameterized number of connections for nodes.</li>
+GenKinetics.Interfaces.Dynamic.NodeConnections\">GenKinetics.Interfaces.Dynamic.NodeConnections</a></i>: parameterized number of connections for nodes.</li>
 <li><i><a href=\"
-GenKinetics.Interfaces.dynamic.Dimension.ReactionDimension\">GenKinetics.Interfaces.dynamic.Dimension.ReactionDimension</a></i>: parameterized number of connections for nodes. This interface can be used for specializing further classes of specific dimension, e.g. <i><a href=\"
-GenKinetics.Interfaces.dynamic.Dimension.ReactionDimension\">ADGenKinetics.Interfaces.dynamic.Dimension.UniUni</a> .</i> </li>
+GenKinetics.Interfaces.Dynamic.Dimension.ReactionDimension\">GenKinetics.Interfaces.Dynamic.Dimension.ReactionDimension</a></i>: parameterized number of connections for nodes. This interface can be used for specializing further classes of specific dimension, e.g. <i><a href=\"
+GenKinetics.Interfaces.Dynamic.Dimension.ReactionDimension\">GenKinetics.Interfaces.Dynamic.Dimension.UniUni</a> .</i> </li>
 <li><i><a href=\"
-GenKinetics.Interfaces.static\">GenKinetics.Interfaces.static</a></i>.{<i><a href=\"GenKinetics.Interfaces.static.Reaction1S\">ReactionXS</a>, <a href=\"
-GenKinetics.Interfaces.static.Reaction2P\">ReactionXP</a></i>, <i><a href=\"
-GenKinetics.Interfaces.static.Reaction1I\">ReactionXI</a>,</i> <i><a href=\"Reaction1A\">ReactionXA</a></i>}: icons and connections for reactions with X number of connections.</li>
+GenKinetics.Interfaces.Static\">GenKinetics.Interfaces.Static</a></i>.{<i><a href=\"GenKinetics.Interfaces.Static.Reaction1S\">ReactionXS</a>, <a href=\"
+GenKinetics.Interfaces.Static.Reaction2P\">ReactionXP</a></i>, <i><a href=\"
+GenKinetics.Interfaces.Static.Reaction1I\">ReactionXI</a>,</i> <i><a href=\"Reaction1A\">ReactionXA</a></i>}: icons and connections for reactions with X number of connections.</li>
 </ul><p></p>
-<p></p><h4><font color=\"#008000\">Nodes</font></h4><p></p>
-<p><br>Typically, the component <i><a href=\"GenKinetics.NodeElements.dynamic.Node\">GenKinetics.NodeElements.dynamic.Node</a></i> or <i><a href=\"GenKinetics.NodeElements.static.Node\">GenKinetics.NodeElements.static.Node</a> </i>is the basic one needed for constructing biochemical reaction networks. Further types can be also imported from available implementation of the Biochem library. </p>
+<p></p><h4><font color=\"#008000\">Icons</font></h4><div>Package containing icons employed across the library.</div><h4><font color=\"#008000\">Nodes</font></h4><p>Typically, the component <i><a href=\"GenKinetics.NodeElements.Dynamic.Node\">GenKinetics.NodeElements.Dynamic.Node</a></i> or <i><a href=\"GenKinetics.NodeElements.Static.Node\">GenKinetics.NodeElements.Static.Node</a> </i>is the basic one needed for constructing biochemical reaction networks. Further types can be also imported from available implementation of the Biochem library. </p>
 <p></p><h4><font color=\"#008000\">Reactions </font></h4><p></p>
-<p><br>Reaction kinetics are available in the packages<i><a href=\" GenKinetics.Reactions.convenience.\"> </a><a href=\" GenKinetics.Reactions.convenience\">GenKinetics.Reactions.convenience</a><a href=\" GenKinetics.Reactions.convenience.\">.</a>{<a href=\"GenKinetics.Reactions.convenience.dynamic\">dynamic</a></i>.<i><a href=\"GenKinetics.Reactions.convenience.static\">static</a></i>}. </p>
-<p><br>For instance,<i><a href=\" GenKinetics.Reactions.convenience.dynamic.IrrKinetic\">&nbsp;GenKinetics.Reactions.convenience.dynamic.IrrKinetic</a></i> is used for irreversible reactions with arbitrary number of substrates and products, while <i><a href=\"GenKinetics.Reactions.convenience.dynamic.InhRevKinetic\">GenKinetics.Reactions.convenience.dynamic.InhRevKinetic</a></i> for reversible inhibited reactions with arbitrary number of substrates, products and inhibitors. </p>
-<p><br>Static packages provide reaction kinetics with fixed reaction structure. For instance&nbsp;<i><a href=\"GenKinetics.Reactions.convenience.static.IrrKinetic2S1P1I\">GenKinetics.Reactions.convenience.static.IrrKinetic2S1P1I</a></i>. </p>
-<p><br>Examples of constructing biochemical networks are given in <i><a href=\"GenKinetics.Examples.Spirallusdyn\">GenKinetics.Examples.Spirallusdyn</a> and <a href=\"GenKinetics.Examples.Spirallustatic\">GenKinetics.Examples.Spirallustatic</a>. </i></p>
+<p><br>Reaction kinetics are available in the packages<i><a href=\" GenKinetics.Reactions.convenience.\"> </a><a href=\" GenKinetics.Reactions.convenience\">GenKinetics.Reactions.convenience</a><a href=\" GenKinetics.Reactions.convenience.\">.</a>{<a href=\"GenKinetics.Reactions.convenience.Dynamic\">dynamic</a></i>.<i><a href=\"GenKinetics.Reactions.convenience.Static\">static</a></i>}. </p>
+<p><br>For instance,<i><a href=\" GenKinetics.Reactions.convenience.Dynamic.IrrKinetic\">&nbsp;GenKinetics.Reactions.convenience.dynamic.IrrKinetic</a></i> is used for irreversible reactions with arbitrary number of substrates and products, while <i><a href=\"GenKinetics.Reactions.convenience.Dynamic.InhRevKinetic\">GenKinetics.Reactions.convenience.dynamic.InhRevKinetic</a></i> for reversible inhibited reactions with arbitrary number of substrates, products and inhibitors. </p>
+<p><br>Static packages provide reaction kinetics with fixed reaction structure. For instance&nbsp;<i><a href=\"GenKinetics.Reactions.convenience.Static.IrrKinetic2S1P1I\">GenKinetics.Reactions.convenience.static.IrrKinetic2S1P1I</a></i>. </p>
+<h4><font color=\"#008000\">UnitTest</font></h4><p>Package for unit tests employing XogenyTest library. You can download the library from&nbsp;<a href=\"https://github.com/xogeny/XogenyTest\">https://github.com/xogeny/XogenyTest</a>. Please note if (some) unit tests are not compilable, then please use the newer version of XogenyTest downloadable at&nbsp;<a href=\"https://github.com/AtiyahElsheikh/XogenyTest\">https://github.com/AtiyahElsheikh/XogenyTest</a>.</p><h4><font color=\"#008000\">Examples</font></h4><p>Examples of constructing biochemical networks are given in <i><a href=\"GenKinetics.Examples.Spirallusdyn\">GenKinetics.Examples.Spirallusdyn</a> and <a href=\"GenKinetics.Examples.Spirallustatic\">GenKinetics.Examples.Spirallustatic</a>.</i></p>
 <p></p><h4><br></h4>
 </body></html>"));
   end Overview;
@@ -657,5 +655,7 @@ printing and shipping costs may be recovered.</p>
     annotation(
       Documentation(info = "<html><head></head><body><p><span style=\"font-size: 12px;\">Licensed under the Modelica License 2</span></p><p><b style=\"color: rgb(170, 0, 0); font-size: x-large;\">Copyright © &lt;2018&gt;, &lt;Atiyah Elsheikh&gt;.</b></p><p><i>This Modelica package is&nbsp;<u>free</u>&nbsp;software and the use is completely at&nbsp;<u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the disclaimer of warranty) see&nbsp;<a href=\"modelica://Modelica.UsersGuide.ModelicaLicense2\">Modelica.UsersGuide.ModelicaLicense2</a>&nbsp;or visit<a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></body></html>"));
   end CopyRight;
+  annotation(
+    Documentation);
 
 end UserGuide;
