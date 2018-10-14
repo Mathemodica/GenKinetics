@@ -15,14 +15,15 @@ Reactions.Convenience.Dynamic.IrrKinetic v(KmS={km},Vfwdmax=vfwd);
     Placement(visible = true, transformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput r annotation(
     Placement(visible = true, transformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+
 equation 
 
   connect(S.rc,v.rc_S[1]); 
   connect(v.rc_P[1],P.rc); 
   
-  connect(Sc,S.c);
-  connect(Pc,P.c);
-  connect(v.v,r);
+  Sc = S.c;
+  Pc = P.c;
+  v.v = r;
   
 annotation(
     Icon(graphics = {Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
