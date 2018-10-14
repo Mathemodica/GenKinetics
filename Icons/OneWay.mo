@@ -1,6 +1,5 @@
 within GenKinetics.Icons;
-
 partial model OneWay
- annotation(
+ annotation (
     Icon(graphics = {Bitmap(extent = {{-78, 80}, {86, -80}}, fileName = "OneWay.gif")}));
 end OneWay;

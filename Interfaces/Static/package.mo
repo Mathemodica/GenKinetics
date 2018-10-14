@@ -5,7 +5,7 @@ package Static
   partial model NodeConnections "Metabolite connections to reactions"
     extends GenKinetics.Icons.Node;
 
-    GenKinetics.Interfaces.Dynamic.NodeConnections nc;
+  GenKinetics.Interfaces.Dynamic.NodeConnections nc;
 
     GenKinetics.Interfaces.Ports.ChemicalPort_N rc1 annotation (
       Placement(visible = true, transformation(extent = {{-84, 54}, {-14, 124}}, rotation = 0), iconTransformation(extent = {{-46, 50}, {50, 150}}, rotation = 0)));

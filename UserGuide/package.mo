@@ -1,11 +1,10 @@
-within GenKinetics;
-
+﻿within GenKinetics;
 package UserGuide
   extends Modelica.Icons.Information;
 
   model Overview
     extends Modelica.Icons.Information;
-    annotation(
+    annotation (
       Documentation(info = "<html><head></head><body><p><img src=\"icons/logo.jpg\"></p>
 <p><br></p><h4><font color=\"#008000\">About</font></h4><p></p>
 <p><br><i>GenKinetics</i> contains an implementation of a specific set of reaction kinetics, namely, generalized simplified kinetic formats. It follows many of the guidelines recommended by the <a href=\"https://modelica.org/publications/papers/2005-05-LarsdotterNilsson-Fritzson-BioMedSim2005-MetabolicModeling.pdf\">Biochem library</a>. The underlying simplified kinetics formats are represented by generalized structured kinetics formulas suitable for arbitrary biochemical reactions with arbitrary number of substrates, products, inhibitors and activators. In this way, matabolic reaction networks can be easily assembled using a few number of reaction kinetics.</p>
@@ -67,7 +66,7 @@ GenKinetics.Interfaces.Static.Reaction1I\">ReactionXI</a>,</i> <i><a href=\"Reac
 
   model Contributors
     extends Modelica.Icons.Information;
-    annotation(
+    annotation (
       Documentation(info = "<html><head></head><body><p>Author: Atiyah Elsheikh </p>
 <p>Contact details: <i><a href=\"GenKinetics.UsersGuide.Contact\">GenKinetics.UsersGuide.Contact</a></i></p>
 </body></html>"));
@@ -75,14 +74,14 @@ GenKinetics.Interfaces.Static.Reaction1I\">ReactionXI</a>,</i> <i><a href=\"Reac
 
   model Contact
     extends Modelica.Icons.Contact;
-    annotation(
+    annotation (
       Documentation(info = "<html><head></head><body><p>Atiyah Elsheikh :&nbsp;<a href=\"a.m.g.elsheikh@gmail.com\">a.m.g.elsheikh-at-gmail.com</a></p>
 </body></html>"));
   end Contact;
 
   class ModelicaLicense2 "Modelica License 2"
     extends Modelica.Icons.Information;
-    annotation(
+    annotation (
       Documentation(info = "<html>
 <head>
 	<title>The Modelica License 2</title>
@@ -640,7 +639,7 @@ printing and shipping costs may be recovered.</p>
 
   model ReleaseNotes
     extends Modelica.Icons.ReleaseNotes;
-    annotation(
+    annotation (
       Documentation(info = "<html><head></head><body><p><b><font style=\"color: #008000; \">R1.0 </font></b>September 2018</p>
 <p>first published release of the library with Basic phyiscial units, basic components for nodes and reactions both with parameterized and static number of connections. Examples are included. </p>
 </body></html>"));
@@ -652,10 +651,11 @@ printing and shipping costs may be recovered.</p>
 
   model CopyRight
     extends Modelica.Icons.Information;
-    annotation(
+    annotation (
       Documentation(info = "<html><head></head><body><p><span style=\"font-size: 12px;\">Licensed under the Modelica License 2</span></p><p><b style=\"color: rgb(170, 0, 0); font-size: x-large;\">Copyright © &lt;2018&gt;, &lt;Atiyah Elsheikh&gt;.</b></p><p><i>This Modelica package is&nbsp;<u>free</u>&nbsp;software and the use is completely at&nbsp;<u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the disclaimer of warranty) see&nbsp;<a href=\"modelica://Modelica.UsersGuide.ModelicaLicense2\">Modelica.UsersGuide.ModelicaLicense2</a>&nbsp;or visit<a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></body></html>"));
   end CopyRight;
-  annotation(
+
+  annotation (
     Documentation);
 
 end UserGuide;
