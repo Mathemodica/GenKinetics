@@ -38,22 +38,22 @@ package Internal "Some explicit implementation of small reactions systems"
 
 
   model SvP_rev "Explicit implementation of S <=> P"
-    Modelica.Blocks.Interfaces.RealOutput S annotation(
+    Modelica.Blocks.Interfaces.RealOutput S annotation (
       Placement(visible = true, transformation(origin = {100, 72}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, 72}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput v(start = 0) annotation(
+    Modelica.Blocks.Interfaces.RealOutput v(start = 0) annotation (
       Placement(visible = true, transformation(origin = {100, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput P(start = 0) annotation(
+    Modelica.Blocks.Interfaces.RealOutput P(start = 0) annotation (
       Placement(visible = true, transformation(origin = {98, -84}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {98, -84}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     parameter Real S0 = 1.0 "initial concentration of S";
     parameter Real vfwd = 1.5 "kinetic parameter";
-    parameter Real vbwd = 0.5 "kinetic parameter"; 
+    parameter Real vbwd = 0.5 "kinetic parameter";
     parameter Real kmS = 2.0 "kinetic parameter";
-    parameter Real kmP = 0.3 "kinetic parameter"; 
+    parameter Real kmP = 0.3 "kinetic parameter";
   initial equation
     S = S0;
   equation
     der(S) = -v;
-    v = (vfwd * S / kmS  - vbwd * P / kmP ) / ( (1 + S / kmS) + (1 + P / kmP) - 1 );
+    v = (vfwd * S / kmS  - vbwd * P / kmP)  / ( (1 + S / kmS) + (1 + P / kmP) - 1);
     der(P) = v;
   end SvP_rev;
 
@@ -62,21 +62,21 @@ package Internal "Some explicit implementation of small reactions systems"
 
 
   model OOSvP_rev "GenKinetics implementation of S <=> P"
-    
+
     parameter Real S0 = 1.0 "initial concentration of S";
     parameter Real vfwd = 1.5 "kinetic parameter";
-    parameter Real vbwd = 0.5 "kinetic parameter"; 
+    parameter Real vbwd = 0.5 "kinetic parameter";
     parameter Real kmS = 2.0 "kinetic parameter";
-    parameter Real kmP = 0.3 "kinetic parameter"; 
-    
+    parameter Real kmP = 0.3 "kinetic parameter";
+
     NodeElements.Dynamic.Node S(c_0 = S0);
     NodeElements.Dynamic.Node P(c_0 = 0);
     Reactions.Convenience.Dynamic.RevKinetic v(KmS = {kmS}, KmP = {kmP}, Vfwdmax = vfwd, Vbwdmax=vbwd);
-    Modelica.Blocks.Interfaces.RealOutput Sc annotation(
+    Modelica.Blocks.Interfaces.RealOutput Sc annotation (
       Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput Pc annotation(
+    Modelica.Blocks.Interfaces.RealOutput Pc annotation (
       Placement(visible = true, transformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput r annotation(
+    Modelica.Blocks.Interfaces.RealOutput r annotation (
       Placement(visible = true, transformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   equation
     connect(S.rc, v.rc_S[1]);
@@ -84,7 +84,7 @@ package Internal "Some explicit implementation of small reactions systems"
     Sc = S.c;
     Pc = P.c;
     v.v = r;
-    annotation(
+    annotation (
       Icon(graphics = {Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
   end OOSvP_rev;
 
@@ -94,30 +94,30 @@ package Internal "Some explicit implementation of small reactions systems"
 
 
   model S1S2vP "Explicit implementation of S1 + S2 => P"
-    Modelica.Blocks.Interfaces.RealOutput S1(start = S10) annotation(
+    Modelica.Blocks.Interfaces.RealOutput S1(start = S10) annotation (
       Placement(visible = true, transformation(origin = {104, 84}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {104, 84}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput v(start = 0) annotation(
+    Modelica.Blocks.Interfaces.RealOutput v(start = 0) annotation (
       Placement(visible = true, transformation(origin = {100, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput P(start = 0) annotation(
+    Modelica.Blocks.Interfaces.RealOutput P(start = 0) annotation (
       Placement(visible = true, transformation(origin = {98, -84}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {98, -84}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput S2(start = S20) annotation(
+    Modelica.Blocks.Interfaces.RealOutput S2(start = S20) annotation (
       Placement(visible = true, transformation(origin = {104, 54}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {104, 54}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  
-  
+
+
     parameter Real S10 = 1.0 "initial concentration of S";
     parameter Real S20 = 1.0 "initial concentration of S";
     parameter Real vfwd = 1.0 "kinetic parameter";
     parameter Real kmS1 = 1.5 "kinetic parameter";
     parameter Real kmS2 = 0.3 "kinetic parameter";
-  
-    
+
+
   equation
-  
+
     der(S1) = -v;
-    der(S2) = -v; 
+    der(S2) = -v;
     v = vfwd * S1 / kmS1 * S2 / kmS2 / (1 + S1 / kmS1) / (1 + S2/kmS2);
     der(P) = v;
-  
+
   end S1S2vP;
 
 
@@ -126,40 +126,40 @@ package Internal "Some explicit implementation of small reactions systems"
 
 
   model OOS1S2vP "GenKinetics implementation of S1 + S2 => P"
-  
+
     parameter Real S10 = 1.0 "initial concentration of S";
     parameter Real S20 = 1.0 "initial concentration of S";
     parameter Real vfwd = 1.0 "kinetic parameter";
     parameter Real kmS1 = 1.5 "kinetic parameter";
     parameter Real kmS2 = 0.3 "kinetic parameter";
-    
+
     NodeElements.Dynamic.Node S1(c_0 = S10);
-    NodeElements.Dynamic.Node S2(c_0 = S20); 
+    NodeElements.Dynamic.Node S2(c_0 = S20);
     NodeElements.Dynamic.Node P(c_0 = 0);
-    
+
     Reactions.Convenience.Dynamic.IrrKinetic v(NS=2,KmS = {kmS1,kmS2}, Vfwdmax = vfwd);
-    
-    Modelica.Blocks.Interfaces.RealOutput S1c annotation(
+
+    Modelica.Blocks.Interfaces.RealOutput S1c annotation (
       Placement(visible = true, transformation(origin = {104, 76}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 82}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput Pc annotation(
+    Modelica.Blocks.Interfaces.RealOutput Pc annotation (
       Placement(visible = true, transformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput r annotation(
+    Modelica.Blocks.Interfaces.RealOutput r annotation (
       Placement(visible = true, transformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput S2c annotation(
+    Modelica.Blocks.Interfaces.RealOutput S2c annotation (
       Placement(visible = true, transformation(origin = {104, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {104, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  
+
   equation
-  
+
     connect(S1.rc, v.rc_S[1]);
     connect(S2.rc, v.rc_S[2]);
     connect(v.rc_P[1], P.rc);
-    
+
     S1c = S1.c;
-    S2c = S2.c; 
+    S2c = S2.c;
     Pc = P.c;
     v.v = r;
-    
-    annotation(
+
+    annotation (
       Icon(graphics = {Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
   end OOS1S2vP;
 
@@ -169,23 +169,23 @@ package Internal "Some explicit implementation of small reactions systems"
 
 
   model SIvP_rev "Explicit implementation of S + I <=> P"
-    Modelica.Blocks.Interfaces.RealOutput S annotation(
+    Modelica.Blocks.Interfaces.RealOutput S annotation (
       Placement(visible = true, transformation(origin = {100, 72}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, 72}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput v(start = 0) annotation(
+    Modelica.Blocks.Interfaces.RealOutput v(start = 0) annotation (
       Placement(visible = true, transformation(origin = {100, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput P(start = 0) annotation(
+    Modelica.Blocks.Interfaces.RealOutput P(start = 0) annotation (
       Placement(visible = true, transformation(origin = {98, -84}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {98, -84}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    
-    
-    parameter Real I = 0.5 " fixed concentration of inhibitor"; 
-    parameter Real kI = 0.5 "kinetic parameter"; 
-    
+
+
+    parameter Real I = 0.5 " fixed concentration of inhibitor";
+    parameter Real kI = 0.5 "kinetic parameter";
+
     parameter Real S0 = 1.0 "initial concentration of S";
     parameter Real vfwd = 1.5 "kinetic parameter";
     parameter Real vbwd = 0.5 "kinetic parameter";
     parameter Real kmS = 2.0 "kinetic parameter";
     parameter Real kmP = 0.3 "kinetic parameter";
-    
+
   initial equation
     S = S0;
   equation
@@ -200,39 +200,38 @@ package Internal "Some explicit implementation of small reactions systems"
 
 
   model OOSIvP_rev "GenKinetics implementation of S + I <=> P"
-    
-    
-    parameter Real I0 = 0.5 " fixed concentration of inhibitor"; 
-    parameter Real kI = 0.5 "kinetic parameter"; 
+
+
+    parameter Real I0 = 0.5 " fixed concentration of inhibitor";
+    parameter Real kI = 0.5 "kinetic parameter";
     parameter Real S0 = 1.0 "initial concentration of S";
     parameter Real vfwd = 1.5 "kinetic parameter";
     parameter Real vbwd = 0.5 "kinetic parameter";
     parameter Real kmS = 2.0 "kinetic parameter";
     parameter Real kmP = 0.3 "kinetic parameter";
-    
-    NodeElements.Dynamic.FixedConcentrationNode I(c_0=I0); 
+
+    NodeElements.Dynamic.FixedConcentrationNode I(c_0=I0);
     NodeElements.Dynamic.Node S(c_0 = S0);
     NodeElements.Dynamic.Node P(c_0 = 0);
     Reactions.Convenience.Dynamic.InhRevKinetic v(KmS = {kmS}, KmP = {kmP}, KI = {kI}, Vfwdmax = vfwd, Vbwdmax = vbwd);
-    Modelica.Blocks.Interfaces.RealOutput Sc annotation(
+    Modelica.Blocks.Interfaces.RealOutput Sc annotation (
       Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput Pc annotation(
+    Modelica.Blocks.Interfaces.RealOutput Pc annotation (
       Placement(visible = true, transformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput r annotation(
+    Modelica.Blocks.Interfaces.RealOutput r annotation (
       Placement(visible = true, transformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  
+
   equation
-  
+
     connect(S.rc, v.rc_S[1]);
     connect(v.rc_P[1], P.rc);
     connect(v.mc_I[1],I.mc);
-    
+
     Sc = S.c;
     Pc = P.c;
     v.v = r;
-    annotation(
+    annotation (
       Icon(graphics = {Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
-  
   end OOSIvP_rev;
 
 
@@ -240,27 +239,27 @@ package Internal "Some explicit implementation of small reactions systems"
 
 
   model SAvP "Explicit implementation of S + A => P"
-    Modelica.Blocks.Interfaces.RealOutput S(start = S0) annotation(
+    Modelica.Blocks.Interfaces.RealOutput S(start = S0) annotation (
       Placement(visible = true, transformation(origin = {100, 72}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, 72}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput v(start = 0) annotation(
+    Modelica.Blocks.Interfaces.RealOutput v(start = 0) annotation (
       Placement(visible = true, transformation(origin = {100, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput P(start = 0) annotation(
+    Modelica.Blocks.Interfaces.RealOutput P(start = 0) annotation (
       Placement(visible = true, transformation(origin = {98, -84}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {98, -84}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-   
-   
-    parameter Real A = 0.5 " fixed concentration of inhibitor"; 
-    parameter Real kA = 0.5 "kinetic parameter";  
-    
+
+
+    parameter Real A = 0.5 " fixed concentration of inhibitor";
+    parameter Real kA = 0.5 "kinetic parameter";
+
     parameter Real S0 = 1.0 "initial concentration of S";
     parameter Real vfwd = 1.0 "kinetic parameter";
     parameter Real km = 2.0 "kinetic parameter";
-  
+
   equation
-  
+
     der(S) = -v;
-    v = (kA + A ) / kA * vfwd * S / km / (1 + S / km);
+    v = (kA + A)  / kA * vfwd * S / km / (1 + S / km);
     der(P) = v;
-  
+
   end SAvP;
 
 
@@ -268,23 +267,23 @@ package Internal "Some explicit implementation of small reactions systems"
 
 
   model OOSAvP "GenKinetics implementation of S + A => P"
-  
-    parameter Real A0 = 0.5 " fixed concentration of inhibitor"; 
-    parameter Real kA = 0.5 "kinetic parameter";  
+
+    parameter Real A0 = 0.5 " fixed concentration of inhibitor";
+    parameter Real kA = 0.5 "kinetic parameter";
     parameter GenKinetics.Units.AffinityConst km = 2.0;
     parameter GenKinetics.Units.Concentration S0 = 1.0;
     parameter Units.ReactionCoef vfwd = 1.0;
-    
+
     NodeElements.Dynamic.Node S(c_0 = S0);
     NodeElements.Dynamic.Node P(c_0 = 0);
     NodeElements.Dynamic.FixedConcentrationNode A(c_0 = A0);
-    
+
     Reactions.Convenience.Dynamic.ActIrrKinetic v(KmS = {km}, KA={kA},Vfwdmax = vfwd);
-    Modelica.Blocks.Interfaces.RealOutput Sc annotation(
+    Modelica.Blocks.Interfaces.RealOutput Sc annotation (
       Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput Pc annotation(
+    Modelica.Blocks.Interfaces.RealOutput Pc annotation (
       Placement(visible = true, transformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput r annotation(
+    Modelica.Blocks.Interfaces.RealOutput r annotation (
       Placement(visible = true, transformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   equation
     connect(S.rc, v.rc_S[1]);
@@ -293,7 +292,7 @@ package Internal "Some explicit implementation of small reactions systems"
     Sc = S.c;
     Pc = P.c;
     v.v = r;
-    annotation(
+    annotation (
       Icon(graphics = {Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
   end OOSAvP;
 
