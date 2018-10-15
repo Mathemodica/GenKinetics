@@ -27,9 +27,10 @@ protected
 
   equation
 
-    A = product({(KA .+ mc_A.c) ./ KA  for i in 1:NA});
+    A = product((KA .+ mc_A.c) ./ KA);
 
   end ReactionActivation;
+
 
 
 
