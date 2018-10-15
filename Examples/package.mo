@@ -1,5 +1,4 @@
-within GenKinetics;
-
+﻿within GenKinetics;
 package Examples
   extends Modelica.Icons.ExamplesPackage;
 
@@ -26,40 +25,41 @@ package Examples
     IrrKinetic v7(NS = 1, NP = 1, Vfwdmax = 2.0, KmS = {3.0});
     Node Fex;
   equation
-// vupt
+  // vupt
     connect(Aex.rc, vupt.rc_S[1]);
     connect(vupt.rc_P[1], A.rc);
     connect(vupt.mc_I[1], A.mc);
-// v1
+  // v1
     connect(A.rc, v1.rc_S[1]);
     connect(v1.rc_P[1], B.rc);
-// v5
+  // v5
     connect(B.rc, v5.rc_S[1]);
     connect(v5.rc_P[1], E.rc);
-// v2
+  // v2
     connect(B.rc, v2.rc_S[1]);
     connect(E.rc, v2.rc_S[2]);
     connect(v2.rc_P[1], C.rc);
-// v3
+  // v3
     connect(C.rc, v3.rc_S[1]);
     connect(v3.rc_P[1], D.rc);
     connect(v3.rc_P[2], F.rc);
     connect(D.mc, v3.mc_I[1]);
-// v4
+  // v4
     connect(D.rc, v4.rc_S[1]);
     connect(v4.rc_P[1], F.rc);
     connect(v4.rc_P[2], E.rc);
     connect(v4.mc_I[1], C.mc);
-// v6
+  // v6
     connect(E.rc, v6.rc_S[1]);
     connect(v6.rc_P[1], Eex.rc);
-// v7
+  // v7
     connect(F.rc, v7.rc_S[1]);
     connect(v7.rc_P[1], Fex.rc);
-    annotation(
+    annotation (
       experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.02),
       __OpenModelica_simulationFlags(lv = "LOG_STATS", maxIntegrationOrder = "4", s = "dassl"));
   end Spirallusdyn;
-  annotation(
+
+  annotation (
     Documentation(info = "<html><head></head><body><p style=\"font-size: 12px;\">This subpackage contains examples of typical metablic pathway models.</p><p style=\"font-size: 12px;\"><br>Licensed under the Modelica License 2</p><p style=\"font-size: 12px;\"><br>Copyright ©&nbsp;<a href=\"GenKinetics.UserGuide.CopyRight\">GenKinetics.UserGuide.CopyRight</a></p><p style=\"font-size: 12px;\"><i>This Modelica package is&nbsp;<u>free</u>&nbsp;software and the use is completely at&nbsp;<u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the disclaimer of warranty) see&nbsp;<a href=\"modelica:///Modelica.UsersGuide.ModelicaLicense2\">Modelica.UsersGuide.ModelicaLicense2</a>&nbsp;or visit&nbsp;<a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></body></html>"));
 end Examples;

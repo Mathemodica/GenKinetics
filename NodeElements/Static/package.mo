@@ -32,7 +32,8 @@ package Static
     extends Static.BasicNode;
   equation
     // der(c) = r_net;
-    der(c) = if(c < tolerance) then 0 else r_net;
+    der(c) = if
+               (c < tolerance) then 0 else r_net;
   end Node;
 
 
@@ -57,7 +58,8 @@ package Static
   //  extends Dynamic.Node;
   equation
   //  der(c) = r_net;
-    der(c) = if(c < tolerance) then 0 else r_net;
+    der(c) = if
+               (c < tolerance) then 0 else r_net;
   end Node2;
 
 
