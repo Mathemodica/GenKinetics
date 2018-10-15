@@ -27,9 +27,11 @@ protected
 
   equation
 
-    A = product({(KA[i] + mc_A[i].c)/ (KA[i])  for i in 1:NA});
+    A = product({(KA .+ mc_A.c) ./ KA  for i in 1:NA});
 
   end ReactionActivation;
+
+
 
 
 
@@ -44,9 +46,10 @@ protected
 
   equation
 
-    I = product({KI[i] / (KI[i] + mc_I[i].c) for i in 1:NI});
+    I = product({KI ./ (KI .+ mc_I.c) for i in 1:NI});
 
   end ReactionInhibition;
+
 
 
 
@@ -98,10 +101,11 @@ protected
 
   equation
 
-    P1 = Vbwdmax * product({rc_P[i].c / KmP[i] for i in 1:NP});
-    P2 = product({rc_P[i].c / KmP[i] + 1 for i in 1:NP});
+    P1 = Vbwdmax * product({rc_P.c ./ KmP for i in 1:NP});
+    P2 = product({rc_P.c ./ KmP .+ 1 for i in 1:NP});
 
   end BasicRevReaction;
+
 
 
 
