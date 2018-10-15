@@ -36,10 +36,10 @@ package Static
 
   model FixedConcentrationNode "Metabolite with fixed concentration"
     extends Static.BasicNode;
-    parameter GenKinetics.Units.Concentration c_fixed = 1.0;
   equation
-    c = c_fixed;
+    c = c_0;
   end FixedConcentrationNode;
+
 
   partial model BasicNode2 "Basic declarations of any Metabolite"
     extends GenKinetics.Interfaces.Static.NodeConnections;
