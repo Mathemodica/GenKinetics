@@ -116,7 +116,64 @@ protected
     v = S1 / S2;
   end IrrKinetic;
 
+  model InhIrrKinetic "S1 + S2 + ... ==I1,I2,...==> P1 + P2 + ... "
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicIrrReaction;
+    extends GenKinetics.Reactions.Convenience.Dynamic.ReactionInhibition;
+  equation
+    v = I * S1 / S2;
+  end InhIrrKinetic;
 
+
+
+  model ActIrrKinetic "S1 + S2 + ... ==A1,A2,...==> P1 + P2 + ... "
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicIrrReaction;
+    extends GenKinetics.Reactions.Convenience.Dynamic.ReactionActivation;
+  equation
+    v = A * S1 / S2;
+  end ActIrrKinetic;
+
+
+  model ActInhIrrKinetic "S1 + S2 + ...  ==I1,I2,...==> P1 + P2 + ... "
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicIrrReaction;
+    extends GenKinetics.Reactions.Convenience.Dynamic.ReactionActivation;
+    extends GenKinetics.Reactions.Convenience.Dynamic.ReactionInhibition;
+  equation
+    v = A * I * S1 / S2;
+  end ActInhIrrKinetic;
+
+
+
+  model RevKinetic "S1 + S2 + ... <===> P1 + P2 + ... "
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction;
+  equation
+    v = (S1 - P1) / (S2 + P2 - 1);
+  end RevKinetic;
+
+
+  model InhRevKinetic "S1 + S2 + ... <==I1,I2,...=> P1 + P2 + ... "
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction;
+    extends GenKinetics.Reactions.Convenience.Dynamic.ReactionInhibition;
+  equation
+    v = I * (S1 - P1) / (S2 + P2 - 1);
+  end InhRevKinetic;
+
+
+
+  model ActRevKinetic "S1 + S2 + ...  <==A1,A2,...==> P1 + P2 + ... "
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction;
+    extends GenKinetics.Reactions.Convenience.Dynamic.ReactionActivation;
+  equation
+    v = A * (S1 - P1) / (S2 + P2 - 1);
+  end ActRevKinetic;
+
+
+  model ActInhRevKinetic "S1 + S2 + ...  <==I1,I2,...==> P1 + P2 + ... "
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction;
+    extends GenKinetics.Reactions.Convenience.Dynamic.ReactionActivation;
+    extends GenKinetics.Reactions.Convenience.Dynamic.ReactionInhibition;
+  equation
+    v = A * I * (S1 - P1) / (S2 + P2 - 1);
+  end ActInhRevKinetic;
 
 
   annotation (

@@ -4,3 +4,10 @@ ReactionInhibition
 BasicIrrReaction
 BasicRevReaction
 IrrKinetic
+InhIrrKinetic
+ActIrrKinetic
+ActInhIrrKinetic
+RevKinetic
+InhRevKinetic
+ActRevKinetic
+ActInhRevKinetic
