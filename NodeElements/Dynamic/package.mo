@@ -15,11 +15,12 @@ package Dynamic
 
   model Node "Metabolite with dynamic rate"
     extends GenKinetics.NodeElements.Dynamic.BasicNode;
-    //parameter Units.Concentration tolerance=1e-6;
+    parameter Units.Concentration tolerance=1e-6;
   equation
-  //der(c) = if(c < tolerance) then 0 else r_net;
-    der(c) = r_net;
+   der(c) = if(c < tolerance) then 0 else r_net;
+   // der(c) = r_net;
   end Node;
+
 
   model FixedConcentrationNode "Metabolite with fixed concentration"
     extends GenKinetics.NodeElements.Dynamic.BasicNode;

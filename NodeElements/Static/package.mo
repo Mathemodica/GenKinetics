@@ -31,8 +31,10 @@ package Static
   model Node "Metabolite with dynamic rate"
     extends Static.BasicNode;
   equation
-    der(c) = r_net;
+    // der(c) = r_net;
+    der(c) = if(c < tolerance) then 0 else r_net;
   end Node;
+
 
   model FixedConcentrationNode "Metabolite with fixed concentration"
     extends Static.BasicNode;
@@ -54,8 +56,10 @@ package Static
     extends Static.BasicNode2;
   //  extends Dynamic.Node;
   equation
-    der(c) = r_net;
+  //  der(c) = r_net;
+    der(c) = if(c < tolerance) then 0 else r_net;
   end Node2;
+
 
 
 
