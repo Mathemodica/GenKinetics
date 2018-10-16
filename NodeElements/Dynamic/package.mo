@@ -18,9 +18,10 @@ package Dynamic
     parameter Units.Concentration tolerance=1e-6;
   equation
    der(c) = if
-              (c < tolerance) then 0 else r_net;
+              (c < tolerance and r_net < 0) then 0 else r_net;
    // der(c) = r_net;
   end Node;
+
 
 
   model FixedConcentrationNode "Metabolite with fixed concentration"

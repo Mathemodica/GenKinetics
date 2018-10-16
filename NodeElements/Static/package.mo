@@ -33,8 +33,9 @@ package Static
   equation
     // der(c) = r_net;
     der(c) = if
-               (c < tolerance) then 0 else r_net;
+               (c < tolerance and r_net < 0) then 0 else r_net;
   end Node;
+
 
 
   model FixedConcentrationNode "Metabolite with fixed concentration"
