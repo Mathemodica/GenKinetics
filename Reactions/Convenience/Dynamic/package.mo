@@ -7,15 +7,35 @@ package Dynamic
 
 
   partial model BasicReaction "basic declaration of a reaction "
-    extends Interfaces.Dynamic.Dimension.ReactionDimension;
+    replaceable class Dimensionality=Interfaces.Dynamic.Dimension.ReactionDimension constrainedby 
+      Interfaces.Dynamic.Dimension.ReactionDimension;
+    extends Dimensionality;
     Units.VolumetricReactionRate v "Reaction Rate";
     // Connections to Substrates and Products
     GenKinetics.Interfaces.Ports.ChemicalPort_S rc_S[NS] "connection to substrates";
     GenKinetics.Interfaces.Ports.ChemicalPort_P rc_P[NP] "connection to product";
   equation
-    rc_S[:].r = n_S[:] * v;
-    rc_P[:].r = -n_P[:] * v;
+    
+    for i in 1:NS loop
+      rc_S[i].r = n_S[i] * v;
+    end for;
+    for i in 1:NP loop
+      rc_P[i].r = -n_P[i] * v;
+    end for;
+   
   end BasicReaction;
+
+
+
+
+
+
+
+
+
+
+
+
 
   partial model ReactionActivation "Interface for activating a reaction"
     parameter Integer NA = 1 "number of Metabolites activating the reaction";
