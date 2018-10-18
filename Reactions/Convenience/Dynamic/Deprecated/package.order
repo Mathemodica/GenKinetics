@@ -1,0 +1,11 @@
+ReactionActivation
+BasicIrrReaction
+IrrKinetic
+ActIrrKinetic
+BasicRevReaction
+ReactionInhibition
+InhIrrKinetic
+ActInhIrrKinetic
+RevKinetic
+InhRevKinetic
+ActInhRevKinetic
