@@ -12,11 +12,17 @@ package Structure
       Interfaces.Dynamic.Dimension.ReactionDimension;
     extends Dimensionality;
     
-    replaceable class Inhibition = Interfaces.Dynamic.Modifier.ReactionInhibition constrainedby
+    /*replaceable class Inhibition = Interfaces.Dynamic.Modifier.UnspecifiedInhibition constrainedby
       Interfaces.Dynamic.Modifier.ReactionInhibition;
-    extends Inhibition; 
+    extends Inhibition;
+    
+    replaceable class Activation = Interfaces.Dynamic.Modifier.UnspecifiedActivation
+  constrainedby 
+      Interfaces.Dyanmic.Modifier.ReactionActivation; */
     
   end ReactionStructure;
+
+
 
 
 

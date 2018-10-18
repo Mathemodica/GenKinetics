@@ -12,6 +12,9 @@ package Dynamic
       Interfaces.Dynamic.Structure.ReactionStructure; 
     extends Structure;
     
+    replaceable class Modifier = Reactions.Convenience.Dynamic.BasicModifier constrainedby Reactions.Convenience.Dynamic.BasicModifier; 
+    extends Modifier; 
+    
     Units.VolumetricReactionRate v "Reaction Rate";
     // Connections to Substrates and Products
     GenKinetics.Interfaces.Ports.ChemicalPort_S rc_S[NS] "connection to substrates";
@@ -26,6 +29,8 @@ package Dynamic
     end for;
    
   end BasicReaction;
+
+
 
 
 
@@ -73,7 +78,7 @@ protected
 
   partial model BasicRevReaction "basic declaration of a reversible reaction "
     extends Reactions.Convenience.Dynamic.BasicIrrReaction(
-      redeclare replaceable class Reversibility = Interfaces.Reversible.TwoWay);
+      redeclare final class Reversibility = Interfaces.Reversible.TwoWay);
 
     parameter Units.AffinityConst KmP[NP] = ones(NP) "affinity constants of the product node";
 
@@ -95,8 +100,12 @@ protected
 
 
 
+
   model IrrKinetic "S1 + S2 + ... => P1 + P2 + ... "
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicIrrReaction;
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicIrrReaction(
+      redeclare final class Activation=Interfaces.Dynamic.Modifier.NoActivation,
+      redeclare final class Inhibition=Interfaces.Dynamic.Modifier.NoInhibition
+    );
   equation 
     v = S1 / S2; 
   end IrrKinetic;
@@ -111,9 +120,21 @@ protected
 
 
 
+
+
+
+
+
+
+
+
+
   model InhIrrKinetic "S1 + S2 + ... ==I1,I2,...==> P1 + P2 + ... "
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicIrrReaction;
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicInhibitor;
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicIrrReaction(
+      redeclare final class Modifier=Reactions.Convenience.Dynamic.BasicInhibitor,
+      redeclare final class Activation=Interfaces.Dynamic.Modifier.NoActivation
+    );
+  
   equation
     v = I * S1 / S2;
   end InhIrrKinetic;
@@ -121,9 +142,17 @@ protected
 
 
 
+
+
+
+
+
+
+
   model ActIrrKinetic "S1 + S2 + ... ==A1,A2,...==> P1 + P2 + ... "
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicIrrReaction;
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicActivator;
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicIrrReaction(
+      redeclare final class Modifier=Reactions.Convenience.Dynamic.BasicActivator, 
+      redeclare final class Inhibition=Interfaces.Dynamic.Modifier.NoInhibition);
   equation
     v = A * S1 / S2;  
   end ActIrrKinetic;
@@ -132,10 +161,14 @@ protected
 
 
 
+
+
+
+
+
   model ActInhIrrKinetic "S1 + S2 + ...  ==I1,I2,...==> P1 + P2 + ... "
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicIrrReaction;
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicInhibitor;
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicActivator;
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicIrrReaction(
+      redeclare final class Modifier=Reactions.Convenience.Dynamic.BasicActivatorAndInhibitor);
   equation
     v = A * I * S1 / S2;
   end ActInhIrrKinetic;
@@ -143,16 +176,24 @@ protected
 
 
 
+
+
   model RevKinetic "S1 + S2 + ... <===> P1 + P2 + ... "
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction;
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction(
+      redeclare final class Activation=Interfaces.Dynamic.Modifier.NoActivation,
+      redeclare final class Inhibition=Interfaces.Dynamic.Modifier.NoInhibition
+    );
   equation
     v = (S1 - P1) / (S2 + P2 - 1);
   end RevKinetic;
 
 
+
   model InhRevKinetic "S1 + S2 + ... <==I1,I2,...=> P1 + P2 + ... "
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction;
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicInhibitor;
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction(
+      redeclare final class Modifier=Reactions.Convenience.Dynamic.BasicInhibitor,
+      redeclare final class Activation=Interfaces.Dynamic.Modifier.NoActivation
+    );
   equation
     v = I * (S1 - P1) / (S2 + P2 - 1);
   end InhRevKinetic;
@@ -160,26 +201,33 @@ protected
 
 
 
+
   model ActRevKinetic "S1 + S2 + ...  <==A1,A2,...==> P1 + P2 + ... "
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction;
-    extends GenKinetics.Reactions.Convenience.Dynamic.ReactionActivation;
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction(
+      redeclare final class Modifier=Reactions.Convenience.Dynamic.BasicActivator, 
+      redeclare final class Inhibition=Interfaces.Dynamic.Modifier.NoInhibition
+    );
   equation
     v = A * (S1 - P1) / (S2 + P2 - 1);
   end ActRevKinetic;
 
 
+
+
+
   model ActInhRevKinetic "S1 + S2 + ...  <==I1,I2,...==> P1 + P2 + ... "
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction;
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicActivator;
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicInhibitor;
+    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction(
+      redeclare final class Modifier=Reactions.Convenience.Dynamic.BasicActivatorAndInhibitor 
+    );
   equation
     v = A * I * (S1 - P1) / (S2 + P2 - 1);
   end ActInhRevKinetic;
 
 
+
   partial model BasicActivator "Interface for activating a reaction"
-    replaceable class Activation = Interfaces.Dynamic.Modifier.UnspecifiedActivation constrainedby Interfaces.Dynamic.Modifier.ReactionActivation;
-    extends Activation;
+    extends BasicModifier;
+    
     GenKinetics.Interfaces.Ports.ModifierChemicalPort_A mc_A[NA] "connectors to the activating node";
     parameter Units.AffinityConst KA[NA] = ones(NA) "activation constants";
   protected
@@ -205,10 +253,10 @@ protected
 
 
 
+
+
   partial model BasicInhibitor "Interface for inhibiting a reaction"
-  
-    replaceable class Inhibition = Interfaces.Dynamic.Modifier.UnspecifiedInhibition constrainedby      Interfaces.Dynamic.Modifier.ReactionActivation;
-    extends Inhibition;
+    extends BasicModifier(redeclare replaceable class Inhibition = Interfaces.Dynamic.Modifier.UnspecifiedInhibition constrainedby Interfaces.Dynamic.Modifier.ReactionInhibition);
     GenKinetics.Interfaces.Ports.ModifierChemicalPort_I mc_I[NI] "connection to inhibitors";
     parameter Units.AffinityConst KI[NI] = ones(NI) "affinity constant of the Inhibitors";
   
@@ -220,6 +268,8 @@ protected
     I = product(KI ./ (KI .+ mc_I.c));
   
   end BasicInhibitor;
+
+
 
 
 
