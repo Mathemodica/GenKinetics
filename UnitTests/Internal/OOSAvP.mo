@@ -11,7 +11,7 @@ model OOSAvP "GenKinetics implementation of S + A => P"
   NodeElements.Dynamic.Node P(c_0 = 0);
   NodeElements.Dynamic.FixedConcentrationNode A(c_0 = A0);
 
-  Reactions.Convenience.Dynamic.ActIrrKinetic v(KmS = {km}, KA={kA},Vfwdmax = vfwd);
+  Reactions.Convenience.Dynamic.ActIrrKinetic v(NA=1,KmS = {km}, KA={kA},Vfwdmax = vfwd);
   Modelica.Blocks.Interfaces.RealOutput Sc annotation (
     Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput Pc annotation (

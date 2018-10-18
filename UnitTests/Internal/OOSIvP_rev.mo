@@ -12,7 +12,7 @@ model OOSIvP_rev "GenKinetics implementation of S + I <=> P"
   NodeElements.Dynamic.FixedConcentrationNode I(c_0=I0);
   NodeElements.Dynamic.Node S(c_0 = S0);
   NodeElements.Dynamic.Node P(c_0 = 0);
-  Reactions.Convenience.Dynamic.InhRevKinetic v(KmS = {kmS}, KmP = {kmP}, KI = {kI}, Vfwdmax = vfwd, Vbwdmax = vbwd);
+  Reactions.Convenience.Dynamic.InhRevKinetic v(NI=1,KmS = {kmS}, KmP = {kmP}, KI = {kI}, Vfwdmax = vfwd, Vbwdmax = vbwd);
   Modelica.Blocks.Interfaces.RealOutput Sc annotation (
     Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput Pc annotation (

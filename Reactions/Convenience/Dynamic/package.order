@@ -1,6 +1,4 @@
 BasicReaction
-ReactionActivation
-ReactionInhibition
 BasicIrrReaction
 BasicRevReaction
 IrrKinetic
@@ -11,3 +9,6 @@ RevKinetic
 InhRevKinetic
 ActRevKinetic
 ActInhRevKinetic
+BasicActivator
+BasicInhibitor
+Deprecated
