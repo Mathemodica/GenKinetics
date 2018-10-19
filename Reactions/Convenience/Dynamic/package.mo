@@ -255,12 +255,14 @@ protected
 
 
 
+
+
   partial model BasicInhibitor "Interface for inhibiting a reaction"
     extends BasicModifier(redeclare replaceable class Inhibition = Interfaces.Dynamic.Modifier.UnspecifiedInhibition constrainedby Interfaces.Dynamic.Modifier.ReactionInhibition);
     GenKinetics.Interfaces.Ports.ModifierChemicalPort_I mc_I[NI] "connection to inhibitors";
     parameter Units.AffinityConst KI[NI] = ones(NI) "affinity constant of the Inhibitors";
   
-  protected
+  //protected
     Real I "inhibition term in the corresponding kinetics";
   
   equation
@@ -268,6 +270,7 @@ protected
     I = product(KI ./ (KI .+ mc_I.c));
   
   end BasicInhibitor;
+
 
 
 
