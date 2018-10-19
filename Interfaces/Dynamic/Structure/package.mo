@@ -4,12 +4,12 @@ package Structure
 
   partial model ReactionStructure "The structure of a reaction reversibility, molecularity and order"
 
-    replaceable class Reversibility = Interfaces.Reversible.OneWay constrainedby
+    replaceable model Reversibility = Interfaces.Reversible.OneWay constrainedby
     Interfaces.Reversible.ReactionReversibility;
     extends Reversibility;
 
-    replaceable class Dimensionality =
-        Interfaces.Dynamic.Dimension.UnspecifiedDimension                                constrainedby
+    replaceable model Dimensionality =
+        Interfaces.Dynamic.Dimension.UnspecifiedDimension constrainedby
     Interfaces.Dynamic.Dimension.ReactionDimension;
     extends Dimensionality;
 
@@ -35,12 +35,12 @@ package Structure
 
 
   partial model StrUniUni "Structure Uni Uni "
-    extends ReactionStructure(redeclare final class Dimensionality =
+    extends ReactionStructure(redeclare final model Dimensionality =
         Dimension.UniUni);
   end StrUniUni;
 
   partial model StrOneWay "Structure Uni Uni "
-    extends ReactionStructure(redeclare final class Reversibility =
+    extends ReactionStructure(redeclare final model Reversibility =
         Reversible.OneWay);
   end StrOneWay;
 

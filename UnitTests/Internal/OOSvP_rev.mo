@@ -9,7 +9,7 @@ model OOSvP_rev "GenKinetics implementation of S <=> P"
 
   NodeElements.Dynamic.Node S(c_0 = S0);
   NodeElements.Dynamic.Node P(c_0 = 0);
-  Reactions.Convenience.Dynamic.RevKinetic v(KmS = {kmS}, KmP = {kmP}, Vfwdmax = vfwd, Vbwdmax=vbwd);
+  Reactions.Convenience.Dynamic.RevKinetic v(NS=1,NP=1,KmS = {kmS}, KmP = {kmP}, Vfwdmax = vfwd, Vbwdmax=vbwd);
   Modelica.Blocks.Interfaces.RealOutput Sc annotation (
     Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput Pc annotation (
