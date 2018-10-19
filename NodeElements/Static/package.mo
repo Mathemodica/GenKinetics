@@ -30,6 +30,7 @@ package Static
 
   model Node "Metabolite with dynamic rate"
     extends Static.BasicNode;
+    parameter Units.Concentration tolerance=1e-6;
   equation
     // der(c) = r_net;
     der(c) = if
