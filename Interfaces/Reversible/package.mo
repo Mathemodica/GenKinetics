@@ -2,14 +2,14 @@
 package Reversible
   extends Modelica.Icons.BasesPackage;
 
-  model ReactionReversibility "Base Type for describing Reversability of a reaction"
-    parameter Units.ReactionCoef Vfwdmax = 1 "maximal forward reaction rate";
+  partial model ReactionReversibility "Base Type for describing Reversability of a reaction"
+
   end ReactionReversibility;
 
 
   partial model OneWay "Irreversible Reaction"
     extends ReactionReversibility;
-
+    parameter Units.ReactionCoef Vfwdmax = 1 "maximal forward reaction rate";
   end OneWay;
 
 
@@ -17,7 +17,7 @@ package Reversible
 
 
   partial model TwoWay "Reversible Reaction"
-    extends ReactionReversibility;
+    extends OneWay;
     parameter Units.ReactionCoef Vbwdmax = 1 "backward maximal reaction rate";
   end TwoWay;
 

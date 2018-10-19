@@ -2,30 +2,30 @@
 package Dimension
   extends Modelica.Icons.BasesPackage;
 
-  partial model ReactionDimension "Dimension and structure of a reaction"
-    parameter Integer NS = 1 "number of substrates";
+  partial model ReactionDimension "Dimension of a reaction"
+    parameter Integer NS "number of substrates";
     parameter Units.StoichiometricCoef n_S[NS] = ones(NS) "stoichiometry of all subtrates";
-    parameter Integer NP = 1 "number of products";
+    parameter Integer NP "number of products";
     parameter Units.StoichiometricCoef n_P[NP] = ones(NP) "stoichiometry of all products";
   end ReactionDimension;
 
   partial model UniUni "S => P"
-    extends ReactionDimension(redeclare final parameter Integer NS = 1, redeclare final parameter Integer NP = 1);
+    extends UnspecifiedDimension(redeclare final parameter Integer NS = 1, redeclare final parameter Integer NP = 1);
   end UniUni;
 
 
   partial model BiUni "S1 + S2 => P"
-    extends ReactionDimension(redeclare final parameter Integer NS = 2, redeclare final parameter Integer NP = 1);
+    extends UnspecifiedDimension(redeclare final parameter Integer NS = 2, redeclare final parameter Integer NP = 1);
   end BiUni;
 
 
   partial model UniBi "S => P1 + P2"
-    extends ReactionDimension(redeclare final parameter Integer NS = 1, redeclare final parameter Integer NP = 2);
+    extends UnspecifiedDimension(redeclare final parameter Integer NS = 1, redeclare final parameter Integer NP = 2);
   end UniBi;
 
 
   partial model BiBi "S1 + S2 => P1 + P2"
-    extends ReactionDimension(redeclare final parameter Integer NS = 2, redeclare final parameter Integer NP = 2);
+    extends UnspecifiedDimension(redeclare final parameter Integer NS = 2, redeclare final parameter Integer NP = 2);
   end BiBi;
 
   annotation (

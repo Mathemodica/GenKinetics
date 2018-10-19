@@ -5,13 +5,14 @@ package Structure
   partial model ReactionStructure "The structure of a reaction reversibility, molecularity and order"
 
     replaceable class Reversibility = Interfaces.Reversible.OneWay constrainedby
-      Interfaces.Reversible.ReactionReversibility;
+    Interfaces.Reversible.ReactionReversibility;
     extends Reversibility;
 
-    replaceable class Dimensionality = Interfaces.Dynamic.Dimension.ReactionDimension constrainedby
-      Interfaces.Dynamic.Dimension.ReactionDimension;
+    replaceable class Dimensionality =
+        Interfaces.Dynamic.Dimension.UnspecifiedDimension                                constrainedby
+    Interfaces.Dynamic.Dimension.ReactionDimension;
     extends Dimensionality;
-    
+
     /*replaceable class Inhibition = Interfaces.Dynamic.Modifier.UnspecifiedInhibition constrainedby
       Interfaces.Dynamic.Modifier.ReactionInhibition;
     extends Inhibition;
@@ -19,7 +20,7 @@ package Structure
     replaceable class Activation = Interfaces.Dynamic.Modifier.UnspecifiedActivation
   constrainedby 
       Interfaces.Dyanmic.Modifier.ReactionActivation; */
-    
+
   end ReactionStructure;
 
 
