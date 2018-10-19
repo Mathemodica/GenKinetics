@@ -1,4 +1,4 @@
-within GenKinetics.Reactions.Convenience;
+﻿within GenKinetics.Reactions.Convenience;
 
 package DynamicTypes
   extends Modelica.Icons.VariantsPackage;
@@ -18,37 +18,6 @@ package DynamicTypes
 
 
   model IrrUniUniI1
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-    extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
     extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, redeclare final model Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
   end IrrUniUniI1;
   annotation(
