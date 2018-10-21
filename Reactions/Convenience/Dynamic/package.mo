@@ -19,6 +19,7 @@ package Dynamic
 
     Units.VolumetricReactionRate v "Reaction Rate";
     // Connections to Substrates and Products
+    
     GenKinetics.Interfaces.Ports.ChemicalPort_S rc_S[NS] "connection to substrates";
     GenKinetics.Interfaces.Ports.ChemicalPort_P rc_P[NP] "connection to product";
   equation
@@ -38,6 +39,10 @@ package Dynamic
 
 
 
+
+
+
+
   partial model BasicIrrReaction "basic declaration of an irreversible reaction "
     extends Reactions.Convenience.Dynamic.BasicReaction;
 
@@ -46,13 +51,18 @@ package Dynamic
 protected
     Real S1 "Kinetic terms";
     Real S2;
-
+    Real cS[NS];
+  
   equation
 
-    S1 = Vfwdmax * product(rc_S.c ./ KmS);
-    S2 = product(rc_S.c ./ KmS .+ 1);
+    cS = rc_S.c; 
+    S1 = Vfwdmax * product(cS ./ KmS);
+    S2 = product(cS ./ KmS .+ 1);
 
   end BasicIrrReaction;
+
+
+
 
 
 
