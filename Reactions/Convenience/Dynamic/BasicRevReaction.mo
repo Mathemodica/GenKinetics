@@ -8,10 +8,12 @@ partial model BasicRevReaction "basic declaration of a reversible reaction "
 protected
   Real P1;
   Real P2;
+  Real Pc[NP]; 
 
 equation
 
-  P1 = Vbwdmax * product(rc_P.c ./ KmP);
-  P2 = product(rc_P.c ./ KmP .+ 1);
+  Pc = rc_P.c; 
+  P1 = Vbwdmax * product(Pc ./ KmP);
+  P2 = product(Pc ./ KmP .+ 1);
 
 end BasicRevReaction;

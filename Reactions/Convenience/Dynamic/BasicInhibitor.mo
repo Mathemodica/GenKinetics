@@ -7,9 +7,11 @@ partial model BasicInhibitor "Interface for inhibiting a reaction"
 
 protected
   Real I "inhibition term in the corresponding kinetics";
+  Real Ic[NI]; 
 
 equation
 
-  I = product(KI ./ (KI .+ mc_I.c));
+  Ic = mc_I.c; 
+  I = product(KI ./ (KI .+ Ic));
 
 end BasicInhibitor;
