@@ -4,24 +4,66 @@ model Spirallus
   extends Modelica.Icons.Example;
   import GenKinetics.NodeElements.Dynamic.*;
   import GenKinetics.Reactions.Convenience.Dynamic.*;
-  Node Aex(c_0 = 1);
-  InhIrrKinetic vupt(NS = 1, NP = 1, NI = 1, Vfwdmax = 1.0, KmS = {0.1}, KI = {3.0});
-  Node A;
-  RevKinetic v1(NS = 1, NP = 1, Vfwdmax = 3.0, Vbwdmax = 1.0, KmS = {0.1}, KmP = {3.0});
-  Node B;
-  RevKinetic v5(NS = 1, NP = 1, Vfwdmax = 2.0, Vbwdmax = 0.5, KmS = {1.0}, KmP = {1.0});
-  Node E;
-  IrrKinetic v2(NS = 2, NP = 1, Vfwdmax = 2.5, KmS = {0.25, 2.0});
+  NodeElements.Dynamic.Node Aex(c_0=1);
+  Reactions.Convenience.Dynamic.InhIrrKinetic vupt(
+    NS=1,
+    NP=1,
+    NI=1,
+    Vfwdmax=1.0,
+    KmS={0.1},
+    KI={3.0});
+  NodeElements.Dynamic.Node A;
+  Reactions.Convenience.Dynamic.RevKinetic v1(
+    NS=1,
+    NP=1,
+    Vfwdmax=3.0,
+    Vbwdmax=1.0,
+    KmS={0.1},
+    KmP={3.0});
+  NodeElements.Dynamic.Node B;
+  Reactions.Convenience.Dynamic.RevKinetic v5(
+    NS=1,
+    NP=1,
+    Vfwdmax=2.0,
+    Vbwdmax=0.5,
+    KmS={1.0},
+    KmP={1.0});
+  NodeElements.Dynamic.Node E;
+  Reactions.Convenience.Dynamic.IrrKinetic v2(
+    NS=2,
+    NP=1,
+    Vfwdmax=2.5,
+    KmS={0.25,2.0});
   // B,E -v2-> C
-  Node C;
-  InhIrrKinetic v3(NS = 1, NP = 2, NI = 1, Vfwdmax = 2.0, KmS = {2.0}, KI = {0.05});
-  Node D;
-  Node F;
-  InhIrrKinetic v4(NS = 1, NP = 2, NI = 1, Vfwdmax = 3.0, KmS = {0.1}, KI = {1.0});
-  IrrKinetic v6(NS = 1, NP = 1, Vfwdmax = 2.0, KmS = {3.0});
-  Node Eex;
-  IrrKinetic v7(NS = 1, NP = 1, Vfwdmax = 2.0, KmS = {3.0});
-  Node Fex;
+  NodeElements.Dynamic.Node C;
+  Reactions.Convenience.Dynamic.InhIrrKinetic v3(
+    NS=1,
+    NP=2,
+    NI=1,
+    Vfwdmax=2.0,
+    KmS={2.0},
+    KI={0.05});
+  NodeElements.Dynamic.Node D;
+  NodeElements.Dynamic.Node F;
+  Reactions.Convenience.Dynamic.InhIrrKinetic v4(
+    NS=1,
+    NP=2,
+    NI=1,
+    Vfwdmax=3.0,
+    KmS={0.1},
+    KI={1.0});
+  Reactions.Convenience.Dynamic.IrrKinetic v6(
+    NS=1,
+    NP=1,
+    Vfwdmax=2.0,
+    KmS={3.0});
+  NodeElements.Dynamic.Node Eex;
+  Reactions.Convenience.Dynamic.IrrKinetic v7(
+    NS=1,
+    NP=1,
+    Vfwdmax=2.0,
+    KmS={3.0});
+  NodeElements.Dynamic.Node Fex;
 equation
   // vupt
   connect(Aex.rc, vupt.rc_S[1]);

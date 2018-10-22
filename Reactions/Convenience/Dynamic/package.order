@@ -11,6 +11,5 @@ ActRevKinetic
 ActInhRevKinetic
 BasicActivator
 BasicInhibitor
-Deprecated
 BasicModifier
 BasicActivatorAndInhibitor

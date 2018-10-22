@@ -13,24 +13,28 @@ Internal.AssertContinuousTrajectory checkS(MaxAccErr = 1e-3, name = "Dynamic Act
     Placement(visible = true, transformation(origin = {38, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 Internal.AssertContinuousTrajectory checkP(MaxAccErr = 1e-3, name = "Dynamic ActInhIrrKinetic v") annotation (
     Placement(visible = true, transformation(origin = {36, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-Internal.SAIvP SR1(I=I,
+  Internal.SAIvP SR1(
+    I=I,
     kI=kI,
     A=A,
     kA=kA,
     S0=S0,
     vfwd=vfwd,
-    km=km) annotation (
-    Placement(visible = true, transformation(origin = {-56, 32}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-GenKinetics.UnitTests.Internal.OOSAIvP SR2(
+    km=km) annotation (Placement(visible=true, transformation(
+        origin={-56,32},
+        extent={{-10,-10},{10,10}},
+        rotation=0)));
+  GenKinetics.UnitTests.Internal.OOSAIvP SR2(
     I0=I,
     kI=kI,
     A0=A,
     kA=kA,
     S0=S0,
     vfwd=vfwd,
-    km=km)
-   annotation (
-    Placement(visible = true, transformation(origin = {-54, -28}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    km=km) annotation (Placement(visible=true, transformation(
+        origin={-54,-28},
+        extent={{-10,-10},{10,10}},
+        rotation=0)));
 equation
   connect(SR2.Pc, checkP.T2) annotation (
     Line(points = {{-44, -36}, {-8, -36}, {-8, -86}, {26, -86}}, color = {0, 0, 127}));

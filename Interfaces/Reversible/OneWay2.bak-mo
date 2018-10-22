@@ -1,0 +1,5 @@
+within GenKinetics.Interfaces.Reversible;
+partial model OneWay2 "Irreversible Reaction"
+  extends UnspecifiedReversibility2;
+  parameter Units.ReactionCoef Vfwdmax = 1 "maximal forward reaction rate";
+end OneWay2;

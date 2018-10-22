@@ -4,24 +4,27 @@ model SpirallusDynTypes
   extends Modelica.Icons.Example;
   import GenKinetics.NodeElements.Dynamic.*;
   import GenKinetics.Reactions.Convenience.DynamicTypes.*;
-  Node Aex(c_0 = 1);
-  IrrUniUniI1 vupt(Vfwdmax = 1.0, KmS = {0.1}, KI = {3.0});
-  Node A;
+  NodeElements.Dynamic.Node Aex(c_0=1);
+  Reactions.Convenience.DynamicTypes.IrrUniUniI1 vupt(
+    Vfwdmax=1.0,
+    KmS={0.1},
+    KI={3.0});
+  NodeElements.Dynamic.Node A;
   RevUniUni v1(Vfwdmax = 3.0, Vbwdmax = 1.0, KmS = {0.1}, KmP = {3.0});
-  Node B;
+  NodeElements.Dynamic.Node B;
   RevUniUni v5(Vfwdmax = 2.0, Vbwdmax = 0.5, KmS = {1.0}, KmP = {1.0});
-  Node E;
+  NodeElements.Dynamic.Node E;
   IrrBiUni v2(Vfwdmax = 2.5, KmS = {0.25, 2.0});
   // B,E -v2-> C
-  Node C;
+  NodeElements.Dynamic.Node C;
   IrrUniBiI1 v3(Vfwdmax = 2.0, KmS = {2.0}, KI = {0.05});
-  Node D;
-  Node F;
+  NodeElements.Dynamic.Node D;
+  NodeElements.Dynamic.Node F;
   IrrUniBiI1 v4(Vfwdmax = 3.0, KmS = {0.1}, KI = {1.0});
-  IrrUniUni v6(Vfwdmax = 2.0, KmS = {3.0});
-  Node Eex;
-  IrrUniUni v7(Vfwdmax = 2.0, KmS = {3.0});
-  Node Fex;
+  Reactions.Convenience.DynamicTypes.IrrUniUni v6(Vfwdmax=2.0, KmS={3.0});
+  NodeElements.Dynamic.Node Eex;
+  Reactions.Convenience.DynamicTypes.IrrUniUni v7(Vfwdmax=2.0, KmS={3.0});
+  NodeElements.Dynamic.Node Fex;
 equation
   // vupt
   connect(Aex.rc, vupt.rc_S[1]);

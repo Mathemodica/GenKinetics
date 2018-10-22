@@ -7,11 +7,15 @@ model OOS1S2vP "GenKinetics implementation of S1 + S2 => P"
   parameter Real kmS1 = 1.5 "kinetic parameter";
   parameter Real kmS2 = 0.3 "kinetic parameter";
 
-  NodeElements.Dynamic.Node S1(c_0 = S10);
-  NodeElements.Dynamic.Node S2(c_0 = S20);
-  NodeElements.Dynamic.Node P(c_0 = 0);
+  NodeElements.Dynamic.Node S1(c_0=S10);
+  NodeElements.Dynamic.Node S2(c_0=S20);
+  NodeElements.Dynamic.Node P(c_0=0);
 
-  Reactions.Convenience.Dynamic.IrrKinetic v(NS=2,NP=1,KmS = {kmS1,kmS2}, Vfwdmax = vfwd);
+  Reactions.Convenience.Dynamic.IrrKinetic v(
+    NS=2,
+    NP=1,
+    KmS={kmS1,kmS2},
+    Vfwdmax=vfwd);
 
   Modelica.Blocks.Interfaces.RealOutput S1c annotation (
     Placement(visible = true, transformation(origin = {104, 76}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 82}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));

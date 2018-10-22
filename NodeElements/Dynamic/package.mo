@@ -2,33 +2,10 @@
 package Dynamic
   extends Modelica.Icons.Package;
 
-  partial model BasicNode "Basic declarations of any Metabolite"
-    extends GenKinetics.Interfaces.Dynamic.NodeConnections;
-    parameter Units.Concentration c_0 = 0 "initial concentration";
-    Units.Concentration c(start = c_0) "substance concentration";
-    Units.VolumetricReactionRate r_net "net reaction rate";
-  equation
-    r_net = rc.r;
-    rc.c = c;
-    mc.c = c;
-  end BasicNode;
-
-  model Node "Metabolite with dynamic rate"
-    extends GenKinetics.NodeElements.Dynamic.BasicNode;
-    parameter Units.Concentration tolerance=1e-6;
-  equation
-   der(c) = if
-              (c < tolerance and r_net < 0) then 0 else r_net;
-   // der(c) = r_net;
-  end Node;
 
 
 
-  model FixedConcentrationNode "Metabolite with fixed concentration"
-    extends GenKinetics.NodeElements.Dynamic.BasicNode;
-  equation
-    c = c_0;
-  end FixedConcentrationNode;
+
 
 
 

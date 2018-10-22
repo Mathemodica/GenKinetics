@@ -7,11 +7,17 @@ model OOSAvP "GenKinetics implementation of S + A => P"
   parameter GenKinetics.Units.Concentration S0 = 1.0;
   parameter Units.ReactionCoef vfwd = 1.0;
 
-  NodeElements.Dynamic.Node S(c_0 = S0);
-  NodeElements.Dynamic.Node P(c_0 = 0);
-  NodeElements.Dynamic.FixedConcentrationNode A(c_0 = A0);
+  NodeElements.Dynamic.Node S(c_0=S0);
+  NodeElements.Dynamic.Node P(c_0=0);
+  NodeElements.Dynamic.FixedConcentrationNode A(c_0=A0);
 
-  Reactions.Convenience.Dynamic.ActIrrKinetic v(NS = 1, NP = 1, NA=1,KmS = {km}, KA={kA},Vfwdmax = vfwd);
+  Reactions.Convenience.Dynamic.ActIrrKinetic v(
+    NS=1,
+    NP=1,
+    NA=1,
+    KmS={km},
+    KA={kA},
+    Vfwdmax=vfwd);
   Modelica.Blocks.Interfaces.RealOutput Sc annotation (
     Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput Pc annotation (
