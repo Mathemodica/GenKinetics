@@ -1,21 +1,13 @@
 within GenKinetics.Reactions.Convenience.Dynamic;
 partial model BasicReaction "basic declaration of a reaction "
+  extends Interfaces.Dynamic.ReactionConnections; 
 
-  replaceable model Structure =
-    Interfaces.Dynamic.Structure.ReactionStructure                             constrainedby
-    Interfaces.Dynamic.Structure.ReactionStructure;
-  extends Structure;
-
-  replaceable model Modifier = BasicModifier                               constrainedby
-    BasicModifier;
-  extends Modifier;
+  replaceable model Modifiers = ModifiersTerm   constrainedby ModifiersTerm;
+  extends Modifiers;
 
   Units.VolumetricReactionRate v "Reaction Rate";
   // Connections to Substrates and Products
 
-  GenKinetics.Interfaces.Ports.ChemicalPort_S rc_S[NS]
-    "connection to substrates";
-  GenKinetics.Interfaces.Ports.ChemicalPort_P rc_P[NP] "connection to product";
 equation
 
   for i in 1:NS loop
