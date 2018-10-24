@@ -1,8 +1,9 @@
 within GenKinetics.Reactions.Convenience.Dynamic;
 package Deprecated
   partial model BasicActivator "Interface for activating a reaction"
+  import GenKinetics;
     extends Interfaces.Dynamic.ActivationConnections;
-    extends ModifiersTerm;
+    extends GenKinetics.Reactions.ModifiersTerm;
     parameter Units.AffinityConst KA[NA] = ones(NA) "activation constants";
 protected
     Real A "activation term";
@@ -11,7 +12,8 @@ protected
   end BasicActivator;
 
   partial model BasicInhibitor "Interface for inhibiting a reaction"
-    extends ModifiersTerm;
+  import GenKinetics;
+    extends GenKinetics.Reactions.ModifiersTerm;
     parameter Units.AffinityConst KI[NI] = ones(NI) "affinity constant of the Inhibitors";
 protected
     Real I "inhibition term in the corresponding kinetics";

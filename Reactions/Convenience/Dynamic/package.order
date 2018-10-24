@@ -1,10 +1,8 @@
-ModifiersTerm
 ActivationTerm
 InhibitionTerm
 ActivationAndInhibitionTerms
-BasicReaction
-BasicIrrReaction
-BasicRevReaction
+IrrReactionTerm
+RevReactionTerm
 IrrKinetic
 InhIrrKinetic
 ActIrrKinetic

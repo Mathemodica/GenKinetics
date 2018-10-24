@@ -1,6 +1,6 @@
 within GenKinetics.Reactions.Convenience.Dynamic;
 model RevKinetic "S1 + S2 + ... <===> P1 + P2 + ... "
-    extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction;
+    extends GenKinetics.Reactions.Convenience.Dynamic.RevReactionTerm;
   /*extends GenKinetics.Reactions.Convenience.Dynamic.BasicRevReaction(redeclare 
       final model Activation = Interfaces.Dynamic.Modifier.NoActivation,
       redeclare final model Inhibition =
