@@ -6,6 +6,7 @@ partial model RevReactionTerm
         Interfaces.Reversible.TwoWay);
 
   parameter Units.AffinityConst KmP[NP] = ones(NP) "affinity constants of the product node";
+  parameter Units.ReactionCoef Vbwdmax = 1 "backward maximal reaction rate";
 
 protected
   Real P1;

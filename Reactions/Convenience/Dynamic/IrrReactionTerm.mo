@@ -5,6 +5,7 @@ partial model IrrReactionTerm
   extends GenKinetics.Reactions.BasicIrrReaction;
 
   parameter Units.AffinityConst KmS[NS] = ones(NS) "affinity constants of the substrate nodes";
+  parameter Units.ReactionCoef Vfwdmax = 1 "maximal forward reaction rate";
 
 protected
   Real S1 "Kinetic terms";
