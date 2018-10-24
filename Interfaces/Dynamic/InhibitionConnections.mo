@@ -1,5 +1,4 @@
 within GenKinetics.Interfaces.Dynamic;
-
 partial model InhibitionConnections
   extends GenKinetics.Interfaces.Dynamic.ModifiersConnections;
 

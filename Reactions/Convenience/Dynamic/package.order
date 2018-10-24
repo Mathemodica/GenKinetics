@@ -1,7 +1,7 @@
 ModifiersTerm
 ActivationTerm
-InhibtionTerm
-ActivationAndInhibtionTerms
+InhibitionTerm
+ActivationAndInhibitionTerms
 BasicReaction
 BasicIrrReaction
 BasicRevReaction

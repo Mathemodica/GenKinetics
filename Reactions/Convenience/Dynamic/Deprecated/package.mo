@@ -1,11 +1,10 @@
 within GenKinetics.Reactions.Convenience.Dynamic;
-
 package Deprecated
   partial model BasicActivator "Interface for activating a reaction"
     extends Interfaces.Dynamic.ActivationConnections;
     extends ModifiersTerm;
     parameter Units.AffinityConst KA[NA] = ones(NA) "activation constants";
-  protected
+protected
     Real A "activation term";
   equation
     A = product((KA .+ mc_A.c) ./ KA);
@@ -14,7 +13,7 @@ package Deprecated
   partial model BasicInhibitor "Interface for inhibiting a reaction"
     extends ModifiersTerm;
     parameter Units.AffinityConst KI[NI] = ones(NI) "affinity constant of the Inhibitors";
-  protected
+protected
     Real I "inhibition term in the corresponding kinetics";
     Real Ic[NI];
   equation

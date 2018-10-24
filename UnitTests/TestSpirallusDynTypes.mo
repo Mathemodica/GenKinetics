@@ -1,7 +1,5 @@
 within GenKinetics.UnitTests;
 model TestSpirallusDynTypes "Testing DynamicTypes package"
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-        coordinateSystem(preserveAspectRatio=false)));
   Examples.Spirallus spirallus;
 
   Examples.SpirallusDynTypes spDynTypes;
@@ -21,5 +19,6 @@ equation
   checkV5.T1 = spirallus.v5.v;
   checkV5.T2 = spDynTypes.v5.v;
 
-
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
+        coordinateSystem(preserveAspectRatio=false)));
 end TestSpirallusDynTypes;
