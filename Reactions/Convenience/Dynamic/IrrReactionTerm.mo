@@ -1,7 +1,6 @@
 within GenKinetics.Reactions.Convenience.Dynamic;
 partial model IrrReactionTerm
-  "basic declaration of an irreversible reaction "
-  import GenKinetics;
+  "basic implementation of an irreversible reaction "
   extends GenKinetics.Reactions.BasicIrrReaction;
 
   parameter Units.AffinityConst KmS[NS] = ones(NS) "affinity constants of the substrate nodes";

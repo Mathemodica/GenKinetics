@@ -1,6 +1,6 @@
 within GenKinetics.Reactions;
 partial model BasicIrrReaction
   "basic declaration of an irreversible reaction "
-  import GenKinetics;
-  extends GenKinetics.Reactions.BasicReaction;
+  extends GenKinetics.Reactions.BasicReaction(redeclare model Reversibility =
+     Interfaces.Reversible.OneWay);
 end BasicIrrReaction;

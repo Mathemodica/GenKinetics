@@ -2,7 +2,7 @@ within GenKinetics.Interfaces.Dynamic.Structure;
 partial model ReactionStructure
   "The structure of a reaction reversibility, molecularity and order"
 
-  replaceable model Reversibility = Reversible.OneWay            constrainedby
+  replaceable model Reversibility = Reversible.UnspecifiedReversibility            constrainedby
     Interfaces.Reversible.ReactionReversibility;
   extends Reversibility;
 

@@ -6,7 +6,9 @@ partial model BasicReaction "basic declaration of a reaction "
   extends Modifiers;
 
   Units.VolumetricReactionRate v "Reaction Rate";
-  // Connections to Substrates and Products
+
+  parameter Boolean ref_steady_state = false;
+  parameter Units.VolumetricReactionRate v0 if  ref_steady_state "Reaction rate at a reference steady-state";
 
 equation
 
