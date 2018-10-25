@@ -1,7 +1,6 @@
 within GenKinetics.Reactions.Convenience.Dynamic;
 partial model RevReactionTerm
   "basic declaration of a reversible reaction "
-  extends Reactions.BasicRevReaction;
   extends IrrReactionTerm(redeclare final model Reversibility =
         Interfaces.Reversible.TwoWay);
 
