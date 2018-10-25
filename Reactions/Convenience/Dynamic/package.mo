@@ -67,7 +67,7 @@ package Dynamic
 
   partial model ActivationTerm "Interface for activating a reaction"
     extends Interfaces.Dynamic.ActivationConnections;
-    extends GenKinetics.Reactions.ModifiersTerm;
+    extends Reactions.ModifiersTerm;
     parameter Units.AffinityConst KA[NA] = ones(NA) "activation constants";
 protected
     Real A "activation term";
