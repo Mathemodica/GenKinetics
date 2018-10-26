@@ -4,66 +4,66 @@ model SpirallusFixedSource
   extends Modelica.Icons.Example;
   import GenKinetics.NodeElements.Dynamic.*;
   import GenKinetics.Reactions.Convenience.Dynamic.*;
-  NodeElements.Dynamic.FixedConcentrationNode Aex(c_0=1);
-  Reactions.Convenience.Dynamic.InhIrrKinetic vupt(
+  FixedConcentrationNode Aex(c_0=0.1);
+  InhIrrKinetic vupt(
     NS=1,
     NP=1,
     NI=1,
     Vfwdmax=1.0,
     KmS={0.1},
     KI={3.0});
-  NodeElements.Dynamic.Node A;
-  Reactions.Convenience.Dynamic.RevKinetic v1(
+  Node A(c_0 = 0.01);
+  RevKinetic v1(
     NS=1,
     NP=1,
     Vfwdmax=3.0,
     Vbwdmax=1.0,
     KmS={0.1},
     KmP={3.0});
-  NodeElements.Dynamic.Node B;
-  Reactions.Convenience.Dynamic.RevKinetic v5(
+  Node B(c_0 = 0.2);
+  RevKinetic v5(
     NS=1,
     NP=1,
     Vfwdmax=2.0,
     Vbwdmax=0.5,
     KmS={1.0},
     KmP={1.0});
-  NodeElements.Dynamic.Node E;
-  Reactions.Convenience.Dynamic.IrrKinetic v2(
+  Node E(c_0 = 0.3);
+  IrrKinetic v2(
     NS=2,
     NP=1,
     Vfwdmax=2.5,
     KmS={0.25,2.0});
   // B,E -v2-> C
-  NodeElements.Dynamic.Node C;
-  Reactions.Convenience.Dynamic.InhIrrKinetic v3(
+  Node C(c_0 = 0.5);
+  InhIrrKinetic v3(
     NS=1,
     NP=2,
     NI=1,
     Vfwdmax=2.0,
     KmS={2.0},
     KI={0.05});
-  NodeElements.Dynamic.Node D;
-  NodeElements.Dynamic.Node F;
-  Reactions.Convenience.Dynamic.InhIrrKinetic v4(
+  Node D(c_0 = 0.01);
+  Node F(c_0 = 0.1);
+  InhIrrKinetic v4(
     NS=1,
     NP=2,
     NI=1,
     Vfwdmax=3.0,
     KmS={0.1},
     KI={1.0});
-  Reactions.Convenience.Dynamic.IrrKinetic v6(
+  IrrKinetic v6(
     NS=1,
     NP=1,
     Vfwdmax=2.0,
     KmS={3.0});
-  NodeElements.Dynamic.Node Eex;
-  Reactions.Convenience.Dynamic.IrrKinetic v7(
+  Node Eex(c_0 = 0.01);
+  IrrKinetic v7(
     NS=1,
     NP=1,
     Vfwdmax=2.0,
     KmS={3.0});
-  NodeElements.Dynamic.Node Fex;
+  Node Fex(c_0 = 0.01);
 equation
   // vupt
   connect(Aex.rc, vupt.rc_S[1]);
