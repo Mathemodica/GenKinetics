@@ -1,1 +1,6 @@
 Dynamic
+ReactionTerm
+ActivationTerm
+InhibitionTerm
+ActivationAndInhibitionTerms
+Generic
