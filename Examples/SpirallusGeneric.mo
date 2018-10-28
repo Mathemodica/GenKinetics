@@ -1,6 +1,6 @@
 within GenKinetics.Examples;
 model SpirallusGeneric
-  "An abstraction of the TCA cycle with dynamic arbitrary number of connections"
+  "An abstraction of the TCA cycle implemented with one type of reaction component"
   extends Modelica.Icons.Example;
   import GenKinetics.NodeElements.Dynamic.*;
   import GenKinetics.Reactions.Convenience.Generic.Kinetic;
