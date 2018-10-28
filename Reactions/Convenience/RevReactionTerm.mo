@@ -1,8 +1,7 @@
-within GenKinetics.Reactions.Convenience.Dynamic;
+within GenKinetics.Reactions.Convenience;
 partial model RevReactionTerm
   "basic declaration of a reversible reaction "
-  extends IrrReactionTerm(redeclare final model Reversibility =
-        Interfaces.Reversible.TwoWay);
+  extends GenKinetics.Reactions.Convenience.IrrReactionTerm;
 
   parameter Units.AffinityConst KmP[NP] = ones(NP) "affinity constants of the product node";
   parameter Units.ReactionCoef Vbwdmax = 1 "backward maximal reaction rate";

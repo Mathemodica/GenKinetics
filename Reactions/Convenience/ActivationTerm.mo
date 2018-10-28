@@ -1,4 +1,4 @@
-within GenKinetics.Reactions.Convenience.Generic;
+within GenKinetics.Reactions.Convenience;
 partial model ActivationTerm "Interface for activating a reaction"
   extends Interfaces.Dynamic.ActivationConnections;
   extends Reactions.ModifiersTerm;

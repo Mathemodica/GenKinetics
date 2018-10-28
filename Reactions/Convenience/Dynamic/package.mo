@@ -65,15 +65,6 @@ package Dynamic
 
 
 
-  partial model ActivationTerm "Interface for activating a reaction"
-    extends Interfaces.Dynamic.ActivationConnections;
-    extends Reactions.ModifiersTerm;
-    parameter Units.AffinityConst KA[NA] = ones(NA) "activation constants";
-protected
-    Real A "activation term";
-  equation
-    A = product((KA .+ mc_A.c) ./ KA);
-  end ActivationTerm;
 
 
 

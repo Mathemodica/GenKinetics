@@ -1,8 +1,3 @@
-ActivationTerm
-InhibitionTerm
-ActivationAndInhibitionTerms
-IrrReactionTerm
-RevReactionTerm
 IrrKinetic
 InhIrrKinetic
 ActIrrKinetic
@@ -11,3 +6,4 @@ RevKinetic
 InhRevKinetic
 ActRevKinetic
 ActInhRevKinetic
+Deprecated

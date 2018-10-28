@@ -1,4 +1,4 @@
-within GenKinetics.Reactions.Convenience.Generic;
+within GenKinetics.Reactions.Convenience;
 partial model InhibitionTerm "Interface for inhibiting a reaction"
   extends GenKinetics.Reactions.ModifiersTerm;
   extends Interfaces.Dynamic.InhibitionConnections;

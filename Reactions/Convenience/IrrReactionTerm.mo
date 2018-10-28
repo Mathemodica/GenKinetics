@@ -1,4 +1,4 @@
-within GenKinetics.Reactions.Convenience.Generic;
+within GenKinetics.Reactions.Convenience;
 partial model IrrReactionTerm
   "basic implementation of an irreversible reaction "
   extends GenKinetics.Reactions.BasicReaction;
