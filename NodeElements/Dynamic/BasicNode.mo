@@ -1,11 +1,8 @@
 within GenKinetics.NodeElements.Dynamic;
 partial model BasicNode "Basic declarations of any Metabolite"
-  replaceable model NodeConnections =
-      GenKinetics.Interfaces.Dynamic.NodeConnections;
-  extends NodeConnections;
-  parameter Units.Concentration c_0 = 0 "initial concentration";
-  Units.Concentration c(start = c_0) "substance concentration";
-  Units.VolumetricReactionRate r_net "net reaction rate";
+  extends GenKinetics.Interfaces.Dynamic.NodeConnections;
+  extends NodeElements.PartialNode;
+
 equation
   r_net = rc.r;
   rc.c = c;
