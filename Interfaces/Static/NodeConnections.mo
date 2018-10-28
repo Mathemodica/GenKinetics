@@ -1,8 +1,9 @@
 within GenKinetics.Interfaces.Static;
 partial model NodeConnections "Metabolite connections to reactions"
   extends GenKinetics.Icons.Node;
+  extends GenKinetics.Interfaces.Dynamic.NodeConnections;
 
-GenKinetics.Interfaces.Dynamic.NodeConnections nc;
+// GenKinetics.Interfaces.Dynamic.NodeConnections nc;
 
   GenKinetics.Interfaces.Ports.ChemicalPort_N rc1 annotation (Placement(
       visible=true,
@@ -35,6 +36,17 @@ GenKinetics.Interfaces.Dynamic.NodeConnections nc;
 
 equation
 
+connect(rc1,rc);
+connect(rc2,rc);
+connect(rc3,rc);
+connect(rc4,rc);
+
+connect(mc1,mc);
+connect(mc2,mc);
+connect(mc3,mc);
+connect(mc4,mc);
+
+  /*
 connect(rc1,nc.rc);
 connect(rc2,nc.rc);
 connect(rc3,nc.rc);
@@ -44,5 +56,5 @@ connect(mc1,nc.mc);
 connect(mc2,nc.mc);
 connect(mc3,nc.mc);
 connect(mc4,nc.mc);
-
+*/
 end NodeConnections;

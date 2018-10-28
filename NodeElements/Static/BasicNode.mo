@@ -1,13 +1,15 @@
 within GenKinetics.NodeElements.Static;
 partial model BasicNode "Basic declarations of any Metabolite"
-  extends GenKinetics.Interfaces.Static.NodeConnections;
-  parameter GenKinetics.Units.Concentration c_0 = 0 "initial reaction rate";
+  extends GenKinetics.NodeElements.Dynamic.BasicNode(
+    redeclare replaceable model NodeConnections =
+        GenKinetics.Interfaces.Static.NodeConnections);
+  /*parameter GenKinetics.Units.Concentration c_0 = 0 "initial reaction rate";
   GenKinetics.Units.Concentration c(start = c_0) "dynamic concentration";
-  GenKinetics.Units.VolumetricReactionRate r_net "net reaction rate";
+  GenKinetics.Units.VolumetricReactionRate r_net "net reaction rate";*/
 equation
-  nc.rc.c = c;
+  /*nc.rc.c = c;
   nc.mc.c = c;
-  r_net = nc.rc.r;
+  r_net = nc.rc.r;*/
   //r_net = rc1.r + rc2.r + rc3.r + rc4.r;
   //rc1.c = c;
   //rc2.c = c;
