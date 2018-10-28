@@ -10,24 +10,7 @@ package Static
 
 
 
-  partial model BasicNode2 "Basic declarations of any Metabolite"
-    extends GenKinetics.Interfaces.Static.NodeConnections;
-    extends GenKinetics.NodeElements.Dynamic.BasicNode;
-    annotation (
-      Line(points = {{50, 90}, {50, 90}}, color = {0, 0, 255}, smooth = Smooth.None),
-      Icon(graphics={  Rectangle(extent = {{-100, 100}, {100, -100}}, lineColor = {0, 0, 255})}),
-      Diagram(graphics));
-  end BasicNode2;
 
-  model Node2 "Metabolite with dynamic rate"
-    extends Static.BasicNode2;
-    //  extends Dynamic.Node;
-      parameter Units.Concentration tolerance=1e-6;
-  equation
-  //  der(c) = r_net;
-    der(c) = if
-               (c < tolerance) then 0 else r_net;
-  end Node2;
 
 
 
