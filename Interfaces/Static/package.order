@@ -1,3 +1,4 @@
+ReactionConnections
 NodeConnections
 PartialReaction1S
 PartialReaction2S
@@ -6,4 +7,7 @@ PartialReaction2P
 PartialReaction1A
 PartialReaction1I
 ReactionUniUni
-ReactionConnections
+ReactionUniUni1I
+ReactionUniBi
+ReactionBiUni
+ReactionUniBiI1

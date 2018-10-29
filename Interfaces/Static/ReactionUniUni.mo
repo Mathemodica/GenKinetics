@@ -1,6 +1,6 @@
 within GenKinetics.Interfaces.Static;
-model ReactionUniUni
-
+partial model ReactionUniUni
+  extends ReactionConnections;
   extends GenKinetics.Interfaces.Static.PartialReaction1S;
   extends GenKinetics.Interfaces.Static.PartialReaction1P;
   /* extends GenKinetics.Interfaces.Dynamic.ReactionConnections(
