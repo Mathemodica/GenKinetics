@@ -35,9 +35,10 @@ model TestDynamicRevKinetic
         rotation=0)));
 equation
   connect(SR2.v, check.T2) annotation (
-    Line(points = {{-34, -48}, {-6, -48}, {-6, -8}, {32, -8}}, color = {0, 0, 127}));
+    Line(points={{-34,-48.4},{-6,-48.4},{-6,-7.6},{32.6,-7.6}},color = {0, 0, 127}));
   connect(SR1.r, check.T1) annotation (
-    Line(points = {{-44, 44}, {-14, 44}, {-14, 6}, {32, 6}}, color = {0, 0, 127}));
+    Line(points={{-43.8,43.6},{-14,43.6},{-14,6.6},{32.4,6.6}},
+                                                             color = {0, 0, 127}));
   annotation (
     experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.02),
     __OpenModelica_simulationFlags(lv = "LOG_STATS", s = "rungekutta"));

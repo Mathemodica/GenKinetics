@@ -1,8 +1,9 @@
 NodeConnections
-Reaction1S
-Reaction2S
-Reaction1P
-Reaction2P
-Reaction1A
-Reaction1I
-Reaction1S1P
+PartialReaction1S
+PartialReaction2S
+PartialReaction1P
+PartialReaction2P
+PartialReaction1A
+PartialReaction1I
+ReactionUniUni
+ReactionConnections

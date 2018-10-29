@@ -39,7 +39,7 @@ package UnitTests
       Placement(visible = true, transformation(origin = {-50, 46}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     Internal.OOSvP_LinLog SR2(S0=S0,P0=P0,v_steady=v_steady,alpha=alpha,theta=theta,S_steady=S_steady,P_steady=P_steady) annotation (
       Placement(visible = true, transformation(origin = {-46, -36}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-    Internal.AssertContinuousTrajectory check(MaxAccErr = 1e-3, name = "Dynamic Node") annotation (
+    Internal.AssertContinuousTrajectory check(MaxAccErr = 1e-3, name = "LinLog Kinetic") annotation (
       Placement(visible = true, transformation(origin = {42, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   equation
     connect(SR2.Sc, check.T2) annotation (

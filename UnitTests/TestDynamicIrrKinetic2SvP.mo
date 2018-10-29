@@ -40,13 +40,16 @@ model TestDynamicIrrKinetic2SvP
         rotation=0)));
 equation
   connect(SR2.v, check1.T2) annotation (
-    Line(points = {{-44, -46}, {-8, -46}, {-8, -68}, {37, -68}}, color = {0, 0, 127}));
+    Line(points={{-44,-46.4},{-8,-46.4},{-8,-67.6},{36.6,-67.6}},color = {0, 0, 127}));
   connect(SR1.r, check1.T1) annotation (
-    Line(points = {{-24, 50}, {-8, 50}, {-8, -53}, {36, -53}}, color = {0, 0, 127}));
+    Line(points={{-23.8,49.6},{-8,49.6},{-8,-53.4},{36.4,-53.4}},
+                                                               color = {0, 0, 127}));
   connect(SR2.S1, check2.T2) annotation (
-    Line(points = {{-44, -38}, {10, -38}, {10, 50}, {40, 50}}, color = {0, 0, 127}));
+    Line(points={{-43.6,-37.6},{10,-37.6},{10,50.4},{40.6,50.4}},
+                                                               color = {0, 0, 127}));
   connect(SR1.S1c, check2.T1) annotation (
-    Line(points = {{-24, 58}, {4, 58}, {4, 64}, {40, 64}}, color = {0, 0, 127}));
+    Line(points={{-23.8,58.2},{4,58.2},{4,64.6},{40.4,64.6}},
+                                                           color = {0, 0, 127}));
   annotation (
     experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.02),
     __OpenModelica_simulationFlags(lv = "LOG_STATS", s = "rungekutta"));

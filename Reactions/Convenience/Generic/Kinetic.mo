@@ -1,6 +1,5 @@
 within GenKinetics.Reactions.Convenience.Generic;
 model Kinetic "S1 + S2 + ...  <==I1,I2,...==> P1 + P2 + ... "
-  import GenKinetics;
   Boolean Reversible;
 
   extends GenKinetics.Reactions.Convenience.RevReactionTerm(redeclare final
