@@ -16,9 +16,9 @@ parameter Units.ReactionCoef vfwd = 1.0;
     Placement(visible = true, transformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput r annotation (
     Placement(visible = true, transformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  NodeElements.Static.Node S(c_0=S0) annotation(
+  NodeElements.Static.Node S(c_0=S0) annotation (
     Placement(visible = true, transformation(origin = {-32, 24}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  NodeElements.Static.Node P(c_0=0) annotation(
+  NodeElements.Static.Node P(c_0=0) annotation (
     Placement(visible = true, transformation(origin = {-26, -44}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
 
