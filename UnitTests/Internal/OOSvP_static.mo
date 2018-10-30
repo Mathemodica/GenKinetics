@@ -5,8 +5,6 @@ parameter GenKinetics.Units.AffinityConst km = 2.0;
 parameter GenKinetics.Units.Concentration S0 = 1.0;
 parameter Units.ReactionCoef vfwd = 1.0;
 
-  NodeElements.Static.Node S(c_0=S0);
-  NodeElements.Static.Node P(c_0=0);
   Reactions.Convenience.Dynamic.IrrKinetic v(
     NS=1,
     NP=1,
@@ -18,11 +16,14 @@ parameter Units.ReactionCoef vfwd = 1.0;
     Placement(visible = true, transformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput r annotation (
     Placement(visible = true, transformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-
+  NodeElements.Static.Node S(c_0=S0) annotation(
+    Placement(visible = true, transformation(origin = {-32, 24}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  NodeElements.Static.Node P(c_0=0) annotation(
+    Placement(visible = true, transformation(origin = {-26, -44}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
 
-  connect(S.rc1,v.rc_S[1]);
   connect(v.rc_P[1],P.rc2);
+  connect(S.rc1,v.rc_S[1]);
 
   Sc = S.c;
   Pc = P.c;

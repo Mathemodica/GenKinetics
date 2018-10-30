@@ -4,7 +4,7 @@ model IrrUniUniI1 "S + I => P"
 
   model Kinetic =   GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic (
       redeclare final model Dimensionality =
-        GenKinetics.Interfaces.Dynamic.Dimension.UniUni,
+        GenKinetics.Interfaces.Dynamic.Dimension.UniUni,      
       redeclare final model Inhibition =
         GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
 

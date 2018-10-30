@@ -3,7 +3,7 @@ model SpirallusDynTypes
   "An abstraction of the TCA cycle with dynamic arbitrary number of connections"
   extends Modelica.Icons.Example;
   import GenKinetics.NodeElements.Dynamic.*;
-  import GenKinetics.Reactions.Convenience.DynamicTypes.*;
+  import GenKinetics.Reactions.Convenience.DynamicTypes3.*;
   NodeElements.Dynamic.Node Aex(c_0=1);
   Reactions.Convenience.DynamicTypes.IrrUniUniI1 vupt(
     Vfwdmax=1.0,
