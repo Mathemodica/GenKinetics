@@ -13,8 +13,7 @@ package Deprecated "Old implementation"
     extends
       GenKinetics.Reactions.Convenience.Dynamic.Deprecated.IrrReactionTerm(
                                                                       redeclare
-        final model Modifiers = InhibitionTerm(redeclare final model Activation
-            =
+        final model Modifiers = InhibitionTerm(redeclare final model Activation =
           Interfaces.Dynamic.Modifier.NoActivation));
 
   equation
@@ -25,8 +24,7 @@ package Deprecated "Old implementation"
     extends
       GenKinetics.Reactions.Convenience.Dynamic.Deprecated.IrrReactionTerm(
                                                                        redeclare
-        final model Modifiers = ActivationTerm(redeclare final model Inhibition
-            =
+        final model Modifiers = ActivationTerm(redeclare final model Inhibition =
           Interfaces.Dynamic.Modifier.NoInhibition));
   equation
     v = A * S1 / S2;
@@ -51,8 +49,7 @@ package Deprecated "Old implementation"
     extends
       GenKinetics.Reactions.Convenience.Dynamic.Deprecated.RevReactionTerm(
                                                                        redeclare
-        final model Modifiers = InhibitionTerm(redeclare final model Activation
-            =
+        final model Modifiers = InhibitionTerm(redeclare final model Activation =
           Interfaces.Dynamic.Modifier.NoActivation));
   equation
     v = I * (S1 - P1) / (S2 + P2 - 1);
@@ -62,8 +59,7 @@ package Deprecated "Old implementation"
     extends
       GenKinetics.Reactions.Convenience.Dynamic.Deprecated.RevReactionTerm(
                                                                        redeclare
-        final model Modifiers = ActivationTerm(redeclare final model Inhibition
-            =
+        final model Modifiers = ActivationTerm(redeclare final model Inhibition =
           Interfaces.Dynamic.Modifier.NoInhibition));
   equation
     v = A * (S1 - P1) / (S2 + P2 - 1);
