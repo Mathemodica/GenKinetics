@@ -1,18 +1,20 @@
 within GenKinetics.Reactions.Convenience.Static;
 model IrrUniBiI1 "S + I => P1 + P2"
   extends Interfaces.Static.ReactionUniBiI1;
-
-  model Kinetic =   GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic (
-      redeclare final model Dimensionality =
-        GenKinetics.Interfaces.Dynamic.Dimension.UniBi,
-      redeclare final model Inhibition =
-        GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-
-  Kinetic kinetic(KmS = {km},Vfwdmax = Vfwdmax, KI = {ki});
+  extends Reactions.ReactionRate;
 
   parameter GenKinetics.Units.AffinityConst km;
   parameter Units.ReactionCoef Vfwdmax;
   parameter Units.AffinityConst ki;
+
+protected
+  model Kinetic =   GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic (
+    redeclare final model Dimensionality =
+      GenKinetics.Interfaces.Dynamic.Dimension.UniBi,
+    redeclare final model Inhibition =
+      GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
+
+  Kinetic kinetic(KmS = {km},Vfwdmax = Vfwdmax, KI = {ki});
 
 equation
 
@@ -22,5 +24,7 @@ equation
   connect(rc_P2,kinetic.rc_P[2]);
 
   connect(mc_I1,kinetic.mc_I[1]);
+
+  kinetic.v = v;
 
 end IrrUniBiI1;
