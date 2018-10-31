@@ -16,7 +16,7 @@ model TestDynamicInhRevKinetic
         origin={42,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Internal.Dynamic.OOSIvP_rev SR1(
+  Internal.Dynamic.SIvP_rev SR1(
     I0=I,
     kI=kI,
     S0=S0,

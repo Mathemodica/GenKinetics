@@ -40,7 +40,7 @@ model TestDynamicActInhRevKinetic
         origin={-56,32},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  GenKinetics.UnitTests.Internal.Dynamic.OOSAIvP_rev SR2(
+  GenKinetics.UnitTests.Internal.Dynamic.SAIvP_rev SR2(
     I0=I,
     kI=kI,
     A0=A,

@@ -1,46 +1,37 @@
-within GenKinetics.UnitTests.Dynamic;
-model TestDynamicActInhIrrKinetic
+within GenKinetics.UnitTests.DynamicTypes;
+model TestIrrUniUniI1
   parameter Real I = 0.3;
   parameter Real kI = 0.77;
-  parameter Real A = 0.5 " fixed concentration of inhibitor";
-  parameter Real kA = 0.5 "kinetic parameter";
   parameter Real S0 = 1.0 "initial concentration of S";
   parameter Real vfwd = 1.0 "kinetic parameter";
   parameter Real km = 2.0 "kinetic parameter";
-  AssertContinuousTrajectory checkv(MaxAccErr=1e-3, name=
-        "Dynamic ActInhIrrKinetic v") annotation (Placement(visible=true,
-        transformation(
+  AssertContinuousTrajectory checkv(MaxAccErr=1e-3, name="Dynamic InhIrrKinetic v")
+    annotation (Placement(visible=true, transformation(
         origin={42,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  AssertContinuousTrajectory checkS(MaxAccErr=1e-3, name=
-        "Dynamic ActInhIrrKinetic S") annotation (Placement(visible=true,
-        transformation(
+  AssertContinuousTrajectory checkS(MaxAccErr=1e-3, name="Dynamic InhIrrKinetic S")
+    annotation (Placement(visible=true, transformation(
         origin={38,64},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  AssertContinuousTrajectory checkP(MaxAccErr=1e-3, name=
-        "Dynamic ActInhIrrKinetic P") annotation (Placement(visible=true,
-        transformation(
+  AssertContinuousTrajectory checkP(MaxAccErr=1e-3, name="Dynamic InhIrrKinetic P")
+    annotation (Placement(visible=true, transformation(
         origin={36,-78},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Internal.Explicit.SAIvP SR1(
+  Internal.Explicit.SIvP SR1(
     I=I,
     kI=kI,
-    A=A,
-    kA=kA,
     S0=S0,
     vfwd=vfwd,
     km=km) annotation (Placement(visible=true, transformation(
         origin={-56,32},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  GenKinetics.UnitTests.Internal.Dynamic.SAIvP SR2(
+  OOModels.SIvP SR2(
     I0=I,
     kI=kI,
-    A0=A,
-    kA=kA,
     S0=S0,
     vfwd=vfwd,
     km=km) annotation (Placement(visible=true, transformation(
@@ -66,4 +57,4 @@ equation
   annotation (
     experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.02),
     __OpenModelica_simulationFlags(lv = "LOG_STATS", s = "rungekutta"));
-end TestDynamicActInhIrrKinetic;
+end TestIrrUniUniI1;

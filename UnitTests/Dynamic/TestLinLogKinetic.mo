@@ -23,7 +23,7 @@ model TestLinLogKinetic
         origin={-50,46},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Internal.Dynamic.OOSvP_LinLog SR2(
+  Internal.Dynamic.SvP_LinLog SR2(
     S0=S0,
     P0=P0,
     v_steady=v_steady,

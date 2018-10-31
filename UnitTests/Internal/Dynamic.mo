@@ -1,6 +1,6 @@
 within GenKinetics.UnitTests.Internal;
 package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
-  model OOSvP_LinLog "GenKinetics implementation of S => P"
+  model SvP_LinLog "GenKinetics implementation of S => P"
     parameter Real S0 = 1.0 "initial concentration of S";
     parameter Real P0 = 0.1 "Initial concentration of P";
 
@@ -29,9 +29,9 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     v.v = r;
     annotation (
       Icon(graphics={  Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
-  end OOSvP_LinLog;
+  end SvP_LinLog;
 
-  model OOSAIvP "GenKinetics implementation of S + A + I => P"
+  model SAIvP "GenKinetics implementation of S + A + I => P"
 
     parameter Real I0 = 0.3 "fixed concentration of inhibitor";
     parameter Real kI = 0.77;
@@ -70,9 +70,9 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     v.v = r;
     annotation (
       Icon(graphics={  Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
-  end OOSAIvP;
+  end SAIvP;
 
-  model OOSvP_rev "GenKinetics implementation of S <=> P"
+  model SvP_rev "GenKinetics implementation of S <=> P"
 
     parameter Real S0 = 1.0 "initial concentration of S";
     parameter Real vfwd = 1.5 "kinetic parameter";
@@ -103,9 +103,9 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     v.v = r;
     annotation (
       Icon(graphics={  Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
-  end OOSvP_rev;
+  end SvP_rev;
 
-  model OOS1S2vP "GenKinetics implementation of S1 + S2 => P"
+  model S1S2vP "GenKinetics implementation of S1 + S2 => P"
 
     parameter Real S10 = 1.0 "initial concentration of S";
     parameter Real S20 = 1.0 "initial concentration of S";
@@ -145,9 +145,9 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
 
     annotation (
       Icon(graphics={  Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
-  end OOS1S2vP;
+  end S1S2vP;
 
-  model OOSIvP_rev "GenKinetics implementation of S + I <=> P"
+  model SIvP_rev "GenKinetics implementation of S + I <=> P"
 
     parameter Real I0 = 0.5 " fixed concentration of inhibitor";
     parameter Real kI = 0.5 "kinetic parameter";
@@ -187,9 +187,9 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     v.v = r;
     annotation (
       Icon(graphics={  Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
-  end OOSIvP_rev;
+  end SIvP_rev;
 
-  model OOSAvP "GenKinetics implementation of S + A => P"
+  model SAvP "GenKinetics implementation of S + A => P"
 
     parameter Real A0 = 0.5 " fixed concentration of inhibitor";
     parameter Real kA = 0.5 "kinetic parameter";
@@ -223,9 +223,9 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     v.v = r;
     annotation (
       Icon(graphics={  Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
-  end OOSAvP;
+  end SAvP;
 
-  model OOSAIvP_rev "GenKinetics implementation of S + A + I => P"
+  model SAIvP_rev "GenKinetics implementation of S + A + I => P"
 
     parameter Real I0 = 0.3 "fixed concentration of inhibitor";
     parameter Real kI = 0.77;
@@ -270,9 +270,9 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     v.v = r;
     annotation (
       Icon(graphics={  Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
-  end OOSAIvP_rev;
+  end SAIvP_rev;
 
-  model OOSvP "GenKinetics implementation of S => P"
+  model SvP "GenKinetics implementation of S => P"
 
   parameter GenKinetics.Units.AffinityConst km = 2.0;
   parameter GenKinetics.Units.Concentration S0 = 1.0;
@@ -303,5 +303,41 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
 
   annotation (
       Icon(graphics={  Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
-  end OOSvP;
+  end SvP;
+
+  model SIvP "GenKinetics implementation of S +  I => P"
+
+    parameter Real I0 = 0.3 "fixed concentration of inhibitor";
+    parameter Real kI = 0.77;
+
+    parameter GenKinetics.Units.AffinityConst km = 2.0;
+    parameter GenKinetics.Units.Concentration S0 = 1.0;
+    parameter Units.ReactionCoef vfwd = 1.0;
+    NodeElements.Dynamic.Node S(c_0=S0);
+    NodeElements.Dynamic.Node P(c_0=0);
+
+    NodeElements.Dynamic.FixedConcentrationNode I(c_0=I0);
+    Reactions.Convenience.Dynamic.InhIrrKinetic v(
+      NS=1,
+      NP=1,
+      NI=1,
+      KmS={km},
+      KI={kI},
+      Vfwdmax=vfwd);
+    Modelica.Blocks.Interfaces.RealOutput Sc annotation (
+      Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Modelica.Blocks.Interfaces.RealOutput Pc annotation (
+      Placement(visible = true, transformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {100, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Modelica.Blocks.Interfaces.RealOutput r annotation (
+      Placement(visible = true, transformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, -4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  equation
+    connect(S.rc, v.rc_S[1]);
+    connect(v.rc_P[1], P.rc);
+    connect(v.mc_I[1], I.mc);
+    Sc = S.c;
+    Pc = P.c;
+    v.v = r;
+    annotation (
+      Icon(graphics={  Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
+  end SIvP;
 end Dynamic;

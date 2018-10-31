@@ -22,7 +22,7 @@ model TestDynamicActIrrKinetic
         origin={-54,38},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Internal.Dynamic.OOSAvP SR2(
+  Internal.Dynamic.SAvP SR2(
     A0=A,
     kA=kA,
     S0=S0,

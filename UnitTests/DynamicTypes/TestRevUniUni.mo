@@ -1,5 +1,5 @@
-within GenKinetics.UnitTests.Dynamic;
-model TestDynamicRevKinetic
+within GenKinetics.UnitTests.DynamicTypes;
+model TestRevUniUni "Test S <=> P "
 
   parameter Real S0 = 1.0;
   parameter Real vfwd = 1.0;
@@ -7,13 +7,12 @@ model TestDynamicRevKinetic
   parameter Real kmS = 2.0 "kinetic parameter";
   parameter Real kmP = 0.3 "kinetic parameter";
 
-  AssertContinuousTrajectory check(MaxAccErr=1e-3, name=
-        "Dynamic Reversible Kinetic") annotation (Placement(visible=true,
-        transformation(
+  AssertContinuousTrajectory check(MaxAccErr=1e-3, name="Dynamic Reversible Kinetic")
+    annotation (Placement(visible=true, transformation(
         origin={42,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  GenKinetics.UnitTests.Internal.Dynamic.SvP_rev SR1(
+  OOModels.SvP_rev SR1(
     S0=S0,
     vfwd=vfwd,
     vbwd=vbwd,
@@ -42,4 +41,4 @@ equation
   annotation (
     experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.02),
     __OpenModelica_simulationFlags(lv = "LOG_STATS", s = "rungekutta"));
-end TestDynamicRevKinetic;
+end TestRevUniUni;

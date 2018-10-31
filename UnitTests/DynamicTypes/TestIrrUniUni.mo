@@ -1,5 +1,5 @@
 within GenKinetics.UnitTests.DynamicTypes;
-model TestDynamicTypesIrrUniUni
+model TestIrrUniUni
   parameter Real km = 2.0;
   parameter Real S0 = 1.0;
   parameter Real vfwd = 1.0;
@@ -10,16 +10,15 @@ model TestDynamicTypesIrrUniUni
         origin={-50,46},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  OOModels.OOIrrUniUni SR2(
+  OOModels.SvP SR2(
     km=km,
     S0=S0,
     vfwd=vfwd) annotation (Placement(visible=true, transformation(
         origin={-46,-36},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  AssertContinuousTrajectory check(MaxAccErr=1e-3, name=
-        "DynamicTypes.IrrUniUni") annotation (Placement(visible=true,
-        transformation(
+  AssertContinuousTrajectory check(MaxAccErr=1e-3, name="DynamicTypes.IrrUniUni")
+    annotation (Placement(visible=true, transformation(
         origin={42,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
@@ -34,4 +33,4 @@ equation
   annotation (
     experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.02),
     __OpenModelica_simulationFlags(lv = "LOG_STATS", s = "rungekutta"));
-end TestDynamicTypesIrrUniUni;
+end TestIrrUniUni;

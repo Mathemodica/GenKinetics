@@ -10,7 +10,7 @@ model TestDynamicIrrKinetic
         origin={-50,46},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Internal.Dynamic.OOSvP SR2(
+  Internal.Dynamic.SvP SR2(
     km=km,
     S0=S0,
     vfwd=vfwd) annotation (Placement(visible=true, transformation(
