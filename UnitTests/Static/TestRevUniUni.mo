@@ -1,4 +1,4 @@
-within GenKinetics.UnitTests.DynamicTypes;
+within GenKinetics.UnitTests.Static;
 model TestRevUniUni "Test S <=> P "
 
   parameter Real S0 = 1.0;
@@ -7,7 +7,7 @@ model TestRevUniUni "Test S <=> P "
   parameter Real kmS = 2.0 "kinetic parameter";
   parameter Real kmP = 0.3 "kinetic parameter";
 
-  AssertContinuousTrajectory check(MaxAccErr=1e-3, name="DynamicTypes RevUniUni Kinetic")
+  AssertContinuousTrajectory check(MaxAccErr=1e-3, name="Static Reversible Uni Uni Kinetic")
     annotation (Placement(visible=true, transformation(
         origin={42,0},
         extent={{-10,-10},{10,10}},

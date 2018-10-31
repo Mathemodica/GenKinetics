@@ -1,4 +1,4 @@
-within GenKinetics.UnitTests.DynamicTypes;
+within GenKinetics.UnitTests.Static;
 model TestIrrBiUni "Test S1 + S2 => P"
 
   parameter Real S10 = 1.0 "initial concentration of S";
@@ -7,7 +7,7 @@ model TestIrrBiUni "Test S1 + S2 => P"
   parameter Real kmS1 = 1.5 "kinetic parameter";
   parameter Real kmS2 = 0.3 "kinetic parameter";
 
-  GenKinetics.UnitTests.AssertContinuousTrajectory check1(MaxAccErr=1e-3, name="DynamicTypes IrrBiUni S1 + S2 => P")
+  GenKinetics.UnitTests.AssertContinuousTrajectory check1(MaxAccErr=1e-3, name="Static Irreversible Kinetic S1 + S2 => P")
     annotation (Placement(visible=true, transformation(
         origin={46,-60},
         extent={{-10,-10},{10,10}},

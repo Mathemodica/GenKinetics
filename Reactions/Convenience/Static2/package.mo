@@ -3,7 +3,8 @@ package Static2
   extends Modelica.Icons.VariantsPackage;
 
   model IrrUniUniI1 "S + I => P"
-  extends Interfaces.Static.ReactionUniUni1I;
+    extends Interfaces.Static.ReactionUniUni1I;
+    extends Reactions.ReactionRate;
     /* model Kinetic = GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni, NI=1);
     Kinetic kinetic(KmS = {km}, Vfwdmax = Vmax, KI = {ki}); */
 
@@ -20,12 +21,15 @@ package Static2
    /* rc_P1.c = kinetic.rc_P[1].c;
    rc_P1.r = kinetic.rc_P[1].r; */
     connect(mc_I1, kinetic.mc_I[1]);
+
+    v = kinetic.v;
   end IrrUniUniI1;
 
 
 
   model RevUniUni "S <=> P"
     extends Interfaces.Static.ReactionUniUni;
+    extends Reactions.ReactionRate;
     Dynamic.RevKinetic kinetic(NS=1,NP=1,KmS = {kmS}, Vfwdmax = Vfwdmax, KmP = {kmP}, Vbwdmax = Vbwdmax);
     parameter GenKinetics.Units.AffinityConst kmS;
     parameter Units.ReactionCoef Vfwdmax;
@@ -34,12 +38,14 @@ package Static2
   equation
     connect(rc_S1, kinetic.rc_S[1]);
     connect(rc_P1, kinetic.rc_P[1]);
+    v = kinetic.v;
   end RevUniUni;
 
 
 
   model IrrBiUni "S1 + S2 => P"
     extends Interfaces.Static.ReactionBiUni;
+    extends Reactions.ReactionRate;
     Dynamic.IrrKinetic kinetic(NS=2,NP=1,KmS = {km1, km2}, Vfwdmax = Vmax);
     parameter GenKinetics.Units.AffinityConst km1;
     parameter GenKinetics.Units.AffinityConst km2;
@@ -48,12 +54,14 @@ package Static2
     connect(rc_S1, kinetic.rc_S[1]);
     connect(rc_S2, kinetic.rc_S[2]);
     connect(rc_P1, kinetic.rc_P[1]);
+    v = kinetic.v;
   end IrrBiUni;
 
 
 
   model IrrUniBiI1 "S + I => P1 + P2"
     extends Interfaces.Static.ReactionUniBiI1;
+    extends Reactions.ReactionRate;
     /*model Kinetic = GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniBi, NI=1);
     Kinetic kinetic(KmS = {km}, Vfwdmax = Vfwdmax, KI = {ki});
     */
@@ -66,6 +74,7 @@ package Static2
     connect(rc_P1, kinetic.rc_P[1]);
     connect(rc_P2, kinetic.rc_P[2]);
     connect(mc_I1, kinetic.mc_I[1]);
+    v = kinetic.v;
   end IrrUniBiI1;
 
 

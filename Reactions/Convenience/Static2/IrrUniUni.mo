@@ -1,6 +1,7 @@
 within GenKinetics.Reactions.Convenience.Static2;
 model IrrUniUni "S => P"
   extends Interfaces.Static.ReactionUniUni;
+  extends Reactions.ReactionRate;
 
   Dynamic.IrrKinetic kinetic(NS=1,  NP=1,  KmS = {km},  Vfwdmax = Vmax);
 
@@ -13,4 +14,6 @@ equation
   connect(rc_P1, kinetic.rc_P[1]);
   // rc_P1.c = rc_P[1].c;
   // rc_P1.r = rc_P[1].r;
+
+  v = kinetic.v;
 end IrrUniUni;
