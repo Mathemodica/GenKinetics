@@ -1,1 +1,8 @@
 *bak-mo
+*.mat
+dslog.txt
+dsin.txt
+buildlog.txt
+dsmodel.c
+dymosim.exe
+dsfinal.txt
