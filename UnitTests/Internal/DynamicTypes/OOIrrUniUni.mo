@@ -5,7 +5,7 @@ model OOIrrUniUni "GenKinetics implementation of S => P"
   parameter Units.ReactionCoef vfwd = 1.0;
   NodeElements.Dynamic.Node S(c_0=S0);
   NodeElements.Dynamic.Node P(c_0=0);
-  ReactionTypes.IrrUniUni v(km = km, Vmax=vfwd);
+  ReactionTypes.IrrUniUni v(KmS = {km}, Vfwdmax=vfwd);
   Modelica.Blocks.Interfaces.RealOutput Sc annotation (
     Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput Pc annotation (
@@ -17,7 +17,7 @@ equation
   connect(v.rc_P[1], P.rc);
   Sc = S.c;
   Pc = P.c;
-  v.kinetic.v = r;
+  v.v = r;
   annotation (
     Icon(graphics={  Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
 end OOIrrUniUni;
