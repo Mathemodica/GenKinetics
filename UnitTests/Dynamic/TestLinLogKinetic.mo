@@ -34,8 +34,11 @@ model TestLinLogKinetic
         origin={-46,-36},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Internal.AssertContinuousTrajectory check(MaxAccErr = 1e-3, name = "LinLog Kinetic") annotation (
-    Placement(visible = true, transformation(origin = {42, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  AssertContinuousTrajectory check(MaxAccErr=1e-3, name="LinLog Kinetic")
+    annotation (Placement(visible=true, transformation(
+        origin={42,0},
+        extent={{-10,-10},{10,10}},
+        rotation=0)));
 equation
   connect(SR2.Sc, check.T2) annotation (
     Line(points = {{-35.8, -29.6}, {-4, -29.6}, {-4, -7.6}, {32.6, -7.6}}, color = {0, 0, 127}));

@@ -17,7 +17,7 @@ model TestDynamicNode
         origin={-46,-36},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Internal.AssertContinuousTrajectory check(MaxAccErr=1e-3, name="Dynamic Node")
+  AssertContinuousTrajectory check(MaxAccErr=1e-3, name="Dynamic Node")
     annotation (Placement(visible=true, transformation(
         origin={42,0},
         extent={{-10,-10},{10,10}},

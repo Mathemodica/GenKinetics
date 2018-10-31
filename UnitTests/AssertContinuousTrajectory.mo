@@ -1,4 +1,4 @@
-within GenKinetics.UnitTests.Internal;
+within GenKinetics.UnitTests;
 model AssertContinuousTrajectory
   "Assert correctness of a whole solution trajectory"
 

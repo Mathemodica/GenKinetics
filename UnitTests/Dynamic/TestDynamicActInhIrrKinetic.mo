@@ -7,12 +7,24 @@ model TestDynamicActInhIrrKinetic
   parameter Real S0 = 1.0 "initial concentration of S";
   parameter Real vfwd = 1.0 "kinetic parameter";
   parameter Real km = 2.0 "kinetic parameter";
-  Internal.AssertContinuousTrajectory checkv(MaxAccErr = 1e-3, name = "Dynamic ActInhIrrKinetic v") annotation (
-    Placement(visible = true, transformation(origin = {42, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-Internal.AssertContinuousTrajectory checkS(MaxAccErr = 1e-3, name = "Dynamic ActInhIrrKinetic S") annotation (
-    Placement(visible = true, transformation(origin = {38, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-Internal.AssertContinuousTrajectory checkP(MaxAccErr = 1e-3, name = "Dynamic ActInhIrrKinetic P") annotation (
-    Placement(visible = true, transformation(origin = {36, -78}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  AssertContinuousTrajectory checkv(MaxAccErr=1e-3, name=
+        "Dynamic ActInhIrrKinetic v") annotation (Placement(visible=true,
+        transformation(
+        origin={42,0},
+        extent={{-10,-10},{10,10}},
+        rotation=0)));
+  AssertContinuousTrajectory checkS(MaxAccErr=1e-3, name=
+        "Dynamic ActInhIrrKinetic S") annotation (Placement(visible=true,
+        transformation(
+        origin={38,64},
+        extent={{-10,-10},{10,10}},
+        rotation=0)));
+  AssertContinuousTrajectory checkP(MaxAccErr=1e-3, name=
+        "Dynamic ActInhIrrKinetic P") annotation (Placement(visible=true,
+        transformation(
+        origin={36,-78},
+        extent={{-10,-10},{10,10}},
+        rotation=0)));
   Internal.Explicit.SAIvP SR1(
     I=I,
     kI=kI,

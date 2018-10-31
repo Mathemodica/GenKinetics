@@ -57,7 +57,7 @@ package Static2
     /*model Kinetic = GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare final model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniBi, NI=1);
     Kinetic kinetic(KmS = {km}, Vfwdmax = Vfwdmax, KI = {ki});
     */
-    Dynamic.InhIrrKinetic kinetic(NS=1, NP=2 , NI=1, KmS = {km}, Vfwdmax = Vfwdmax, KI = {ki});
+    Dynamic.InhIrrKinetic kinetic(NS=1, NP=2,  NI=1, KmS = {km}, Vfwdmax = Vfwdmax, KI = {ki});
     parameter GenKinetics.Units.AffinityConst km;
     parameter Units.ReactionCoef Vfwdmax;
     parameter Units.AffinityConst ki;

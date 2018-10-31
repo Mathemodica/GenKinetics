@@ -10,15 +10,16 @@ model TestDynamicTypesIrrUniUni
         origin={-50,46},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Internal.DynamicTypes.OOIrrUniUni SR2(
+  OOModels.OOIrrUniUni SR2(
     km=km,
     S0=S0,
     vfwd=vfwd) annotation (Placement(visible=true, transformation(
         origin={-46,-36},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Internal.AssertContinuousTrajectory check(MaxAccErr=1e-3, name="DynamicTypes.IrrUniUni")
-    annotation (Placement(visible=true, transformation(
+  AssertContinuousTrajectory check(MaxAccErr=1e-3, name=
+        "DynamicTypes.IrrUniUni") annotation (Placement(visible=true,
+        transformation(
         origin={42,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
