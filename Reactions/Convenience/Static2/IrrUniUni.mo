@@ -3,10 +3,12 @@ model IrrUniUni "S => P"
   extends Interfaces.Static.ReactionUniUni;
   extends Reactions.ReactionRate;
 
-  Dynamic.IrrKinetic kinetic(NS=1,  NP=1,  KmS = {km},  Vfwdmax = Vmax);
-
   parameter GenKinetics.Units.AffinityConst km;
   parameter Units.ReactionCoef Vmax;
+
+protected
+  Dynamic.IrrKinetic kinetic(NS=1,  NP=1,  KmS = {km},  Vfwdmax = Vmax);
+
 equation
   connect(rc_S1, kinetic.rc_S[1]);
   // rc_S1.c = rc_S[1].c;
