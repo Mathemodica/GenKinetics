@@ -1,7 +1,9 @@
 within GenKinetics.Examples;
 model SpirallusStatic
   "Implementation of the Spiralus network using static connections"
-  NodeElements.Static.FixedConcentrationNode Aex(c_0=1)
+  extends Modelica.Icons.Example;
+  
+  NodeElements.Static.FixedConcentrationNode Aex(c_0=0.1)
     annotation (Placement(transformation(extent={{-12,268},{8,288}})));
   Reactions.Convenience.Static.IrrUniUniI1 vupt(
     km=0.1,
@@ -11,9 +13,9 @@ model SpirallusStatic
     annotation (Placement(transformation(extent={{-12,178},{8,198}})));
   Reactions.Convenience.Static.RevUniUni v1(
     kmS=0.1,
-    Vfwdmax=2.0,
+    Vfwdmax=3.0,
     kmP=0.3,
-    Vbwdmax=0.5)
+    Vbwdmax=1.0)
     annotation (Placement(transformation(extent={{-12,128},{8,148}})));
   NodeElements.Static.Node B(c_0=0.2)
     annotation (Placement(transformation(extent={{-12,80},{8,100}})));

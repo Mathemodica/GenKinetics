@@ -19,7 +19,7 @@ model SpirallusFixedSource
     Vfwdmax=3.0,
     Vbwdmax=1.0,
     KmS={0.1},
-    KmP={3.0});
+    KmP={0.3});
   Node B(c_0 = 0.2);
   RevKinetic v5(
     NS=1,
