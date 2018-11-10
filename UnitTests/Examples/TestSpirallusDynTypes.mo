@@ -4,9 +4,9 @@ model TestSpirallusDynTypes "Testing DynamicTypes package"
 
   .GenKinetics.Examples.SpirallusDynTypes spDynTypes;
 
-  AssertContinuousTrajectory checkV2(MaxAccErr=1e-3);
-  AssertContinuousTrajectory checkV3(MaxAccErr=1e-3);
-  AssertContinuousTrajectory checkV5(MaxAccErr=1e-5);
+  Validate checkV2(MaxAccErr=1e-3);
+  Validate checkV3(MaxAccErr=1e-3);
+  Validate checkV5(MaxAccErr=1e-5);
 
 equation
 

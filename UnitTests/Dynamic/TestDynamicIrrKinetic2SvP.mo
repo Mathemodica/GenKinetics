@@ -7,7 +7,7 @@ model TestDynamicIrrKinetic2SvP
   parameter Real kmS1 = 1.5 "kinetic parameter";
   parameter Real kmS2 = 0.3 "kinetic parameter";
 
-  GenKinetics.UnitTests.AssertContinuousTrajectory check1(MaxAccErr=1e-3, name=
+  GenKinetics.UnitTests.Validate check1(MaxAccErr=1e-3, name=
         "Dynamic Irreversible Kinetic S1 + S2 => P") annotation (Placement(
         visible=true, transformation(
         origin={46,-60},
@@ -33,8 +33,7 @@ model TestDynamicIrrKinetic2SvP
         origin={-54,-46},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  AssertContinuousTrajectory check2 annotation (Placement(visible=true,
-        transformation(
+  Validate check2 annotation (Placement(visible=true, transformation(
         origin={50,58},
         extent={{-10,-10},{10,10}},
         rotation=0)));

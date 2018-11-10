@@ -8,8 +8,8 @@ model TestDynamicActIrrKinetic
   parameter Real vfwd = 1.0 "kinetic parameter";
   parameter Real km = 2.0 "kinetic parameter";
 
-  AssertContinuousTrajectory check(MaxAccErr=1e-3, name="Dynamic ActIrrKinetic")
-    annotation (Placement(visible=true, transformation(
+  Validate check(MaxAccErr=1e-3, name="Dynamic ActIrrKinetic") annotation (
+      Placement(visible=true, transformation(
         origin={42,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));

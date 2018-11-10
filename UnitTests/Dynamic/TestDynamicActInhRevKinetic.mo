@@ -9,21 +9,18 @@ model TestDynamicActInhRevKinetic
   parameter Real kmS = 2.0 "kinetic parameter";
   parameter Real vbwd = 0.5 "kinetic parameter";
   parameter Real kmP = 0.77 "kinetic parameter";
-  AssertContinuousTrajectory checkv(MaxAccErr=1e-3, name=
-        "Dynamic ActInhRevKinetic v") annotation (Placement(visible=true,
-        transformation(
+  Validate checkv(MaxAccErr=1e-3, name="Dynamic ActInhRevKinetic v")
+    annotation (Placement(visible=true, transformation(
         origin={42,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  AssertContinuousTrajectory checkS(MaxAccErr=1e-3, name=
-        "Dynamic ActInhRevKinetic S") annotation (Placement(visible=true,
-        transformation(
+  Validate checkS(MaxAccErr=1e-3, name="Dynamic ActInhRevKinetic S")
+    annotation (Placement(visible=true, transformation(
         origin={38,64},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  AssertContinuousTrajectory checkP(MaxAccErr=1e-3, name=
-        "Dynamic ActInhRevKinetic P") annotation (Placement(visible=true,
-        transformation(
+  Validate checkP(MaxAccErr=1e-3, name="Dynamic ActInhRevKinetic P")
+    annotation (Placement(visible=true, transformation(
         origin={36,-78},
         extent={{-10,-10},{10,10}},
         rotation=0)));

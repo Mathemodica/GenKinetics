@@ -1,11 +1,10 @@
 within GenKinetics.UnitTests;
-model AssertContinuousTrajectory
-  "Assert correctness of a whole solution trajectory"
+model Validate "Assert correctness of a whole solution trajectory"
 
   parameter Real MaxAccErr = 1e-3 "Maximum Accumulation Error";
   parameter String name = "" "Name of Test";
 
-  XogenyTest.AssertContinuousTrajectory check(MaxAccErr=MaxAccErr,name=name);
+  Internal.AssertContinuousTrajectory check(MaxAccErr=MaxAccErr,name=name);
 
   input Modelica.Blocks.Interfaces.RealInput T1 "First trajectory" annotation (
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {-96, 66}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
@@ -24,4 +23,4 @@ equation
   annotation (
     Documentation(info = "<html><head></head><body><div>A testing facitilty for ensuring the correctness of a continuous variabl.</div><div><br></div><div>Modification of the same component implemented in XogenyTest with additional icons from MSL for visual modeling since XogenyTest does not employ MSL.&nbsp;</div><div><br></div><br></body></html>"),
     Icon(graphics={  Rectangle(origin = {-14, -1}, lineColor = {0, 0, 127}, pattern = LinePattern.DashDotDot, extent = {{-86, 101}, {114, -99}})}));
-end AssertContinuousTrajectory;
+end Validate;

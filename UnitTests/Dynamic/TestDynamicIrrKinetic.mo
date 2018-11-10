@@ -17,9 +17,8 @@ model TestDynamicIrrKinetic
         origin={-46,-36},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  AssertContinuousTrajectory check(MaxAccErr=1e-3, name=
-        "Dynamic Irreversible Kinetic") annotation (Placement(visible=true,
-        transformation(
+  Validate check(MaxAccErr=1e-3, name="Dynamic Irreversible Kinetic")
+    annotation (Placement(visible=true, transformation(
         origin={42,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));

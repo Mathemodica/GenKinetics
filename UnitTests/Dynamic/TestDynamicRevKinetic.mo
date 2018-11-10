@@ -7,9 +7,8 @@ model TestDynamicRevKinetic
   parameter Real kmS = 2.0 "kinetic parameter";
   parameter Real kmP = 0.3 "kinetic parameter";
 
-  AssertContinuousTrajectory check(MaxAccErr=1e-3, name=
-        "Dynamic Reversible Kinetic") annotation (Placement(visible=true,
-        transformation(
+  Validate check(MaxAccErr=1e-3, name="Dynamic Reversible Kinetic") annotation
+    (Placement(visible=true, transformation(
         origin={42,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
