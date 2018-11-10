@@ -24,7 +24,6 @@ protected
   end IrrUniUniI1;
 
 
-
   model RevUniUni "S <=> P"
     extends Interfaces.Static.ReactionUniUni;
     extends Reactions.ReactionRate;
@@ -42,7 +41,6 @@ protected
     connect(rc_P1, kinetic.rc_P[1]);
     v = kinetic.v;
   end RevUniUni;
-
 
 
   model IrrBiUni "S1 + S2 => P"
@@ -64,7 +62,6 @@ protected
   end IrrBiUni;
 
 
-
   model IrrUniBiI1 "S + I => P1 + P2"
     extends Interfaces.Static.ReactionUniBiI1;
     extends Reactions.ReactionRate;
@@ -83,7 +80,6 @@ protected
     connect(mc_I1, kinetic.mc_I[1]);
     v = kinetic.v;
   end IrrUniBiI1;
-
 
 
 

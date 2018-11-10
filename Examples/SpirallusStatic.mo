@@ -2,7 +2,7 @@ within GenKinetics.Examples;
 model SpirallusStatic
   "Implementation of the Spiralus network using static connections"
   extends Modelica.Icons.Example;
-  
+
   NodeElements.Static.FixedConcentrationNode Aex(c_0=0.1)
     annotation (Placement(transformation(extent={{-12,268},{8,288}})));
   Reactions.Convenience.Static.IrrUniUniI1 vupt(
