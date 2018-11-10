@@ -3,7 +3,7 @@ partial model ActivationTerm "Interface for activating a reaction"
   extends Interfaces.Dynamic.ActivationConnections;
   extends Reactions.ModifiersTerm;
 
-  parameter Real gamma[NA] = zeros(NA) "elasticity coefficients";
+  parameter Units.Elasticity gamma[NA] = zeros(NA) "elasticity coefficients";
   parameter Units.Concentration A0[NA] = ones(NA) "Substrate concentration at a reference steady state";
 
 protected

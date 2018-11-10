@@ -4,7 +4,7 @@ partial model InhibitionTerm
   extends Interfaces.Dynamic.InhibitionConnections;
   extends Reactions.ModifiersTerm;
 
-  parameter Real delta[NI] = zeros(NI) "elasticity coefficients";
+  parameter Units.Elasticity delta[NI] = zeros(NI) "elasticity coefficients";
   parameter Units.Concentration I0[NI] = ones(NI) "Substrate concentration at a reference steady state";
 
 protected

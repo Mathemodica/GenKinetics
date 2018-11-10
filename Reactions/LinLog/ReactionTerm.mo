@@ -2,8 +2,8 @@ within GenKinetics.Reactions.LinLog;
 partial model ReactionTerm "Basic reaction terms in linlog kinetics "
   extends BasicReferencedReaction;
 
-  parameter Real alpha[NS] = zeros(NS) "elasticity coefficients";
-  parameter Real theta[NP] = zeros(NP) "elasticity coefficients";
+  parameter Units.Elasticity alpha[NS] = zeros(NS) "elasticity coefficients";
+  parameter Units.Elasticity theta[NP] = zeros(NP) "elasticity coefficients";
 
   parameter Units.Concentration S0[NS] = ones(NS) "Substrate concentration at a reference steady state";
   parameter Units.Concentration P0[NP] = ones(NP) "Product concentration at a reference steady state";
