@@ -1,7 +1,4 @@
 within GenKinetics.Reactions.Convenience.DynamicTypes;
-model IrrUniBiI1
-  extends GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic(redeclare
-      final model Dimensionality =
-        GenKinetics.Interfaces.Dynamic.Dimension.UniBi, redeclare final model
-      Inhibition = GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
+model IrrUniBiI1 "S => P"
+  extends Generic.Kinetic(NS = 1, NP = 2, NI = 1, NA = 0, Reversible = false);
 end IrrUniBiI1;

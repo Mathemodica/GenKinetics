@@ -3,9 +3,9 @@ model SpirallusDynTypes
   "An abstraction of the TCA cycle with dynamic arbitrary number of connections"
   extends Modelica.Icons.Example;
   import GenKinetics.Substances.Dynamic.*;
-  import GenKinetics.Reactions.Convenience.DynamicTypes3.*;
+  import GenKinetics.Reactions.Convenience.DynamicTypes.*;
   Substances.Dynamic.Substance Aex(c_0=1);
-  Reactions.Convenience.DynamicTypes.IrrUniUniI1 vupt(
+  Reactions.Convenience.DynamicTypes3.IrrUniUniI1 vupt(
     Vfwdmax=1.0,
     KmS={0.1},
     KI={3.0});
@@ -21,9 +21,9 @@ model SpirallusDynTypes
   Substances.Dynamic.Substance D;
   Substances.Dynamic.Substance F;
   IrrUniBiI1 v4(Vfwdmax = 3.0, KmS = {0.1}, KI = {1.0});
-  Reactions.Convenience.DynamicTypes.IrrUniUni v6(Vfwdmax=2.0, KmS={3.0});
+  Reactions.Convenience.DynamicTypes3.IrrUniUni v6(Vfwdmax=2.0, KmS={3.0});
   Substances.Dynamic.Substance Eex;
-  Reactions.Convenience.DynamicTypes.IrrUniUni v7(Vfwdmax=2.0, KmS={3.0});
+  Reactions.Convenience.DynamicTypes3.IrrUniUni v7(Vfwdmax=2.0, KmS={3.0});
   Substances.Dynamic.Substance Fex;
 equation
   // vupt

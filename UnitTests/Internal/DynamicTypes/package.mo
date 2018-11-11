@@ -1,5 +1,5 @@
 within GenKinetics.UnitTests.Internal;
 package DynamicTypes "Unit tests for components in Reactions.*.DynamicTypes"
   replaceable class ReactionTypes =
-      GenKinetics.Reactions.Convenience.DynamicTypes;
+      GenKinetics.Reactions.Convenience.DynamicTypes3;
 end DynamicTypes;

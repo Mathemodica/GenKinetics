@@ -1,5 +1,4 @@
 within GenKinetics.Reactions.Convenience.DynamicTypes;
-model IrrUniUni
-  extends GenKinetics.Reactions.Convenience.Dynamic.IrrKinetic(redeclare final
-      model Dimensionality = GenKinetics.Interfaces.Dynamic.Dimension.UniUni);
+model IrrUniUni "S => P"
+  extends Generic.Kinetic(NS = 1, NP = 1, NI = 0, NA = 0, Reversible = false);
 end IrrUniUni;
