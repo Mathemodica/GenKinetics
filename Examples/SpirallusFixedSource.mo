@@ -4,7 +4,7 @@ model SpirallusFixedSource
   extends Modelica.Icons.Example;
   import GenKinetics.Substances.Dynamic.*;
   import GenKinetics.Reactions.Convenience.Dynamic.*;
-  FixedConcentrationNode Aex(c_0=0.1);
+  Substances.Dynamic.AmbientSubstance Aex(c_0=0.1);
   InhIrrKinetic vupt(
     NS=1,
     NP=1,
@@ -12,7 +12,7 @@ model SpirallusFixedSource
     Vfwdmax=1.0,
     KmS={0.1},
     KI={3.0});
-  Node A(c_0 = 0.01);
+  Substances.Dynamic.Substance A(c_0=0.01);
   RevKinetic v1(
     NS=1,
     NP=1,
@@ -20,7 +20,7 @@ model SpirallusFixedSource
     Vbwdmax=1.0,
     KmS={0.1},
     KmP={0.3});
-  Node B(c_0 = 0.2);
+  Substances.Dynamic.Substance B(c_0=0.2);
   RevKinetic v5(
     NS=1,
     NP=1,
@@ -28,14 +28,14 @@ model SpirallusFixedSource
     Vbwdmax=0.5,
     KmS={1.0},
     KmP={1.0});
-  Node E(c_0 = 0.3);
+  Substances.Dynamic.Substance E(c_0=0.3);
   IrrKinetic v2(
     NS=2,
     NP=1,
     Vfwdmax=2.5,
     KmS={0.25,2.0});
   // B,E -v2-> C
-  Node C(c_0 = 0.5);
+  Substances.Dynamic.Substance C(c_0=0.5);
   InhIrrKinetic v3(
     NS=1,
     NP=2,
@@ -43,8 +43,8 @@ model SpirallusFixedSource
     Vfwdmax=2.0,
     KmS={2.0},
     KI={0.05});
-  Node D(c_0 = 0.01);
-  Node F(c_0 = 0.1);
+  Substances.Dynamic.Substance D(c_0=0.01);
+  Substances.Dynamic.Substance F(c_0=0.1);
   InhIrrKinetic v4(
     NS=1,
     NP=2,
@@ -57,13 +57,13 @@ model SpirallusFixedSource
     NP=1,
     Vfwdmax=2.0,
     KmS={3.0});
-  Node Eex(c_0 = 0.01);
+  Substances.Dynamic.Substance Eex(c_0=0.01);
   IrrKinetic v7(
     NS=1,
     NP=1,
     Vfwdmax=2.0,
     KmS={3.0});
-  Node Fex(c_0 = 0.01);
+  Substances.Dynamic.Substance Fex(c_0=0.01);
 equation
   // vupt
   connect(Aex.rc, vupt.rc_S[1]);

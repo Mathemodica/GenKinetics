@@ -1,7 +1,7 @@
 within GenKinetics.Substances.Dynamic;
-model ReferencedFixedConcentrationNode
+model ReferencedAmbientSubstance
   "additional parameter for a value at a referenced steady state "
-  extends FixedConcentrationNode;
+  extends AmbientSubstance;
   parameter Units.Concentration c_steady "concentration value at a reference steady state";
 
-end ReferencedFixedConcentrationNode;
+end ReferencedAmbientSubstance;

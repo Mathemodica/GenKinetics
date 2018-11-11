@@ -1,5 +1,5 @@
-BasicNode
-Node
-FixedConcentrationNode
-ReferencedNode
-ReferencedFixedConcentrationNode
+BasicSubstance
+Substance
+AmbientSubstance
+ReferencedSubstance
+ReferencedAmbientSubstance

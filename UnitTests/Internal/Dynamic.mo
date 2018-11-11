@@ -12,8 +12,8 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter Real S_steady = 0.1;
     parameter Real P_steady = 0.1;
 
-    Substances.Dynamic.ReferencedNode S(c_0=S0, c_steady=S_steady);
-    Substances.Dynamic.ReferencedNode P(c_0=P0, c_steady=P_steady);
+    Substances.Dynamic.ReferencedSubstance S(c_0=S0, c_steady=S_steady);
+    Substances.Dynamic.ReferencedSubstance P(c_0=P0, c_steady=P_steady);
     Reactions.LinLog.Dynamic.Kinetic v(NS = 1, NP = 1,v_steady = v_steady,alpha = {alpha}, theta = {theta},S0 = {S_steady},  P0 = {P_steady});
     Modelica.Blocks.Interfaces.RealOutput Sc annotation (
       Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -41,10 +41,10 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter GenKinetics.Units.AffinityConst km = 2.0;
     parameter GenKinetics.Units.Concentration S0 = 1.0;
     parameter Units.ReactionCoef vfwd = 1.0;
-    Substances.Dynamic.Node S(c_0=S0);
-    Substances.Dynamic.Node P(c_0=0);
-    Substances.Dynamic.FixedConcentrationNode A(c_0=A0);
-    Substances.Dynamic.FixedConcentrationNode I(c_0=I0);
+    Substances.Dynamic.Substance S(c_0=S0);
+    Substances.Dynamic.Substance P(c_0=0);
+    Substances.Dynamic.AmbientSubstance A(c_0=A0);
+    Substances.Dynamic.AmbientSubstance I(c_0=I0);
     Reactions.Convenience.Dynamic.ActInhIrrKinetic v(
       NS=1,
       NP=1,
@@ -80,8 +80,8 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter Real kmS = 2.0 "kinetic parameter";
     parameter Real kmP = 0.3 "kinetic parameter";
 
-    Substances.Dynamic.Node S(c_0=S0);
-    Substances.Dynamic.Node P(c_0=0);
+    Substances.Dynamic.Substance S(c_0=S0);
+    Substances.Dynamic.Substance P(c_0=0);
     Reactions.Convenience.Dynamic.RevKinetic v(
       NS=1,
       NP=1,
@@ -113,9 +113,9 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter Real kmS1 = 1.5 "kinetic parameter";
     parameter Real kmS2 = 0.3 "kinetic parameter";
 
-    Substances.Dynamic.Node S1(c_0=S10);
-    Substances.Dynamic.Node S2(c_0=S20);
-    Substances.Dynamic.Node P(c_0=0);
+    Substances.Dynamic.Substance S1(c_0=S10);
+    Substances.Dynamic.Substance S2(c_0=S20);
+    Substances.Dynamic.Substance P(c_0=0);
 
     Reactions.Convenience.Dynamic.IrrKinetic v(
       NS=2,
@@ -157,9 +157,9 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter Real kmS = 2.0 "kinetic parameter";
     parameter Real kmP = 0.3 "kinetic parameter";
 
-    Substances.Dynamic.FixedConcentrationNode I(c_0=I0);
-    Substances.Dynamic.Node S(c_0=S0);
-    Substances.Dynamic.Node P(c_0=0);
+    Substances.Dynamic.AmbientSubstance I(c_0=I0);
+    Substances.Dynamic.Substance S(c_0=S0);
+    Substances.Dynamic.Substance P(c_0=0);
     Reactions.Convenience.Dynamic.InhRevKinetic v(
       NS=1,
       NP=1,
@@ -197,9 +197,9 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter GenKinetics.Units.Concentration S0 = 1.0;
     parameter Units.ReactionCoef vfwd = 1.0;
 
-    Substances.Dynamic.Node S(c_0=S0);
-    Substances.Dynamic.Node P(c_0=0);
-    Substances.Dynamic.FixedConcentrationNode A(c_0=A0);
+    Substances.Dynamic.Substance S(c_0=S0);
+    Substances.Dynamic.Substance P(c_0=0);
+    Substances.Dynamic.AmbientSubstance A(c_0=A0);
 
     Reactions.Convenience.Dynamic.ActIrrKinetic v(
       NS=1,
@@ -239,10 +239,10 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter Real vbwd = 0.5 "kinetic parameter";
     parameter Real kmP = 0.77 "kinetic parameter";
 
-    Substances.Dynamic.Node S(c_0=S0);
-    Substances.Dynamic.Node P(c_0=0);
-    Substances.Dynamic.FixedConcentrationNode A(c_0=A0);
-    Substances.Dynamic.FixedConcentrationNode I(c_0=I0);
+    Substances.Dynamic.Substance S(c_0=S0);
+    Substances.Dynamic.Substance P(c_0=0);
+    Substances.Dynamic.AmbientSubstance A(c_0=A0);
+    Substances.Dynamic.AmbientSubstance I(c_0=I0);
     Reactions.Convenience.Dynamic.ActInhRevKinetic v(
       NS=1,
       NP=1,
@@ -278,8 +278,8 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
   parameter GenKinetics.Units.Concentration S0 = 1.0;
   parameter Units.ReactionCoef vfwd = 1.0;
 
-    Substances.Dynamic.Node S(c_0=S0);
-    Substances.Dynamic.Node P(c_0=0);
+    Substances.Dynamic.Substance S(c_0=S0);
+    Substances.Dynamic.Substance P(c_0=0);
     Reactions.Convenience.Dynamic.IrrKinetic v(
       NS=1,
       NP=1,
@@ -313,10 +313,10 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter GenKinetics.Units.AffinityConst km = 2.0;
     parameter GenKinetics.Units.Concentration S0 = 1.0;
     parameter Units.ReactionCoef vfwd = 1.0;
-    Substances.Dynamic.Node S(c_0=S0);
-    Substances.Dynamic.Node P(c_0=0);
+    Substances.Dynamic.Substance S(c_0=S0);
+    Substances.Dynamic.Substance P(c_0=0);
 
-    Substances.Dynamic.FixedConcentrationNode I(c_0=I0);
+    Substances.Dynamic.AmbientSubstance I(c_0=I0);
     Reactions.Convenience.Dynamic.InhIrrKinetic v(
       NS=1,
       NP=1,

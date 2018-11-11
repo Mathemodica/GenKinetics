@@ -4,7 +4,7 @@ model Spirallus
   extends Modelica.Icons.Example;
   import GenKinetics.Substances.Dynamic.*;
   import GenKinetics.Reactions.Convenience.Dynamic.*;
-  Substances.Dynamic.Node Aex(c_0=1);
+  Substances.Dynamic.Substance Aex(c_0=1);
   Reactions.Convenience.Dynamic.InhIrrKinetic vupt(
     NS=1,
     NP=1,
@@ -12,7 +12,7 @@ model Spirallus
     Vfwdmax=1.0,
     KmS={0.1},
     KI={3.0});
-  Substances.Dynamic.Node A;
+  Substances.Dynamic.Substance A;
   Reactions.Convenience.Dynamic.RevKinetic v1(
     NS=1,
     NP=1,
@@ -20,7 +20,7 @@ model Spirallus
     Vbwdmax=1.0,
     KmS={0.1},
     KmP={3.0});
-  Substances.Dynamic.Node B;
+  Substances.Dynamic.Substance B;
   Reactions.Convenience.Dynamic.RevKinetic v5(
     NS=1,
     NP=1,
@@ -28,14 +28,14 @@ model Spirallus
     Vbwdmax=0.5,
     KmS={1.0},
     KmP={1.0});
-  Substances.Dynamic.Node E;
+  Substances.Dynamic.Substance E;
   Reactions.Convenience.Dynamic.IrrKinetic v2(
     NS=2,
     NP=1,
     Vfwdmax=2.5,
     KmS={0.25,2.0});
   // B,E -v2-> C
-  Substances.Dynamic.Node C;
+  Substances.Dynamic.Substance C;
   Reactions.Convenience.Dynamic.InhIrrKinetic v3(
     NS=1,
     NP=2,
@@ -43,8 +43,8 @@ model Spirallus
     Vfwdmax=2.0,
     KmS={2.0},
     KI={0.05});
-  Substances.Dynamic.Node D;
-  Substances.Dynamic.Node F;
+  Substances.Dynamic.Substance D;
+  Substances.Dynamic.Substance F;
   Reactions.Convenience.Dynamic.InhIrrKinetic v4(
     NS=1,
     NP=2,
@@ -57,13 +57,13 @@ model Spirallus
     NP=1,
     Vfwdmax=2.0,
     KmS={3.0});
-  Substances.Dynamic.Node Eex;
+  Substances.Dynamic.Substance Eex;
   Reactions.Convenience.Dynamic.IrrKinetic v7(
     NS=1,
     NP=1,
     Vfwdmax=2.0,
     KmS={3.0});
-  Substances.Dynamic.Node Fex;
+  Substances.Dynamic.Substance Fex;
 equation
   // vupt
   connect(Aex.rc, vupt.rc_S[1]);
