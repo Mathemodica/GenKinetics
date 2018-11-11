@@ -2,7 +2,7 @@ within GenKinetics.Examples;
 model SpirallusGeneric
   "An abstraction of the TCA cycle implemented with one type of reaction component"
   extends Modelica.Icons.Example;
-  import GenKinetics.NodeElements.Dynamic.*;
+  import GenKinetics.Substances.Dynamic.*;
   import GenKinetics.Reactions.Convenience.Generic.Kinetic;
   FixedConcentrationNode Aex(c_0=0.1);
   Kinetic vupt(Reversible = false,

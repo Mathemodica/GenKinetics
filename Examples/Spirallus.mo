@@ -2,9 +2,9 @@ within GenKinetics.Examples;
 model Spirallus
   "An abstraction of the TCA cycle with dynamic arbitrary number of connections"
   extends Modelica.Icons.Example;
-  import GenKinetics.NodeElements.Dynamic.*;
+  import GenKinetics.Substances.Dynamic.*;
   import GenKinetics.Reactions.Convenience.Dynamic.*;
-  NodeElements.Dynamic.Node Aex(c_0=1);
+  Substances.Dynamic.Node Aex(c_0=1);
   Reactions.Convenience.Dynamic.InhIrrKinetic vupt(
     NS=1,
     NP=1,
@@ -12,7 +12,7 @@ model Spirallus
     Vfwdmax=1.0,
     KmS={0.1},
     KI={3.0});
-  NodeElements.Dynamic.Node A;
+  Substances.Dynamic.Node A;
   Reactions.Convenience.Dynamic.RevKinetic v1(
     NS=1,
     NP=1,
@@ -20,7 +20,7 @@ model Spirallus
     Vbwdmax=1.0,
     KmS={0.1},
     KmP={3.0});
-  NodeElements.Dynamic.Node B;
+  Substances.Dynamic.Node B;
   Reactions.Convenience.Dynamic.RevKinetic v5(
     NS=1,
     NP=1,
@@ -28,14 +28,14 @@ model Spirallus
     Vbwdmax=0.5,
     KmS={1.0},
     KmP={1.0});
-  NodeElements.Dynamic.Node E;
+  Substances.Dynamic.Node E;
   Reactions.Convenience.Dynamic.IrrKinetic v2(
     NS=2,
     NP=1,
     Vfwdmax=2.5,
     KmS={0.25,2.0});
   // B,E -v2-> C
-  NodeElements.Dynamic.Node C;
+  Substances.Dynamic.Node C;
   Reactions.Convenience.Dynamic.InhIrrKinetic v3(
     NS=1,
     NP=2,
@@ -43,8 +43,8 @@ model Spirallus
     Vfwdmax=2.0,
     KmS={2.0},
     KI={0.05});
-  NodeElements.Dynamic.Node D;
-  NodeElements.Dynamic.Node F;
+  Substances.Dynamic.Node D;
+  Substances.Dynamic.Node F;
   Reactions.Convenience.Dynamic.InhIrrKinetic v4(
     NS=1,
     NP=2,
@@ -57,13 +57,13 @@ model Spirallus
     NP=1,
     Vfwdmax=2.0,
     KmS={3.0});
-  NodeElements.Dynamic.Node Eex;
+  Substances.Dynamic.Node Eex;
   Reactions.Convenience.Dynamic.IrrKinetic v7(
     NS=1,
     NP=1,
     Vfwdmax=2.0,
     KmS={3.0});
-  NodeElements.Dynamic.Node Fex;
+  Substances.Dynamic.Node Fex;
 equation
   // vupt
   connect(Aex.rc, vupt.rc_S[1]);

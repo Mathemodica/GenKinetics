@@ -4,7 +4,7 @@ package Examples
 
   model SpirallusLinLog "An abstraction of the TCA cycle with dynamic arbitrary number of connections implemented "
     extends Modelica.Icons.Example;
-    import GenKinetics.NodeElements.Dynamic.*;
+    import GenKinetics.Substances.Dynamic.*;
     import GenKinetics.Reactions.LinLog.Dynamic.*;
     ReferencedFixedConcentrationNode Aex(c_0 = 0.1, c_steady = 0.1);
     InhKinetic vupt(NS = 1, NP = 1, NI = 1, I0 = {A.c_steady}, S0 = {Aex.c_steady}, P0 = {A.c_steady}, alpha = {0.77}, theta = {0.33}, delta = {0.45}, v_steady = 0.5);
@@ -74,36 +74,36 @@ package Examples
   model SpirallusStatic2 "Implementation of the Spiralus network using static connections"
   extends Modelica.Icons.Example;
 
-    NodeElements.Static.FixedConcentrationNode Aex(c_0 = 0.1) annotation (
-      Placement(transformation(extent = {{-12, 268}, {8, 288}})));
+  Substances.Static.FixedConcentrationNode Aex(c_0=0.1)
+    annotation (Placement(transformation(extent={{-12,268},{8,288}})));
     Reactions.Convenience.Static2.IrrUniUniI1 vupt(km = 0.1, Vmax = 1.0, ki = 3.0) annotation (
       Placement(transformation(extent = {{-12, 224}, {8, 244}})));
-    NodeElements.Static.Node A(c_0 = 0.01) annotation (
-      Placement(transformation(extent = {{-12, 178}, {8, 198}})));
+  Substances.Static.Node A(c_0=0.01)
+    annotation (Placement(transformation(extent={{-12,178},{8,198}})));
     Reactions.Convenience.Static2.RevUniUni v1(kmS = 0.1, Vfwdmax = 3.0, kmP = 0.3, Vbwdmax = 1.0) annotation (
       Placement(transformation(extent = {{-12, 128}, {8, 148}})));
-    NodeElements.Static.Node B(c_0 = 0.2) annotation (
-      Placement(transformation(extent = {{-12, 80}, {8, 100}})));
+  Substances.Static.Node B(c_0=0.2)
+    annotation (Placement(transformation(extent={{-12,80},{8,100}})));
     Reactions.Convenience.Static2.RevUniUni v5(kmS = 1.0, Vfwdmax = 2.0, kmP = 1.0, Vbwdmax = 0.5) annotation (
       Placement(transformation(extent = {{-12, 28}, {8, 48}})));
-    NodeElements.Static.Node E(c_0 = 0.3) annotation (
-      Placement(transformation(extent = {{-12, -22}, {8, -2}})));
+  Substances.Static.Node E(c_0=0.3)
+    annotation (Placement(transformation(extent={{-12,-22},{8,-2}})));
     Reactions.Convenience.Static2.IrrBiUni v2(km1 = 0.25, km2 = 2.0, Vmax = 2.5) annotation (
       Placement(transformation(extent = {{76, -22}, {96, -2}})));
-    NodeElements.Static.Node C(c_0 = 0.5) annotation (
-      Placement(transformation(extent = {{120, -86}, {140, -66}})));
+  Substances.Static.Node C(c_0=0.5)
+    annotation (Placement(transformation(extent={{120,-86},{140,-66}})));
     Reactions.Convenience.Static2.IrrUniBiI1 v3(km = 2.0, Vfwdmax = 2.0, ki = 0.05) annotation (
       Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {66, -112})));
-    NodeElements.Static.Node F(c_0 = 0.1) annotation (
-      Placement(transformation(extent = {{-98, -190}, {-78, -170}})));
-    NodeElements.Static.Node D(c_0 = 0.01) annotation (
-      Placement(transformation(extent = {{-12, -122}, {8, -102}})));
+  Substances.Static.Node F(c_0=0.1)
+    annotation (Placement(transformation(extent={{-98,-190},{-78,-170}})));
+  Substances.Static.Node D(c_0=0.01)
+    annotation (Placement(transformation(extent={{-12,-122},{8,-102}})));
     Reactions.Convenience.Static2.IrrUniBiI1 v4(km = 0.1, Vfwdmax = 3.0, ki = 1.0) annotation (
       Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {-82, -82})));
-    NodeElements.Static.Node Fex(c_0 = 0.01) annotation (
-      Placement(transformation(extent = {{-158, -288}, {-138, -268}})));
-    NodeElements.Static.Node Eex(c_0 = 0.01) annotation (
-      Placement(transformation(extent = {{-132, 74}, {-112, 94}})));
+  Substances.Static.Node Fex(c_0=0.01)
+    annotation (Placement(transformation(extent={{-158,-288},{-138,-268}})));
+  Substances.Static.Node Eex(c_0=0.01)
+    annotation (Placement(transformation(extent={{-132,74},{-112,94}})));
     Reactions.Convenience.Static2.IrrUniUni v6(km = 3.0, Vmax = 2.0) annotation (
       Placement(transformation(extent = {{-98, 24}, {-78, 44}})));
   Reactions.Convenience.Static2.IrrUniUni v7(Vmax = 2.0, km = 3.0)  annotation (
@@ -172,7 +172,7 @@ package Examples
   model SpirallusStatic3 "Implementation of the Spiralus network using static connections"
     extends Modelica.Icons.Example;
 
-    import GenKinetics.NodeElements.Static.*;
+    import GenKinetics.Substances.Static.*;
     import GenKinetics.Reactions.Convenience.Static3.*;
 
     FixedConcentrationNode Aex(c_0 = 0.1) annotation (

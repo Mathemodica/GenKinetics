@@ -2,29 +2,29 @@ within GenKinetics.Examples;
 model SpirallusDynTypes
   "An abstraction of the TCA cycle with dynamic arbitrary number of connections"
   extends Modelica.Icons.Example;
-  import GenKinetics.NodeElements.Dynamic.*;
+  import GenKinetics.Substances.Dynamic.*;
   import GenKinetics.Reactions.Convenience.DynamicTypes3.*;
-  NodeElements.Dynamic.Node Aex(c_0=1);
+  Substances.Dynamic.Node Aex(c_0=1);
   Reactions.Convenience.DynamicTypes.IrrUniUniI1 vupt(
     Vfwdmax=1.0,
     KmS={0.1},
     KI={3.0});
-  NodeElements.Dynamic.Node A;
+  Substances.Dynamic.Node A;
   RevUniUni v1(Vfwdmax = 3.0, Vbwdmax = 1.0, KmS = {0.1}, KmP = {3.0});
-  NodeElements.Dynamic.Node B;
+  Substances.Dynamic.Node B;
   RevUniUni v5(Vfwdmax = 2.0, Vbwdmax = 0.5, KmS = {1.0}, KmP = {1.0});
-  NodeElements.Dynamic.Node E;
+  Substances.Dynamic.Node E;
   IrrBiUni v2(Vfwdmax = 2.5, KmS = {0.25, 2.0});
   // B,E -v2-> C
-  NodeElements.Dynamic.Node C;
+  Substances.Dynamic.Node C;
   IrrUniBiI1 v3(Vfwdmax = 2.0, KmS = {2.0}, KI = {0.05});
-  NodeElements.Dynamic.Node D;
-  NodeElements.Dynamic.Node F;
+  Substances.Dynamic.Node D;
+  Substances.Dynamic.Node F;
   IrrUniBiI1 v4(Vfwdmax = 3.0, KmS = {0.1}, KI = {1.0});
   Reactions.Convenience.DynamicTypes.IrrUniUni v6(Vfwdmax=2.0, KmS={3.0});
-  NodeElements.Dynamic.Node Eex;
+  Substances.Dynamic.Node Eex;
   Reactions.Convenience.DynamicTypes.IrrUniUni v7(Vfwdmax=2.0, KmS={3.0});
-  NodeElements.Dynamic.Node Fex;
+  Substances.Dynamic.Node Fex;
 equation
   // vupt
   connect(Aex.rc, vupt.rc_S[1]);

@@ -3,13 +3,13 @@ model SpirallusStatic
   "Implementation of the Spiralus network using static connections"
   extends Modelica.Icons.Example;
 
-  NodeElements.Static.FixedConcentrationNode Aex(c_0=0.1)
+  Substances.Static.FixedConcentrationNode Aex(c_0=0.1)
     annotation (Placement(transformation(extent={{-12,268},{8,288}})));
   Reactions.Convenience.Static.IrrUniUniI1 vupt(
     km=0.1,
     Vmax=1.0,
     ki=3.0) annotation (Placement(transformation(extent={{-12,224},{8,244}})));
-  NodeElements.Static.Node A(c_0=0.01)
+  Substances.Static.Node A(c_0=0.01)
     annotation (Placement(transformation(extent={{-12,178},{8,198}})));
   Reactions.Convenience.Static.RevUniUni v1(
     kmS=0.1,
@@ -17,7 +17,7 @@ model SpirallusStatic
     kmP=0.3,
     Vbwdmax=1.0)
     annotation (Placement(transformation(extent={{-12,128},{8,148}})));
-  NodeElements.Static.Node B(c_0=0.2)
+  Substances.Static.Node B(c_0=0.2)
     annotation (Placement(transformation(extent={{-12,80},{8,100}})));
   Reactions.Convenience.Static.RevUniUni v5(
     kmS=1.0,
@@ -25,13 +25,13 @@ model SpirallusStatic
     kmP=1.0,
     Vbwdmax=0.5)
     annotation (Placement(transformation(extent={{-12,28},{8,48}})));
-  NodeElements.Static.Node E(c_0=0.3)
+  Substances.Static.Node E(c_0=0.3)
     annotation (Placement(transformation(extent={{-12,-22},{8,-2}})));
   Reactions.Convenience.Static.IrrBiUni v2(
     km1=0.25,
     km2=2.0,
     Vmax=2.5) annotation (Placement(transformation(extent={{76,-22},{96,-2}})));
-  NodeElements.Static.Node C(c_0=0.5)
+  Substances.Static.Node C(c_0=0.5)
     annotation (Placement(transformation(extent={{120,-86},{140,-66}})));
   Reactions.Convenience.Static.IrrUniBiI1 v3(
     km=2.0,
@@ -40,9 +40,9 @@ model SpirallusStatic
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={66,-112})));
-  NodeElements.Static.Node F(c_0=0.1)
+  Substances.Static.Node F(c_0=0.1)
     annotation (Placement(transformation(extent={{-98,-190},{-78,-170}})));
-  NodeElements.Static.Node D(c_0=0.01)
+  Substances.Static.Node D(c_0=0.01)
     annotation (Placement(transformation(extent={{-12,-122},{8,-102}})));
   Reactions.Convenience.Static.IrrUniBiI1 v4(
     km=0.1,
@@ -53,9 +53,9 @@ model SpirallusStatic
         origin={-82,-82})));
   Reactions.Convenience.Static.IrrUniUni irrUniUni(km=3.0, Vmax=2.0)
     annotation (Placement(transformation(extent={{-118,-240},{-98,-220}})));
-  NodeElements.Static.Node Fex(c_0=0.01)
+  Substances.Static.Node Fex(c_0=0.01)
     annotation (Placement(transformation(extent={{-158,-288},{-138,-268}})));
-  NodeElements.Static.Node Eex(c_0=0.01)
+  Substances.Static.Node Eex(c_0=0.01)
     annotation (Placement(transformation(extent={{-132,74},{-112,94}})));
   Reactions.Convenience.Static.IrrUniUni v6(km=3.0, Vmax=2.0)
     annotation (Placement(transformation(extent={{-98,24},{-78,44}})));

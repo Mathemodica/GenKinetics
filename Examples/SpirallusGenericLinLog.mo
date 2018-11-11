@@ -2,7 +2,7 @@ within GenKinetics.Examples;
 model SpirallusGenericLinLog
   "An abstraction of the TCA cycle with dynamic arbitrary number of connections implemented "
   extends Modelica.Icons.Example;
-  import GenKinetics.NodeElements.Dynamic.*;
+  import GenKinetics.Substances.Dynamic.*;
   import GenKinetics.Reactions.LinLog.Generic.Kinetic;
   ReferencedFixedConcentrationNode Aex(c_0 = 0.1, c_steady = 0.1);
   Kinetic vupt(NS = 1, NP = 1, NI = 1, NA = 0, I0={A.c_steady},S0={Aex.c_steady},P0={A.c_steady},alpha = {0.77}, theta = {0.33},  delta = {0.45},  v_steady = 0.5);

@@ -6,8 +6,8 @@ package Static
   parameter GenKinetics.Units.Concentration S0 = 1.0;
   parameter Units.ReactionCoef vfwd = 1.0;
 
-    NodeElements.Static.Node S(c_0=S0);
-    NodeElements.Static.Node P(c_0=0);
+    Substances.Static.Node S(c_0=S0);
+    Substances.Static.Node P(c_0=0);
     ReactionTypes.IrrUniUni v(km=km, Vmax=vfwd);
     Modelica.Blocks.Interfaces.RealOutput Sc annotation (
       Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -38,10 +38,10 @@ package Static
     parameter GenKinetics.Units.AffinityConst km = 2.0;
     parameter GenKinetics.Units.Concentration S0 = 1.0;
     parameter Units.ReactionCoef vfwd = 1.0;
-    NodeElements.Static.Node S(c_0=S0);
-    NodeElements.Static.Node P(c_0=0);
+    Substances.Static.Node S(c_0=S0);
+    Substances.Static.Node P(c_0=0);
 
-    NodeElements.Dynamic.FixedConcentrationNode I(c_0=I0);
+    Substances.Dynamic.FixedConcentrationNode I(c_0=I0);
     ReactionTypes.IrrUniUniI1 v(
       km=km,
       ki=kI,
@@ -71,8 +71,8 @@ package Static
     parameter Real kmS = 2.0 "kinetic parameter";
     parameter Real kmP = 0.3 "kinetic parameter";
 
-    NodeElements.Static.Node S(c_0=S0);
-    NodeElements.Static.Node P(c_0=0);
+    Substances.Static.Node S(c_0=S0);
+    Substances.Static.Node P(c_0=0);
     ReactionTypes.RevUniUni v(
       kmS=kmS,
       kmP=kmP,
@@ -102,9 +102,9 @@ package Static
     parameter Real kmS1 = 1.5 "kinetic parameter";
     parameter Real kmS2 = 0.3 "kinetic parameter";
 
-    NodeElements.Static.Node S1(c_0=S10);
-    NodeElements.Static.Node S2(c_0=S20);
-    NodeElements.Static.Node P(c_0=0);
+    Substances.Static.Node S1(c_0=S10);
+    Substances.Static.Node S2(c_0=S20);
+    Substances.Static.Node P(c_0=0);
 
     ReactionTypes.IrrBiUni v(km1=kmS1, km2=kmS2, Vmax=vfwd);
 
