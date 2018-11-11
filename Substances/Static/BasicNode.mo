@@ -1,7 +1,7 @@
 within GenKinetics.Substances.Static;
 partial model BasicNode "Basic declarations of any Metabolite"
   extends GenKinetics.Interfaces.Static.NodeConnections;
-  extends Substances.PartialNode;
+  extends Interfaces.Substances.Substance;
 
 equation
   rc.c = c;
