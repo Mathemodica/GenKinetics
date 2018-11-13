@@ -1,4 +1,4 @@
-within GenKinetics.Reactions.Convenience.Static3;
+within GenKinetics.Reactions.Convenience.StaticX;
 model IrrBiUni "S1 + S2 => P"
   extends Interfaces.Static.ReactionBiUni;
   extends Reactions.ReactionRate;

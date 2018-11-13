@@ -8,26 +8,15 @@ model IrrUniUniI1 "S + I => P"
   parameter Units.AffinityConst ki;
 
 protected
-  model Kinetic =   GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic (
-    redeclare final model Dimensionality =
-      GenKinetics.Interfaces.Dynamic.Dimension.UniUni,
-    redeclare final model Inhibition =
-      GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
-
-  Kinetic kinetic(KmS = {km},Vfwdmax = Vmax,KI = {ki});
+  Generic.Kinetic kinetic(NS=1, NP=1, NA=0, NI=1, KmS = {km},
+                          Vfwdmax = Vmax, KI = {ki}, Reversible = false);
 
 equation
+ connect(rc_S1, kinetic.rc_S[1]);
 
-  connect(rc_S1,kinetic.rc_S[1]);
-  // rc_S1.c = rc_S[1].c;
-  // rc_S1.r = rc_S[1].r;
+ connect(rc_P1, kinetic.rc_P[1]);
 
-  connect(rc_P1,kinetic.rc_P[1]);
-  // rc_P1.c = rc_P[1].c;
-  // rc_P1.r = rc_P[1].r;
+ connect(mc_I1, kinetic.mc_I[1]);
 
-  connect(mc_I1,kinetic.mc_I[1]);
-
-  v = kinetic.v;
-
+ v = kinetic.v;
 end IrrUniUniI1;

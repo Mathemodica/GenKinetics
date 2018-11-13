@@ -173,7 +173,7 @@ package Examples
     extends Modelica.Icons.Example;
 
     import GenKinetics.Substances.Static.*;
-    import GenKinetics.Reactions.Convenience.Static3.*;
+    import GenKinetics.Reactions.Convenience.Static.*;
 
   Substances.Static.AmbientSubstance Aex(c_0=0.1)
     annotation (Placement(transformation(extent={{-12,268},{8,288}})));

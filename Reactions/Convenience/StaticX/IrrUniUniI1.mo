@@ -1,30 +1,33 @@
-within GenKinetics.Reactions.Convenience.Static3;
-model IrrUniBiI1 "S + I => P1 + P2"
-  extends Interfaces.Static.ReactionUniBiI1;
+within GenKinetics.Reactions.Convenience.StaticX;
+model IrrUniUniI1 "S + I => P"
+  extends Interfaces.Static.ReactionUniUni1I;
   extends Reactions.ReactionRate;
 
   parameter GenKinetics.Units.AffinityConst km;
-  parameter Units.ReactionCoef Vfwdmax;
+  parameter Units.ReactionCoef Vmax;
   parameter Units.AffinityConst ki;
 
 protected
   model Kinetic =   GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic (
     redeclare final model Dimensionality =
-      GenKinetics.Interfaces.Dynamic.Dimension.UniBi,
+      GenKinetics.Interfaces.Dynamic.Dimension.UniUni,
     redeclare final model Inhibition =
       GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
 
-  Kinetic kinetic(KmS = {km},Vfwdmax = Vfwdmax, KI = {ki});
+  Kinetic kinetic(KmS = {km},Vfwdmax = Vmax,KI = {ki});
 
 equation
 
   connect(rc_S1,kinetic.rc_S[1]);
+  // rc_S1.c = rc_S[1].c;
+  // rc_S1.r = rc_S[1].r;
 
   connect(rc_P1,kinetic.rc_P[1]);
-  connect(rc_P2,kinetic.rc_P[2]);
+  // rc_P1.c = rc_P[1].c;
+  // rc_P1.r = rc_P[1].r;
 
   connect(mc_I1,kinetic.mc_I[1]);
 
-  kinetic.v = v;
+  v = kinetic.v;
 
-end IrrUniBiI1;
+end IrrUniUniI1;

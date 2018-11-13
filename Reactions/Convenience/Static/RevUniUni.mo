@@ -8,18 +8,13 @@ model RevUniUni "S <=> P"
   parameter GenKinetics.Units.AffinityConst kmP;
   parameter Units.ReactionCoef Vbwdmax;
 
-
 protected
-  model Kinetic =  GenKinetics.Reactions.Convenience.Dynamic.RevKinetic(redeclare
-        final model Dimensionality =
-                       GenKinetics.Interfaces.Dynamic.Dimension.UniUni);
+  Generic.Kinetic kinetic(NS=1,  NP=1, NA=0, NI=0, KmS = {kmS},
+                          Vfwdmax = Vfwdmax, KmP = {kmP}, Vbwdmax = Vbwdmax,
+                          Reversible=true);
 
-  Kinetic kinetic(KmS = {kmS},Vfwdmax = Vfwdmax,KmP = {kmP},Vbwdmax = Vbwdmax);
 equation
-
-  connect(rc_S1,kinetic.rc_S[1]);
-  connect(rc_P1,kinetic.rc_P[1]);
-
+  connect(rc_S1, kinetic.rc_S[1]);
+  connect(rc_P1, kinetic.rc_P[1]);
   v = kinetic.v;
-
 end RevUniUni;

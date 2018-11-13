@@ -1,4 +1,5 @@
 within GenKinetics.Reactions.Convenience;
-package Static "Kinetics with fixed number of connections "
+package Static "Another implementation for static number of connection"
   extends Modelica.Icons.VariantsPackage;
+
 end Static;

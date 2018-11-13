@@ -5,13 +5,13 @@ model SpirallusStatic
 
   Substances.Static.AmbientSubstance Aex(c_0=0.1)
     annotation (Placement(transformation(extent={{-12,268},{8,288}})));
-  Reactions.Convenience.Static.IrrUniUniI1 vupt(
+  Reactions.Convenience.Static3.IrrUniUniI1 vupt(
     km=0.1,
     Vmax=1.0,
     ki=3.0) annotation (Placement(transformation(extent={{-12,224},{8,244}})));
   Substances.Static.Substance A(c_0=0.01)
     annotation (Placement(transformation(extent={{-12,178},{8,198}})));
-  Reactions.Convenience.Static.RevUniUni v1(
+  Reactions.Convenience.Static3.RevUniUni v1(
     kmS=0.1,
     Vfwdmax=3.0,
     kmP=0.3,
@@ -19,7 +19,7 @@ model SpirallusStatic
     annotation (Placement(transformation(extent={{-12,128},{8,148}})));
   Substances.Static.Substance B(c_0=0.2)
     annotation (Placement(transformation(extent={{-12,80},{8,100}})));
-  Reactions.Convenience.Static.RevUniUni v5(
+  Reactions.Convenience.Static3.RevUniUni v5(
     kmS=1.0,
     Vfwdmax=2.0,
     kmP=1.0,
@@ -27,13 +27,13 @@ model SpirallusStatic
     annotation (Placement(transformation(extent={{-12,28},{8,48}})));
   Substances.Static.Substance E(c_0=0.3)
     annotation (Placement(transformation(extent={{-12,-22},{8,-2}})));
-  Reactions.Convenience.Static.IrrBiUni v2(
+  Reactions.Convenience.Static3.IrrBiUni v2(
     km1=0.25,
     km2=2.0,
     Vmax=2.5) annotation (Placement(transformation(extent={{76,-22},{96,-2}})));
   Substances.Static.Substance C(c_0=0.5)
     annotation (Placement(transformation(extent={{120,-86},{140,-66}})));
-  Reactions.Convenience.Static.IrrUniBiI1 v3(
+  Reactions.Convenience.Static3.IrrUniBiI1 v3(
     km=2.0,
     Vfwdmax=2.0,
     ki=0.05) annotation (Placement(transformation(
@@ -44,20 +44,20 @@ model SpirallusStatic
     annotation (Placement(transformation(extent={{-98,-190},{-78,-170}})));
   Substances.Static.Substance D(c_0=0.01)
     annotation (Placement(transformation(extent={{-12,-122},{8,-102}})));
-  Reactions.Convenience.Static.IrrUniBiI1 v4(
+  Reactions.Convenience.Static3.IrrUniBiI1 v4(
     km=0.1,
     Vfwdmax=3.0,
     ki=1.0) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={-82,-82})));
-  Reactions.Convenience.Static.IrrUniUni irrUniUni(km=3.0, Vmax=2.0)
+  Reactions.Convenience.Static3.IrrUniUni irrUniUni(km=3.0, Vmax=2.0)
     annotation (Placement(transformation(extent={{-118,-240},{-98,-220}})));
   Substances.Static.Substance Fex(c_0=0.01)
     annotation (Placement(transformation(extent={{-158,-288},{-138,-268}})));
   Substances.Static.Substance Eex(c_0=0.01)
     annotation (Placement(transformation(extent={{-132,74},{-112,94}})));
-  Reactions.Convenience.Static.IrrUniUni v6(km=3.0, Vmax=2.0)
+  Reactions.Convenience.Static3.IrrUniUni v6(km=3.0, Vmax=2.0)
     annotation (Placement(transformation(extent={{-98,24},{-78,44}})));
 equation
   connect(Aex.rc3, vupt.rc_S1)
