@@ -29,7 +29,7 @@ package Static
       Icon(graphics={  Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
   end SvP;
   replaceable class ReactionTypes =
-      GenKinetics.Reactions.Convenience.Static3;
+      GenKinetics.Reactions.Convenience.Static;
   model SIvP "GenKinetics implementation of S +  I => P"
 
     parameter Real I0 = 0.3 "fixed concentration of inhibitor";
