@@ -1,7 +1,6 @@
 ﻿loadModel(Modelica);
 loadModel(GenKinetics);
 simulate(GenKinetics.UnitTests.Dynamic.TestDynamicNode);
-simulate(GenKinetics.UnitTests.Dynamic.TestDynamicNode);
 simulate(GenKinetics.UnitTests.Dynamic.TestDynamicIrrKinetic);
 simulate(GenKinetics.UnitTests.Dynamic.TestDynamicRevKinetic);
 simulate(GenKinetics.UnitTests.Dynamic.TestDynamicIrrKinetic2SvP);
