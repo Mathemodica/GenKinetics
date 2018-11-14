@@ -5,7 +5,8 @@ partial model ReactionConnections
     Interfaces.Dynamic.Structure.ReactionStructure;
   extends Structure;
 
-  GenKinetics.Interfaces.Ports.ChemicalPort_S rc_S[NS]
+  GenKinetics.Interfaces.Nodes.SubstrateConnector rc_S[NS]
     "connection to substrates";
-  GenKinetics.Interfaces.Ports.ChemicalPort_P rc_P[NP] "connection to product";
+  GenKinetics.Interfaces.Nodes.ProductConnector rc_P[NP]
+    "connection to product";
 end ReactionConnections;

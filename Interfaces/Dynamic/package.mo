@@ -18,7 +18,8 @@ package Dynamic
 
   partial model ActivationConnections
     extends ModifiersConnections;
-    GenKinetics.Interfaces.Ports.ModifierChemicalPort_I mc_A[NA] "connection to activators";
+  GenKinetics.Interfaces.Nodes.InhibitorConnector mc_A[NA]
+    "connection to activators";
   end ActivationConnections;
 
 

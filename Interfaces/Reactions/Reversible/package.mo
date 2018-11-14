@@ -1,10 +1,7 @@
-﻿within GenKinetics.Interfaces;
+﻿within GenKinetics.Interfaces.Reactions;
 package Reversible
   extends Modelica.Icons.BasesPackage;
 
-  partial model ReactionReversibility "Base Type for describing Reversability of a reaction"
-
-  end ReactionReversibility;
 
 
 
