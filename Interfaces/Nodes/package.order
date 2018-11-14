@@ -4,3 +4,5 @@ SubstrateConnector
 ProductConnector
 InhibitorConnector
 ActivatorConnector
+ChemicalPort
+ModifierPort
