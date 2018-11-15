@@ -1,4 +1,4 @@
-﻿within GenKinetics.Interfaces.Reactions;
+﻿within GenKinetics.Interfaces.Reactions.Basics;
 package Reversible
   extends Modelica.Icons.BasesPackage;
 

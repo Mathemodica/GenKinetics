@@ -1,7 +1,7 @@
 within GenKinetics.Reactions.Convenience.Static;
 model IrrUniUniI1 "S + I => P"
   extends Interfaces.Static.ReactionUniUni1I;
-  extends Reactions.ReactionRate;
+  extends Interfaces.Reactions.ReactionRate;
 
   parameter GenKinetics.Units.AffinityConst km;
   parameter Units.ReactionCoef Vmax;

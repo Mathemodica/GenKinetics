@@ -4,7 +4,7 @@ package Static2
 
   model IrrUniUniI1 "S + I => P"
     extends Interfaces.Static.ReactionUniUni1I;
-    extends Reactions.ReactionRate;
+    extends Interfaces.Reactions.ReactionRate;
 
     parameter GenKinetics.Units.AffinityConst km;
     parameter Units.ReactionCoef Vmax;
@@ -26,7 +26,7 @@ protected
 
   model RevUniUni "S <=> P"
     extends Interfaces.Static.ReactionUniUni;
-    extends Reactions.ReactionRate;
+    extends Interfaces.Reactions.ReactionRate;
 
     parameter GenKinetics.Units.AffinityConst kmS;
     parameter Units.ReactionCoef Vfwdmax;
@@ -45,7 +45,7 @@ protected
 
   model IrrBiUni "S1 + S2 => P"
     extends Interfaces.Static.ReactionBiUni;
-    extends Reactions.ReactionRate;
+    extends Interfaces.Reactions.ReactionRate;
 
     parameter GenKinetics.Units.AffinityConst km1;
     parameter GenKinetics.Units.AffinityConst km2;
@@ -64,7 +64,7 @@ protected
 
   model IrrUniBiI1 "S + I => P1 + P2"
     extends Interfaces.Static.ReactionUniBiI1;
-    extends Reactions.ReactionRate;
+    extends Interfaces.Reactions.ReactionRate;
 
     parameter GenKinetics.Units.AffinityConst km;
     parameter Units.ReactionCoef Vfwdmax;

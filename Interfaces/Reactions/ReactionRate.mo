@@ -1,4 +1,4 @@
-within GenKinetics.Reactions;
+within GenKinetics.Interfaces.Reactions;
 partial model ReactionRate "Declaration of reaction rate"
 
   Units.VolumetricReactionRate v "Reaction Rate";

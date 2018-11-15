@@ -4,7 +4,7 @@ model ActRevKinetic "S1 + S2 + ...  <==A1,A2,...==> P1 + P2 + ... "
       model Modifiers = Convenience.ActivationTerm (redeclare final model
           Inhibition = Interfaces.Reactions.Modifiers.Base.NoInhibition),
       redeclare final model Reversibility =
-        Interfaces.Reactions.Reversible.TwoWay);
+        Interfaces.Reactions.Basics.Reversible.TwoWays);
 equation
   v = A * (S1 - P1) / (S2 + P2 - 1);
 end ActRevKinetic;
