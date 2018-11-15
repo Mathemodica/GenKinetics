@@ -3,8 +3,8 @@ model SvP "GenKinetics implementation of S => P"
   parameter GenKinetics.Units.AffinityConst km = 2.0;
   parameter GenKinetics.Units.Concentration S0 = 1.0;
   parameter Units.ReactionCoef vfwd = 1.0;
-  Substances.Dynamic.Substance S(c_0=S0);
-  Substances.Dynamic.Substance P(c_0=0);
+  Substances.Auto.Substance S(c_0=S0);
+  Substances.Auto.Substance P(c_0=0);
   ReactionTypes.IrrUniUni v(KmS = {km}, Vfwdmax=vfwd);
   Modelica.Blocks.Interfaces.RealOutput Sc annotation (
     Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));

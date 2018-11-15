@@ -1,0 +1,13 @@
+ReactionActivation
+ReactionInhibition
+UnspecifiedActivation
+UnspecifiedInhibition
+NoActivation
+NoInhibition
+Activator
+Inhibitor
+TwoActivators
+TwoInhibitors
+ActivationConnections
+ModifiersConnections
+InhibitionConnections

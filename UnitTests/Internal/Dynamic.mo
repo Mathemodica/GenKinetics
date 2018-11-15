@@ -12,9 +12,16 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter Real S_steady = 0.1;
     parameter Real P_steady = 0.1;
 
-    Substances.Dynamic.ReferencedSubstance S(c_0=S0, c_steady=S_steady);
-    Substances.Dynamic.ReferencedSubstance P(c_0=P0, c_steady=P_steady);
-    Reactions.LinLog.Dynamic.Kinetic v(NS = 1, NP = 1,v_steady = v_steady,alpha = {alpha}, theta = {theta},S0 = {S_steady},  P0 = {P_steady});
+    Substances.Auto.ReferencedSubstance S(c_0=S0, c_steady=S_steady);
+    Substances.Auto.ReferencedSubstance P(c_0=P0, c_steady=P_steady);
+    Reactions.LinLog.Auto.Kinetic v(
+      NS=1,
+      NP=1,
+      v_steady=v_steady,
+      alpha={alpha},
+      theta={theta},
+      S0={S_steady},
+      P0={P_steady});
     Modelica.Blocks.Interfaces.RealOutput Sc annotation (
       Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     Modelica.Blocks.Interfaces.RealOutput Pc annotation (
@@ -41,11 +48,11 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter GenKinetics.Units.AffinityConst km = 2.0;
     parameter GenKinetics.Units.Concentration S0 = 1.0;
     parameter Units.ReactionCoef vfwd = 1.0;
-    Substances.Dynamic.Substance S(c_0=S0);
-    Substances.Dynamic.Substance P(c_0=0);
-    Substances.Dynamic.AmbientSubstance A(c_0=A0);
-    Substances.Dynamic.AmbientSubstance I(c_0=I0);
-    Reactions.Convenience.Dynamic.ActInhIrrKinetic v(
+    Substances.Auto.Substance S(c_0=S0);
+    Substances.Auto.Substance P(c_0=0);
+    Substances.Auto.AmbientSubstance A(c_0=A0);
+    Substances.Auto.AmbientSubstance I(c_0=I0);
+    Reactions.Convenience.Auto.ActInhIrrKinetic v(
       NS=1,
       NP=1,
       NA=1,
@@ -80,9 +87,9 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter Real kmS = 2.0 "kinetic parameter";
     parameter Real kmP = 0.3 "kinetic parameter";
 
-    Substances.Dynamic.Substance S(c_0=S0);
-    Substances.Dynamic.Substance P(c_0=0);
-    Reactions.Convenience.Dynamic.RevKinetic v(
+    Substances.Auto.Substance S(c_0=S0);
+    Substances.Auto.Substance P(c_0=0);
+    Reactions.Convenience.Auto.RevKinetic v(
       NS=1,
       NP=1,
       KmS={kmS},
@@ -113,11 +120,11 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter Real kmS1 = 1.5 "kinetic parameter";
     parameter Real kmS2 = 0.3 "kinetic parameter";
 
-    Substances.Dynamic.Substance S1(c_0=S10);
-    Substances.Dynamic.Substance S2(c_0=S20);
-    Substances.Dynamic.Substance P(c_0=0);
+    Substances.Auto.Substance S1(c_0=S10);
+    Substances.Auto.Substance S2(c_0=S20);
+    Substances.Auto.Substance P(c_0=0);
 
-    Reactions.Convenience.Dynamic.IrrKinetic v(
+    Reactions.Convenience.Auto.IrrKinetic v(
       NS=2,
       NP=1,
       KmS={kmS1,kmS2},
@@ -157,10 +164,10 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter Real kmS = 2.0 "kinetic parameter";
     parameter Real kmP = 0.3 "kinetic parameter";
 
-    Substances.Dynamic.AmbientSubstance I(c_0=I0);
-    Substances.Dynamic.Substance S(c_0=S0);
-    Substances.Dynamic.Substance P(c_0=0);
-    Reactions.Convenience.Dynamic.InhRevKinetic v(
+    Substances.Auto.AmbientSubstance I(c_0=I0);
+    Substances.Auto.Substance S(c_0=S0);
+    Substances.Auto.Substance P(c_0=0);
+    Reactions.Convenience.Auto.InhRevKinetic v(
       NS=1,
       NP=1,
       NI=1,
@@ -197,11 +204,11 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter GenKinetics.Units.Concentration S0 = 1.0;
     parameter Units.ReactionCoef vfwd = 1.0;
 
-    Substances.Dynamic.Substance S(c_0=S0);
-    Substances.Dynamic.Substance P(c_0=0);
-    Substances.Dynamic.AmbientSubstance A(c_0=A0);
+    Substances.Auto.Substance S(c_0=S0);
+    Substances.Auto.Substance P(c_0=0);
+    Substances.Auto.AmbientSubstance A(c_0=A0);
 
-    Reactions.Convenience.Dynamic.ActIrrKinetic v(
+    Reactions.Convenience.Auto.ActIrrKinetic v(
       NS=1,
       NP=1,
       NA=1,
@@ -239,11 +246,11 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter Real vbwd = 0.5 "kinetic parameter";
     parameter Real kmP = 0.77 "kinetic parameter";
 
-    Substances.Dynamic.Substance S(c_0=S0);
-    Substances.Dynamic.Substance P(c_0=0);
-    Substances.Dynamic.AmbientSubstance A(c_0=A0);
-    Substances.Dynamic.AmbientSubstance I(c_0=I0);
-    Reactions.Convenience.Dynamic.ActInhRevKinetic v(
+    Substances.Auto.Substance S(c_0=S0);
+    Substances.Auto.Substance P(c_0=0);
+    Substances.Auto.AmbientSubstance A(c_0=A0);
+    Substances.Auto.AmbientSubstance I(c_0=I0);
+    Reactions.Convenience.Auto.ActInhRevKinetic v(
       NS=1,
       NP=1,
       NA=1,
@@ -278,9 +285,9 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
   parameter GenKinetics.Units.Concentration S0 = 1.0;
   parameter Units.ReactionCoef vfwd = 1.0;
 
-    Substances.Dynamic.Substance S(c_0=S0);
-    Substances.Dynamic.Substance P(c_0=0);
-    Reactions.Convenience.Dynamic.IrrKinetic v(
+    Substances.Auto.Substance S(c_0=S0);
+    Substances.Auto.Substance P(c_0=0);
+    Reactions.Convenience.Auto.IrrKinetic v(
       NS=1,
       NP=1,
       KmS={km},
@@ -313,11 +320,11 @@ package Dynamic "Small reaction systems implemented using Reactions.*.Dynamic"
     parameter GenKinetics.Units.AffinityConst km = 2.0;
     parameter GenKinetics.Units.Concentration S0 = 1.0;
     parameter Units.ReactionCoef vfwd = 1.0;
-    Substances.Dynamic.Substance S(c_0=S0);
-    Substances.Dynamic.Substance P(c_0=0);
+    Substances.Auto.Substance S(c_0=S0);
+    Substances.Auto.Substance P(c_0=0);
 
-    Substances.Dynamic.AmbientSubstance I(c_0=I0);
-    Reactions.Convenience.Dynamic.InhIrrKinetic v(
+    Substances.Auto.AmbientSubstance I(c_0=I0);
+    Reactions.Convenience.Auto.InhIrrKinetic v(
       NS=1,
       NP=1,
       NI=1,

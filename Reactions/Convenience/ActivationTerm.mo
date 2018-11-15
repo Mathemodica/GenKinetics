@@ -1,6 +1,6 @@
 within GenKinetics.Reactions.Convenience;
 partial model ActivationTerm "Interface for activating a reaction"
-  extends Interfaces.Reactions.Modifiers.Base.ActivationConnections;
+  extends Interfaces.Reactions.Modifiers.Auto.ActivationConnections;
   extends Reactions.ModifiersTerm;
   parameter Units.AffinityConst KA[NA] = ones(NA) "activation constants";
 protected

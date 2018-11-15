@@ -7,8 +7,8 @@ model SvP_rev "GenKinetics implementation of S <=> P"
   parameter Real kmS = 2.0 "kinetic parameter";
   parameter Real kmP = 0.3 "kinetic parameter";
 
-  Substances.Dynamic.Substance S(c_0=S0);
-  Substances.Dynamic.Substance P(c_0=0);
+  Substances.Auto.Substance S(c_0=S0);
+  Substances.Auto.Substance P(c_0=0);
   ReactionTypes.RevUniUni v(
     KmS={kmS},
     KmP={kmP},

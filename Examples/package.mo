@@ -4,26 +4,26 @@ package Examples
 
   model SpirallusLinLog "An abstraction of the TCA cycle with dynamic arbitrary number of connections implemented "
     extends Modelica.Icons.Example;
-    import GenKinetics.Substances.Dynamic.*;
-    import GenKinetics.Reactions.LinLog.Dynamic.*;
-  Substances.Dynamic.ReferencedAmbientSubstance Aex(c_0=0.1, c_steady=0.1);
+    import GenKinetics.Substances.Auto.*;
+    import GenKinetics.Reactions.LinLog.Auto.*;
+  Substances.Auto.ReferencedAmbientSubstance Aex(c_0=0.1, c_steady=0.1);
     InhKinetic vupt(NS = 1, NP = 1, NI = 1, I0 = {A.c_steady}, S0 = {Aex.c_steady}, P0 = {A.c_steady}, alpha = {0.77}, theta = {0.33}, delta = {0.45}, v_steady = 0.5);
-  Substances.Dynamic.ReferencedSubstance A(c_0=0.01, c_steady=0.026);
+  Substances.Auto.ReferencedSubstance A(c_0=0.01, c_steady=0.026);
     Kinetic v1(NS = 1, NP = 1, S0 = {A.c_steady}, P0 = {B.c_steady}, alpha = {2.1}, theta = {-0.3}, v_steady = 0.5);
-  Substances.Dynamic.ReferencedSubstance B(c_0=0.2, c_steady=0.323);
+  Substances.Auto.ReferencedSubstance B(c_0=0.2, c_steady=0.323);
     Kinetic v5(NS = 1, NP = 1, S0 = {B.c_steady}, P0 = {E.c_steady}, alpha = {1.22}, theta = {0.45}, v_steady = 0.25);
-  Substances.Dynamic.ReferencedSubstance E(c_0=18.3, c_steady=0.4258);
+  Substances.Auto.ReferencedSubstance E(c_0=18.3, c_steady=0.4258);
     Kinetic v2(NS = 2, NP = 1, S0 = {B.c_steady, E.c_steady}, P0 = {C.c_steady}, alpha = {1.56, 0.35}, theta = {0.45}, v_steady = 0.25);
     // B,E -v2-> C
-  Substances.Dynamic.ReferencedSubstance C(c_0=18.5, c_steady=0.36);
+  Substances.Auto.ReferencedSubstance C(c_0=18.5, c_steady=0.36);
     InhKinetic v3(NS = 1, NP = 2, NI = 1, S0 = {C.c_steady}, P0 = {D.c_steady, F.c_steady}, I0 = {D.c_steady}, alpha = {0.45}, theta = {-0.42, 1.2}, delta = {-1.2}, v_steady = 0.25);
-  Substances.Dynamic.ReferencedSubstance D(c_0=0.01, c_steady=0.013);
-  Substances.Dynamic.ReferencedSubstance F(c_0=18.1, c_steady=0.37);
+  Substances.Auto.ReferencedSubstance D(c_0=0.01, c_steady=0.013);
+  Substances.Auto.ReferencedSubstance F(c_0=18.1, c_steady=0.37);
     InhKinetic v4(NS = 1, NP = 2, NI = 1, S0 = {D.c_steady}, P0 = {E.c_steady, F.c_steady}, I0 = {C.c_steady}, alpha = {0.23}, theta = {0.33, 0.34}, delta = {-0.9}, v_steady = 0.25);
     Kinetic v6(NS = 1, NP = 1, S0 = {E.c_steady}, P0 = {Eex.c_steady}, alpha = {0.005}, theta = {0}, v_steady = 0.25);
-  Substances.Dynamic.ReferencedSubstance Eex(c_0=10, c_steady=2.4);
+  Substances.Auto.ReferencedSubstance Eex(c_0=10, c_steady=2.4);
     Kinetic v7(NS = 1, NP = 1, S0 = {F.c_steady}, P0 = {Fex.c_steady}, alpha = {0.005}, theta = {0.05}, v_steady = 0.48);
-  Substances.Dynamic.ReferencedSubstance Fex(c_0=100, c_steady=4.2);
+  Substances.Auto.ReferencedSubstance Fex(c_0=100, c_steady=4.2);
   equation
   // vupt
     connect(Aex.rc, vupt.rc_S[1]);
@@ -74,40 +74,65 @@ package Examples
   model SpirallusStatic2 "Implementation of the Spiralus network using static connections"
   extends Modelica.Icons.Example;
 
-  Substances.Static.AmbientSubstance Aex(c_0=0.1)
+  Substances.AmbientSubstance Aex(c_0=0.1)
     annotation (Placement(transformation(extent={{-12,268},{8,288}})));
-    Reactions.Convenience.Static2.IrrUniUniI1 vupt(km = 0.1, Vmax = 1.0, ki = 3.0) annotation (
-      Placement(transformation(extent = {{-12, 224}, {8, 244}})));
-  Substances.Static.Substance A(c_0=0.01)
+  Reactions.Convenience.Explicit2.IrrUniUniI1 vupt(
+    km=0.1,
+    Vmax=1.0,
+    ki=3.0) annotation (Placement(transformation(extent={{-12,224},{8,244}})));
+  Substances.Substance A(c_0=0.01)
     annotation (Placement(transformation(extent={{-12,178},{8,198}})));
-    Reactions.Convenience.Static2.RevUniUni v1(kmS = 0.1, Vfwdmax = 3.0, kmP = 0.3, Vbwdmax = 1.0) annotation (
-      Placement(transformation(extent = {{-12, 128}, {8, 148}})));
-  Substances.Static.Substance B(c_0=0.2)
+  Reactions.Convenience.Explicit2.RevUniUni v1(
+    kmS=0.1,
+    Vfwdmax=3.0,
+    kmP=0.3,
+    Vbwdmax=1.0)
+    annotation (Placement(transformation(extent={{-12,128},{8,148}})));
+  Substances.Substance B(c_0=0.2)
     annotation (Placement(transformation(extent={{-12,80},{8,100}})));
-    Reactions.Convenience.Static2.RevUniUni v5(kmS = 1.0, Vfwdmax = 2.0, kmP = 1.0, Vbwdmax = 0.5) annotation (
-      Placement(transformation(extent = {{-12, 28}, {8, 48}})));
-  Substances.Static.Substance E(c_0=0.3)
+  Reactions.Convenience.Explicit2.RevUniUni v5(
+    kmS=1.0,
+    Vfwdmax=2.0,
+    kmP=1.0,
+    Vbwdmax=0.5)
+    annotation (Placement(transformation(extent={{-12,28},{8,48}})));
+  Substances.Substance E(c_0=0.3)
     annotation (Placement(transformation(extent={{-12,-22},{8,-2}})));
-    Reactions.Convenience.Static2.IrrBiUni v2(km1 = 0.25, km2 = 2.0, Vmax = 2.5) annotation (
-      Placement(transformation(extent = {{76, -22}, {96, -2}})));
-  Substances.Static.Substance C(c_0=0.5)
+  Reactions.Convenience.Explicit2.IrrBiUni v2(
+    km1=0.25,
+    km2=2.0,
+    Vmax=2.5) annotation (Placement(transformation(extent={{76,-22},{96,-2}})));
+  Substances.Substance C(c_0=0.5)
     annotation (Placement(transformation(extent={{120,-86},{140,-66}})));
-    Reactions.Convenience.Static2.IrrUniBiI1 v3(km = 2.0, Vfwdmax = 2.0, ki = 0.05) annotation (
-      Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {66, -112})));
-  Substances.Static.Substance F(c_0=0.1)
+  Reactions.Convenience.Explicit2.IrrUniBiI1 v3(
+    km=2.0,
+    Vfwdmax=2.0,
+    ki=0.05) annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=-90,
+        origin={66,-112})));
+  Substances.Substance F(c_0=0.1)
     annotation (Placement(transformation(extent={{-98,-190},{-78,-170}})));
-  Substances.Static.Substance D(c_0=0.01)
+  Substances.Substance D(c_0=0.01)
     annotation (Placement(transformation(extent={{-12,-122},{8,-102}})));
-    Reactions.Convenience.Static2.IrrUniBiI1 v4(km = 0.1, Vfwdmax = 3.0, ki = 1.0) annotation (
-      Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {-82, -82})));
-  Substances.Static.Substance Fex(c_0=0.01)
+  Reactions.Convenience.Explicit2.IrrUniBiI1 v4(
+    km=0.1,
+    Vfwdmax=3.0,
+    ki=1.0) annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=-90,
+        origin={-82,-82})));
+  Substances.Substance Fex(c_0=0.01)
     annotation (Placement(transformation(extent={{-158,-288},{-138,-268}})));
-  Substances.Static.Substance Eex(c_0=0.01)
+  Substances.Substance Eex(c_0=0.01)
     annotation (Placement(transformation(extent={{-132,74},{-112,94}})));
-    Reactions.Convenience.Static2.IrrUniUni v6(km = 3.0, Vmax = 2.0) annotation (
-      Placement(transformation(extent = {{-98, 24}, {-78, 44}})));
-  Reactions.Convenience.Static2.IrrUniUni v7(Vmax = 2.0, km = 3.0)  annotation (
-      Placement(visible = true, transformation(origin = {-114, -230}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Reactions.Convenience.Explicit2.IrrUniUni v6(km=3.0, Vmax=2.0)
+    annotation (Placement(transformation(extent={{-98,24},{-78,44}})));
+  Reactions.Convenience.Explicit2.IrrUniUni v7(Vmax=2.0, km=3.0) annotation (
+      Placement(visible=true, transformation(
+        origin={-114,-230},
+        extent={{-10,-10},{10,10}},
+        rotation=0)));
   equation
     connect(v7.rc_P1, Fex.rc1) annotation (
       Line(points = {{-114, -240}, {-150, -240}, {-150, -268}, {-148, -268}}));
@@ -172,38 +197,37 @@ package Examples
   model SpirallusStatic3 "Implementation of the Spiralus network using static connections"
     extends Modelica.Icons.Example;
 
-    import GenKinetics.Substances.Static.*;
-    import GenKinetics.Reactions.Convenience.Static.*;
+    import GenKinetics.Reactions.Convenience.Explicit.*;
 
-  Substances.Static.AmbientSubstance Aex(c_0=0.1)
+  Substances.AmbientSubstance Aex(c_0=0.1)
     annotation (Placement(transformation(extent={{-12,268},{8,288}})));
     IrrUniUniI1 vupt(km = 0.1, Vmax = 1.0, ki = 3.0) annotation (
       Placement(transformation(extent = {{-12, 224}, {8, 244}})));
-  Substances.Static.Substance A(c_0=0.01)
+  Substances.Substance A(c_0=0.01)
     annotation (Placement(transformation(extent={{-12,178},{8,198}})));
     RevUniUni v1(kmS = 0.1, Vfwdmax = 3.0, kmP = 0.3, Vbwdmax = 1.0) annotation (
       Placement(transformation(extent = {{-12, 128}, {8, 148}})));
-  Substances.Static.Substance B(c_0=0.2)
+  Substances.Substance B(c_0=0.2)
     annotation (Placement(transformation(extent={{-12,80},{8,100}})));
     RevUniUni v5(kmS = 1.0, Vfwdmax = 2.0, kmP = 1.0, Vbwdmax = 0.5) annotation (
       Placement(transformation(extent = {{-12, 28}, {8, 48}})));
-  Substances.Static.Substance E(c_0=0.3)
+  Substances.Substance E(c_0=0.3)
     annotation (Placement(transformation(extent={{-12,-22},{8,-2}})));
     IrrBiUni v2(km1 = 0.25, km2 = 2.0, Vmax = 2.5) annotation (
       Placement(transformation(extent = {{76, -22}, {96, -2}})));
-  Substances.Static.Substance C(c_0=0.5)
+  Substances.Substance C(c_0=0.5)
     annotation (Placement(transformation(extent={{120,-86},{140,-66}})));
     IrrUniBiI1 v3(km = 2.0, Vfwdmax = 2.0, ki = 0.05) annotation (
       Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {66, -112})));
-  Substances.Static.Substance F(c_0=0.1)
+  Substances.Substance F(c_0=0.1)
     annotation (Placement(transformation(extent={{-98,-190},{-78,-170}})));
-  Substances.Static.Substance D(c_0=0.01)
+  Substances.Substance D(c_0=0.01)
     annotation (Placement(transformation(extent={{-12,-122},{8,-102}})));
     IrrUniBiI1 v4(km = 0.1, Vfwdmax = 3.0, ki = 1.0) annotation (
       Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {-82, -82})));
-  Substances.Static.Substance Fex(c_0=0.01)
+  Substances.Substance Fex(c_0=0.01)
     annotation (Placement(transformation(extent={{-158,-288},{-138,-268}})));
-  Substances.Static.Substance Eex(c_0=0.01)
+  Substances.Substance Eex(c_0=0.01)
     annotation (Placement(transformation(extent={{-132,74},{-112,94}})));
     IrrUniUni v6(km = 3.0, Vmax = 2.0) annotation (
       Placement(transformation(extent = {{-98, 24}, {-78, 44}})));

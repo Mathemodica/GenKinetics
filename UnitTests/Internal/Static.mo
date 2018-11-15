@@ -6,8 +6,8 @@ package Static
   parameter GenKinetics.Units.Concentration S0 = 1.0;
   parameter Units.ReactionCoef vfwd = 1.0;
 
-    Substances.Static.Substance S(c_0=S0);
-    Substances.Static.Substance P(c_0=0);
+    Substances.Substance S(c_0=S0);
+    Substances.Substance P(c_0=0);
     ReactionTypes.IrrUniUni v(km=km, Vmax=vfwd);
     Modelica.Blocks.Interfaces.RealOutput Sc annotation (
       Placement(visible = true, transformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {102, 64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -29,7 +29,7 @@ package Static
       Icon(graphics={  Rectangle(origin = {5, 0}, extent = {{-105, 100}, {95, -100}})}));
   end SvP;
   replaceable class ReactionTypes =
-      GenKinetics.Reactions.Convenience.Static;
+      GenKinetics.Reactions.Convenience.Explicit;
   model SIvP "GenKinetics implementation of S +  I => P"
 
     parameter Real I0 = 0.3 "fixed concentration of inhibitor";
@@ -38,10 +38,10 @@ package Static
     parameter GenKinetics.Units.AffinityConst km = 2.0;
     parameter GenKinetics.Units.Concentration S0 = 1.0;
     parameter Units.ReactionCoef vfwd = 1.0;
-    Substances.Static.Substance S(c_0=S0);
-    Substances.Static.Substance P(c_0=0);
+    Substances.Substance S(c_0=S0);
+    Substances.Substance P(c_0=0);
 
-    Substances.Dynamic.AmbientSubstance I(c_0=I0);
+    Substances.Auto.AmbientSubstance I(c_0=I0);
     ReactionTypes.IrrUniUniI1 v(
       km=km,
       ki=kI,
@@ -71,8 +71,8 @@ package Static
     parameter Real kmS = 2.0 "kinetic parameter";
     parameter Real kmP = 0.3 "kinetic parameter";
 
-    Substances.Static.Substance S(c_0=S0);
-    Substances.Static.Substance P(c_0=0);
+    Substances.Substance S(c_0=S0);
+    Substances.Substance P(c_0=0);
     ReactionTypes.RevUniUni v(
       kmS=kmS,
       kmP=kmP,
@@ -102,9 +102,9 @@ package Static
     parameter Real kmS1 = 1.5 "kinetic parameter";
     parameter Real kmS2 = 0.3 "kinetic parameter";
 
-    Substances.Static.Substance S1(c_0=S10);
-    Substances.Static.Substance S2(c_0=S20);
-    Substances.Static.Substance P(c_0=0);
+    Substances.Substance S1(c_0=S10);
+    Substances.Substance S2(c_0=S20);
+    Substances.Substance P(c_0=0);
 
     ReactionTypes.IrrBiUni v(km1=kmS1, km2=kmS2, Vmax=vfwd);
 

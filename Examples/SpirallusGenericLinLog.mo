@@ -2,26 +2,26 @@ within GenKinetics.Examples;
 model SpirallusGenericLinLog
   "An abstraction of the TCA cycle with dynamic arbitrary number of connections implemented "
   extends Modelica.Icons.Example;
-  import GenKinetics.Substances.Dynamic.*;
+  import GenKinetics.Substances.Auto.*;
   import GenKinetics.Reactions.LinLog.Generic.Kinetic;
-  Substances.Dynamic.ReferencedAmbientSubstance Aex(c_0=0.1, c_steady=0.1);
+  Substances.Auto.ReferencedAmbientSubstance Aex(c_0=0.1, c_steady=0.1);
   Kinetic vupt(NS = 1, NP = 1, NI = 1, NA = 0, I0={A.c_steady},S0={Aex.c_steady},P0={A.c_steady},alpha = {0.77}, theta = {0.33},  delta = {0.45},  v_steady = 0.5);
-  Substances.Dynamic.ReferencedSubstance A(c_0=0.01, c_steady=0.026);
+  Substances.Auto.ReferencedSubstance A(c_0=0.01, c_steady=0.026);
   Kinetic v1(NS = 1, NP = 1, NI = 0, NA = 0, S0 = {A.c_steady},  P0 = {B.c_steady}, alpha = {2.1},  theta = {-0.3},  v_steady = 0.5);
-  Substances.Dynamic.ReferencedSubstance B(c_0=0.2, c_steady=0.323);
+  Substances.Auto.ReferencedSubstance B(c_0=0.2, c_steady=0.323);
   Kinetic v5(NS = 1, NP = 1, NI = 0, NA = 0, S0 = {B.c_steady},  P0 = {E.c_steady},  alpha = {1.22}, theta = {0.45}, v_steady = 0.25);
-  Substances.Dynamic.ReferencedSubstance E(c_0=18.3, c_steady=0.4258);
+  Substances.Auto.ReferencedSubstance E(c_0=18.3, c_steady=0.4258);
   Kinetic v2(NS = 2, NP = 1, NA = 0, NI = 0, S0 = {B.c_steady,E.c_steady},  P0 = {C.c_steady},  alpha = {1.56,0.35}, theta = {0.45}, v_steady = 0.25);
   // B,E -v2-> C
-  Substances.Dynamic.ReferencedSubstance C(c_0=68.5, c_steady=0.36);
+  Substances.Auto.ReferencedSubstance C(c_0=68.5, c_steady=0.36);
   Kinetic v3(NS = 1, NP = 2, NI = 1, NA = 0, S0 = {C.c_steady}, P0 = {D.c_steady,F.c_steady}, I0 = {D.c_steady}, alpha = {0.45},theta = {-0.42,1.2}, delta = {-1.2}, v_steady = 0.25);
-  Substances.Dynamic.ReferencedSubstance D(c_0=0.01, c_steady=0.013);
-  Substances.Dynamic.ReferencedSubstance F(c_0=18.1, c_steady=0.37);
+  Substances.Auto.ReferencedSubstance D(c_0=0.01, c_steady=0.013);
+  Substances.Auto.ReferencedSubstance F(c_0=18.1, c_steady=0.37);
   Kinetic v4(NS = 1, NP = 2, NI = 1, NA = 0, S0 = {D.c_steady},  P0 = {E.c_steady,F.c_steady},  I0 = {C.c_steady},  alpha = {0.23}, theta = {0.33,0.34},  delta = {-0.9}, v_steady = 0.25);
   Kinetic v6(NS = 1, NP = 1, NI = 0, NA = 0, S0 = {E.c_steady}, P0 = {Eex.c_steady}, alpha = {0.005}, theta = {0},  v_steady = 0.25);
-  Substances.Dynamic.ReferencedSubstance Eex(c_0=10, c_steady=2.4);
+  Substances.Auto.ReferencedSubstance Eex(c_0=10, c_steady=2.4);
   Kinetic v7(NS = 1, NP = 1, NA = 0, NI=0, S0 = {F.c_steady},  P0 = {Fex.c_steady},  alpha = {0.005},  theta = {0.05},  v_steady = 0.48);
-  Substances.Dynamic.ReferencedSubstance Fex(c_0=100, c_steady=4.2);
+  Substances.Auto.ReferencedSubstance Fex(c_0=100, c_steady=4.2);
 equation
 // vupt
   connect(Aex.rc, vupt.rc_S[1]);

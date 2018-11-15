@@ -7,10 +7,10 @@ model SIvP "GenKinetics implementation of S +  I => P"
   parameter GenKinetics.Units.AffinityConst km = 2.0;
   parameter GenKinetics.Units.Concentration S0 = 1.0;
   parameter Units.ReactionCoef vfwd = 1.0;
-  Substances.Dynamic.Substance S(c_0=S0);
-  Substances.Dynamic.Substance P(c_0=0);
+  Substances.Auto.Substance S(c_0=S0);
+  Substances.Auto.Substance P(c_0=0);
 
-  Substances.Dynamic.AmbientSubstance I(c_0=I0);
+  Substances.Auto.AmbientSubstance I(c_0=I0);
   ReactionTypes.IrrUniUniI1 v(
     KmS={km},
     KI={kI},

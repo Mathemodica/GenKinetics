@@ -2,68 +2,68 @@ within GenKinetics.Examples;
 model Spirallus
   "An abstraction of the TCA cycle with dynamic arbitrary number of connections"
   extends Modelica.Icons.Example;
-  import GenKinetics.Substances.Dynamic.*;
-  import GenKinetics.Reactions.Convenience.Dynamic.*;
-  Substances.Dynamic.Substance Aex(c_0=1);
-  Reactions.Convenience.Dynamic.InhIrrKinetic vupt(
+  import GenKinetics.Substances.Auto.*;
+  import GenKinetics.Reactions.Convenience.Auto.*;
+  Substances.Auto.Substance Aex(c_0=1);
+  Reactions.Convenience.Auto.InhIrrKinetic vupt(
     NS=1,
     NP=1,
     NI=1,
     Vfwdmax=1.0,
     KmS={0.1},
     KI={3.0});
-  Substances.Dynamic.Substance A;
-  Reactions.Convenience.Dynamic.RevKinetic v1(
+  Substances.Auto.Substance A;
+  Reactions.Convenience.Auto.RevKinetic v1(
     NS=1,
     NP=1,
     Vfwdmax=3.0,
     Vbwdmax=1.0,
     KmS={0.1},
     KmP={3.0});
-  Substances.Dynamic.Substance B;
-  Reactions.Convenience.Dynamic.RevKinetic v5(
+  Substances.Auto.Substance B;
+  Reactions.Convenience.Auto.RevKinetic v5(
     NS=1,
     NP=1,
     Vfwdmax=2.0,
     Vbwdmax=0.5,
     KmS={1.0},
     KmP={1.0});
-  Substances.Dynamic.Substance E;
-  Reactions.Convenience.Dynamic.IrrKinetic v2(
+  Substances.Auto.Substance E;
+  Reactions.Convenience.Auto.IrrKinetic v2(
     NS=2,
     NP=1,
     Vfwdmax=2.5,
     KmS={0.25,2.0});
   // B,E -v2-> C
-  Substances.Dynamic.Substance C;
-  Reactions.Convenience.Dynamic.InhIrrKinetic v3(
+  Substances.Auto.Substance C;
+  Reactions.Convenience.Auto.InhIrrKinetic v3(
     NS=1,
     NP=2,
     NI=1,
     Vfwdmax=2.0,
     KmS={2.0},
     KI={0.05});
-  Substances.Dynamic.Substance D;
-  Substances.Dynamic.Substance F;
-  Reactions.Convenience.Dynamic.InhIrrKinetic v4(
+  Substances.Auto.Substance D;
+  Substances.Auto.Substance F;
+  Reactions.Convenience.Auto.InhIrrKinetic v4(
     NS=1,
     NP=2,
     NI=1,
     Vfwdmax=3.0,
     KmS={0.1},
     KI={1.0});
-  Reactions.Convenience.Dynamic.IrrKinetic v6(
+  Reactions.Convenience.Auto.IrrKinetic v6(
     NS=1,
     NP=1,
     Vfwdmax=2.0,
     KmS={3.0});
-  Substances.Dynamic.Substance Eex;
-  Reactions.Convenience.Dynamic.IrrKinetic v7(
+  Substances.Auto.Substance Eex;
+  Reactions.Convenience.Auto.IrrKinetic v7(
     NS=1,
     NP=1,
     Vfwdmax=2.0,
     KmS={3.0});
-  Substances.Dynamic.Substance Fex;
+  Substances.Auto.Substance Fex;
 equation
   // vupt
   connect(Aex.rc, vupt.rc_S[1]);

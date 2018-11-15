@@ -1,6 +1,6 @@
 within GenKinetics.Substances.Dynamic;
 partial model BasicSubstance "Basic declarations of any Metabolite"
-  extends GenKinetics.Interfaces.Substances.Base.NodeConnections;
+  extends GenKinetics.Interfaces.Substances.Auto.NodeConnections;
   extends Interfaces.Substances.Substance;
 
 equation

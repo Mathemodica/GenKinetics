@@ -7,9 +7,9 @@ model S1S2vP "GenKinetics implementation of S1 + S2 => P"
   parameter Real kmS1 = 1.5 "kinetic parameter";
   parameter Real kmS2 = 0.3 "kinetic parameter";
 
-  Substances.Dynamic.Substance S1(c_0=S10);
-  Substances.Dynamic.Substance S2(c_0=S20);
-  Substances.Dynamic.Substance P(c_0=0);
+  Substances.Auto.Substance S1(c_0=S10);
+  Substances.Auto.Substance S2(c_0=S20);
+  Substances.Auto.Substance P(c_0=0);
 
   ReactionTypes.IrrBiUni v(
     KmS={kmS1,kmS2},
