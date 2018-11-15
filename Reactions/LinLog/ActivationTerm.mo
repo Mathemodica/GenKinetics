@@ -1,6 +1,6 @@
 within GenKinetics.Reactions.LinLog;
 partial model ActivationTerm "Interface for activating a reaction"
-  extends Interfaces.Dynamic.ActivationConnections;
+  extends Interfaces.Reactions.Modifiers.Base.ActivationConnections;
   extends Reactions.ModifiersTerm;
 
   parameter Units.Elasticity gamma[NA] = zeros(NA) "elasticity coefficients";

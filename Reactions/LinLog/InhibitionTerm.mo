@@ -1,7 +1,7 @@
 within GenKinetics.Reactions.LinLog;
 partial model InhibitionTerm
   "basic implementation of inhibiting a reaction"
-  extends Interfaces.Dynamic.InhibitionConnections;
+  extends Interfaces.Reactions.Modifiers.Base.InhibitionConnections;
   extends Reactions.ModifiersTerm;
 
   parameter Units.Elasticity delta[NI] = zeros(NI) "elasticity coefficients";

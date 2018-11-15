@@ -1,6 +1,6 @@
 within GenKinetics.Reactions;
 partial model BasicReaction "basic declaration of a reaction "
-  extends Interfaces.Dynamic.ReactionConnections;
+  extends Interfaces.Reactions.Basics.Base.ReactionConnections;
   extends Reactions.ReactionRate;
 
   replaceable model Modifiers = ModifiersTerm constrainedby ModifiersTerm;

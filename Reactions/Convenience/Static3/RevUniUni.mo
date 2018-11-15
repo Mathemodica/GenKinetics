@@ -9,9 +9,9 @@ model RevUniUni "S <=> P"
   parameter Units.ReactionCoef Vbwdmax;
 
 protected
-  model Kinetic =  GenKinetics.Reactions.Convenience.Dynamic.RevKinetic(redeclare
-        final model Dimensionality =
-                       GenKinetics.Interfaces.Dynamic.Dimension.UniUni);
+  model Kinetic = GenKinetics.Reactions.Convenience.Dynamic.RevKinetic (
+        redeclare final model Dimensionality =
+          GenKinetics.Interfaces.Reactions.Basics.Base.Dimension.UniUni);
 
   Kinetic kinetic(KmS = {kmS},Vfwdmax = Vfwdmax,KmP = {kmP},Vbwdmax = Vbwdmax);
 equation

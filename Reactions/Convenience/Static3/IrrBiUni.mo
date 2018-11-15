@@ -8,8 +8,8 @@ model IrrBiUni "S1 + S2 => P"
   parameter Units.ReactionCoef Vmax;
 
 protected
-  model Kinetic =   Dynamic.IrrKinetic(redeclare final model Dimensionality =
-    GenKinetics.Interfaces.Dynamic.Dimension.BiUni);
+  model Kinetic = Dynamic.IrrKinetic (redeclare final model Dimensionality =
+          GenKinetics.Interfaces.Reactions.Basics.Base.Dimension.BiUni);
   Kinetic kinetic(KmS = {km1,km2},Vfwdmax = Vmax);
 
 equation

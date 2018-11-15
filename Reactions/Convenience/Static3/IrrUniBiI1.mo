@@ -8,11 +8,11 @@ model IrrUniBiI1 "S + I => P1 + P2"
   parameter Units.AffinityConst ki;
 
 protected
-  model Kinetic =   GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic (
-    redeclare final model Dimensionality =
-      GenKinetics.Interfaces.Dynamic.Dimension.UniBi,
-    redeclare final model Inhibition =
-      GenKinetics.Interfaces.Dynamic.Modifier.OneInhibitor);
+  model Kinetic = GenKinetics.Reactions.Convenience.Dynamic.InhIrrKinetic (
+        redeclare final model Dimensionality =
+          GenKinetics.Interfaces.Reactions.Basics.Base.Dimension.UniBi,
+        redeclare final model Inhibition =
+          GenKinetics.Interfaces.Reactions.Modifiers.Base.OneInhibitor);
 
   Kinetic kinetic(KmS = {km},Vfwdmax = Vfwdmax, KI = {ki});
 

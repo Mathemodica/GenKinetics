@@ -7,8 +7,8 @@ model IrrUniUni "S => P"
   parameter Units.ReactionCoef Vmax;
 
 protected
-  model Kinetic =   Dynamic.IrrKinetic(redeclare final model Dimensionality =
-    GenKinetics.Interfaces.Dynamic.Dimension.UniUni);
+  model Kinetic = Dynamic.IrrKinetic (redeclare final model Dimensionality =
+          GenKinetics.Interfaces.Reactions.Basics.Base.Dimension.UniUni);
   Kinetic kinetic(KmS = {km},Vfwdmax = Vmax);
 
 equation
