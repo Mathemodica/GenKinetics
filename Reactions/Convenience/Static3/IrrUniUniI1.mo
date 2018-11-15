@@ -1,6 +1,6 @@
 within GenKinetics.Reactions.Convenience.Static3;
 model IrrUniUniI1 "S + I => P"
-  extends Interfaces.Static.ReactionUniUni1I;
+  extends Interfaces.Reactions.UniUniI1;
   extends Interfaces.Reactions.ReactionRate;
 
   parameter GenKinetics.Units.AffinityConst km;
@@ -12,7 +12,7 @@ protected
         redeclare final model Dimensionality =
           GenKinetics.Interfaces.Reactions.Basics.Base.Dimension.UniUni,
         redeclare final model Inhibition =
-          GenKinetics.Interfaces.Reactions.Modifiers.Base.OneInhibitor);
+          GenKinetics.Interfaces.Reactions.Modifiers.Base.Inhibitor);
 
   Kinetic kinetic(KmS = {km},Vfwdmax = Vmax,KI = {ki});
 

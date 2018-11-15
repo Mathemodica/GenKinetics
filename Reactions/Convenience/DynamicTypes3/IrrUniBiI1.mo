@@ -4,5 +4,5 @@ model IrrUniBiI1
       final model Dimensionality =
         GenKinetics.Interfaces.Reactions.Basics.Base.Dimension.UniBi,
       redeclare final model Inhibition =
-        GenKinetics.Interfaces.Reactions.Modifiers.Base.OneInhibitor);
+        GenKinetics.Interfaces.Reactions.Modifiers.Base.Inhibitor);
 end IrrUniBiI1;

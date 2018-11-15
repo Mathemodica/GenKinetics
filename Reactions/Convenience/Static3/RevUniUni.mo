@@ -1,6 +1,6 @@
 within GenKinetics.Reactions.Convenience.Static3;
 model RevUniUni "S <=> P"
-  extends Interfaces.Static.ReactionUniUni;
+  extends Interfaces.Reactions.UniUni;
   extends Interfaces.Reactions.ReactionRate;
 
   parameter GenKinetics.Units.AffinityConst kmS;

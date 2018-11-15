@@ -3,7 +3,7 @@ package Static2
   extends Modelica.Icons.VariantsPackage;
 
   model IrrUniUniI1 "S + I => P"
-    extends Interfaces.Static.ReactionUniUni1I;
+    extends Interfaces.Reactions.UniUniI1;
     extends Interfaces.Reactions.ReactionRate;
 
     parameter GenKinetics.Units.AffinityConst km;
@@ -25,7 +25,7 @@ protected
 
 
   model RevUniUni "S <=> P"
-    extends Interfaces.Static.ReactionUniUni;
+    extends Interfaces.Reactions.UniUni;
     extends Interfaces.Reactions.ReactionRate;
 
     parameter GenKinetics.Units.AffinityConst kmS;
@@ -44,7 +44,7 @@ protected
 
 
   model IrrBiUni "S1 + S2 => P"
-    extends Interfaces.Static.ReactionBiUni;
+    extends Interfaces.Reactions.BiUni;
     extends Interfaces.Reactions.ReactionRate;
 
     parameter GenKinetics.Units.AffinityConst km1;
@@ -63,7 +63,7 @@ protected
 
 
   model IrrUniBiI1 "S + I => P1 + P2"
-    extends Interfaces.Static.ReactionUniBiI1;
+    extends Interfaces.Reactions.UniBiI1;
     extends Interfaces.Reactions.ReactionRate;
 
     parameter GenKinetics.Units.AffinityConst km;

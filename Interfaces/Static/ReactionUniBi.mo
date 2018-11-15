@@ -1,8 +1,8 @@
 within GenKinetics.Interfaces.Static;
 partial model ReactionUniBi
 
-  extends ReactionConnections;
-  extends GenKinetics.Interfaces.Static.PartialReaction1S;
-  extends GenKinetics.Interfaces.Static.PartialReaction2P;
+  extends Reactions.Basics.ReactionConnections;
+  extends GenKinetics.Interfaces.Reactions.Basics.OneSubstrate;
+  extends GenKinetics.Interfaces.Reactions.Basics.TwoProducts;
 
 end ReactionUniBi;
