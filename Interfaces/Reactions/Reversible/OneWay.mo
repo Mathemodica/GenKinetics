@@ -1,4 +1,4 @@
 within GenKinetics.Interfaces.Reactions.Reversible;
 partial model OneWay "Irreversible Reaction"
-  extends UnspecifiedReversibility;
+  extends GenKinetics.Interfaces.Reactions.Reversible.ReactionReversibility;
 end OneWay;
