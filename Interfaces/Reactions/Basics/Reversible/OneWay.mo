@@ -4,4 +4,5 @@ partial model OneWay "Irreversible Reaction"
     GenKinetics.Interfaces.Reactions.Basics.Reversible.ReactionReversibility;
   extends
     GenKinetics.Icons.OneWay;
+  extends Reversibility(Reversible = false);
 end OneWay;
