@@ -3,8 +3,8 @@ partial model ReactionStructure
   "The structure of a reaction reversibility, molecularity and order"
 
   replaceable model Reversibility =
-      Reversible.UnspecifiedReversibility                                          constrainedby
-    Reversible.ReactionReversibility;
+      Reactions.Basics.Reversible.UnspecifiedReversibility                                          constrainedby
+    Reactions.Basics.Reversible.ReactionReversibility;
   extends Reversibility;
 
   replaceable model Dimensionality =
