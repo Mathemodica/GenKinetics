@@ -1,8 +1,9 @@
 within GenKinetics.Interfaces.Reactions;
-partial model BiUni
-
+partial model Uu "S1  == P1"
   extends Reactions.Basics.ReactionConnections;
-  extends GenKinetics.Interfaces.Reactions.Basics.TwoSubstrates;
+  extends GenKinetics.Interfaces.Reactions.Basics.OneSubstrate;
   extends GenKinetics.Interfaces.Reactions.Basics.OneProduct;
 
-end BiUni;
+equation
+
+end Uu;

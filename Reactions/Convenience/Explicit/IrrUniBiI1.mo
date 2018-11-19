@@ -1,6 +1,7 @@
 within GenKinetics.Reactions.Convenience.Explicit;
 model IrrUniBiI1 "S + I => P1 + P2"
-  extends Interfaces.Reactions.UniBiI1Irr;
+  extends Interfaces.Reactions.Ubi;
+  extends Interfaces.Reactions.Modifiers.Inhibitor;
   extends Interfaces.Reactions.ReactionRate;
 
   parameter GenKinetics.Units.AffinityConst km;

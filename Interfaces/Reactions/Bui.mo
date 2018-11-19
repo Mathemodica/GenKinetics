@@ -1,5 +1,5 @@
 within GenKinetics.Interfaces.Reactions;
-partial model UniUniI1Irr "S + I => P "
-  extends UniUniI1;
+partial model Bui "Interface for S1 + S2 => P "
+  extends Bu;
   extends Basics.Reversible.OneWay;
-end UniUniI1Irr;
+end Bui;

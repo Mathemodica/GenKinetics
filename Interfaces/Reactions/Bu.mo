@@ -1,9 +1,8 @@
 within GenKinetics.Interfaces.Reactions;
-partial model UniUni
+partial model Bu "S1 + S2 == P"
+
   extends Reactions.Basics.ReactionConnections;
-  extends GenKinetics.Interfaces.Reactions.Basics.OneSubstrate;
+  extends GenKinetics.Interfaces.Reactions.Basics.TwoSubstrates;
   extends GenKinetics.Interfaces.Reactions.Basics.OneProduct;
 
-equation
-
-end UniUni;
+end Bu;
