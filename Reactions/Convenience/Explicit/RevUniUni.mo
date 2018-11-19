@@ -11,7 +11,7 @@ model RevUniUni "S <=> P"
 protected
   Generic.Kinetic kinetic(NS=1,  NP=1, NA=0, NI=0, KmS = {kmS},
                           Vfwdmax = Vfwdmax, KmP = {kmP}, Vbwdmax = Vbwdmax,
-                          Reversible=true);
+                          Reversible=Reversible);
 
 equation
   connect(rc_S1, kinetic.rc_S[1]);

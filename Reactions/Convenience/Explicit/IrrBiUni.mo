@@ -10,7 +10,7 @@ model IrrBiUni "S1 + S2 => P"
 protected
   Generic.Kinetic kinetic(NS=2,NP=1,NA=0,NI=0,
                           KmS = {km1, km2}, Vfwdmax = Vmax,
-                          Reversible=false);
+                          Reversible=Reversible);
 
 equation
   connect(rc_S1, kinetic.rc_S[1]);
