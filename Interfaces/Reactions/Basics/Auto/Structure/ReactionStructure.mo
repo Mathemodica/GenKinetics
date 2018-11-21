@@ -1,10 +1,11 @@
 within GenKinetics.Interfaces.Reactions.Basics.Auto.Structure;
 partial model ReactionStructure
   "The structure of a reaction reversibility, molecularity and order"
+  import GenKinetics;
 
   replaceable model Reversibility =
-      Reactions.Basics.Reversible.UnspecifiedReversibility                                          constrainedby
-    Reactions.Basics.Reversible.ReactionReversibility;
+      GenKinetics.Interfaces.Reactions.Reversible.UnspecifiedReversibility                          constrainedby
+    GenKinetics.Interfaces.Reactions.Reversible.ReactionReversibility;
   extends Reversibility;
 
   replaceable model Dimensionality =

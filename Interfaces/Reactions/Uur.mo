@@ -1,5 +1,6 @@
 within GenKinetics.Interfaces.Reactions;
 partial model Uur "Interface for S <=> P"
+  import GenKinetics;
   extends Uu;
-  extends Basics.Reversible.TwoWays;
+  extends GenKinetics.Interfaces.Reactions.Reversible.TwoWays;
 end Uur;

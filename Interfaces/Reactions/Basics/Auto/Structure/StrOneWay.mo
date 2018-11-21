@@ -1,5 +1,6 @@
 within GenKinetics.Interfaces.Reactions.Basics.Auto.Structure;
 partial model StrOneWay "Structure Uni Uni "
+  import GenKinetics;
   extends ReactionStructure(redeclare final model Reversibility =
-        Reversible.OneWay);
+        GenKinetics.Interfaces.Reactions.Reversible.OneWay);
 end StrOneWay;
