@@ -1,10 +1,10 @@
 Reaction
-Port_P
+Port_M
 Port_I
 Port_A
-Port_M
+Port_S
+Port_P
 Substance
 Port
-Port_S
 OneWay
 TwoWays
