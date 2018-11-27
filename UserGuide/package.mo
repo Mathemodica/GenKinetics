@@ -71,7 +71,7 @@ modelica://GenKinetics.Interfaces.Dynamic.Dimension.ReactionDimension\">GenKinet
     extends Modelica.Icons.Contact;
     annotation (
       Documentation(info="<html>
-<p>Atiyah Elsheikh :&nbsp;atiyah.elsheikh at saramod.org </p>
+<p>Atiyah Elsheikh :&nbsp;atiyah.m.g.elsheikh at gmail.com </p>
 </html>"));
   end Contact;
 

@@ -1,6 +1,6 @@
 within GenKinetics.Interfaces.Substances;
 partial model SubstanceConnections "Metabolite connections to reactions"
-  extends GenKinetics.Icons.Node;
+  extends GenKinetics.Icons.Substance;
   extends GenKinetics.Interfaces.Substances.Auto.SubstanceConnections;
   // GenKinetics.Interfaces.Dynamic.NodeConnections nc;
 
