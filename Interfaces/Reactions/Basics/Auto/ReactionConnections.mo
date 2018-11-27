@@ -1,5 +1,5 @@
 within GenKinetics.Interfaces.Reactions.Basics.Auto;
-partial model ReactionConnections
+partial model ReactionConnections "Connector within a reactions"
   import GenKinetics;
   replaceable model Structure =
     GenKinetics.Interfaces.Reactions.Basics.Auto.Structure.ReactionStructure

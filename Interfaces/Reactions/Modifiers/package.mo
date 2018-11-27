@@ -1,3 +1,3 @@
 within GenKinetics.Interfaces.Reactions;
-package Modifiers
+package Modifiers "Partial models of modifiers to reactions"
 end Modifiers;

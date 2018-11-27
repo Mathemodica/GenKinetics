@@ -1,8 +1,8 @@
-SubstanceConnector
-ModifierConnector
-SubstrateConnector
-ProductConnector
-InhibitorConnector
-ActivatorConnector
 ChemicalPort
 ModifierPort
+SubstanceConnector
+SubstrateConnector
+ProductConnector
+ModifierConnector
+InhibitorConnector
+ActivatorConnector
