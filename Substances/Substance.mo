@@ -1,5 +1,5 @@
 within GenKinetics.Substances;
-model Substance "Metabolite with dynamic rate"
+model Substance "Metabolite with dynamic concentration rate"
   import GenKinetics;
   extends GenKinetics.Substances.BasicSubstance;
   parameter Units.Concentration tolerance=1e-6;
