@@ -1,18 +1,6 @@
 within GenKinetics.Interfaces.Reactions;
-package Reversible
+package Reversible "Interfaces describing reaction reversibility"
   extends Modelica.Icons.BasesPackage;
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   annotation (
