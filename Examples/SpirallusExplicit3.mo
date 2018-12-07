@@ -1,6 +1,6 @@
 within GenKinetics.Examples;
-model SpirallusStatic
-  "Implementation of the Spiralus network using static connections"
+model SpirallusExplicit3
+  "Implementation of the Spiralus network using Convenience.Explicit3 package"
   extends Modelica.Icons.Example;
 
   Substances.AmbientSubstance Aex(c_0=0.1)
@@ -113,4 +113,4 @@ equation
         preserveAspectRatio=false,
         initialScale=0.05,
         extent={{-200,-300},{200,300}})));
-end SpirallusStatic;
+end SpirallusExplicit3;

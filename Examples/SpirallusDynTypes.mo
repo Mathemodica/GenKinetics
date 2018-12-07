@@ -1,6 +1,6 @@
 within GenKinetics.Examples;
 model SpirallusDynTypes
-  "An abstraction of the TCA cycle with dynamic arbitrary number of connections"
+  "An abstraction of the TCA cycle using Convenience.AutoTypes"
   extends Modelica.Icons.Example;
   import GenKinetics.Substances.Auto.*;
   import GenKinetics.Reactions.Convenience.AutoTypes.*;

@@ -1,6 +1,6 @@
 within GenKinetics.Examples;
 model SpirallusGenericLinLog
-  "An abstraction of the TCA cycle with dynamic arbitrary number of connections implemented "
+  "An abstraction of the TCA cycle with LinLog.Generic package "
   extends Modelica.Icons.Example;
   import GenKinetics.Substances.Auto.*;
   import GenKinetics.Reactions.LinLog.Generic.Kinetic;

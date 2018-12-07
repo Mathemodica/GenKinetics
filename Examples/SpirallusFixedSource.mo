@@ -1,6 +1,6 @@
 within GenKinetics.Examples;
 model SpirallusFixedSource
-  "An abstraction of the TCA cycle with dynamic arbitrary number of connections"
+  "An abstraction of the TCA cycle with a fixed source"
   extends Modelica.Icons.Example;
   import GenKinetics.Substances.Auto.*;
   import GenKinetics.Reactions.Convenience.Auto.*;

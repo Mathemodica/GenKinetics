@@ -1,9 +1,9 @@
 SpirallusLinLog
-SpirallusStatic2
-SpirallusStatic3
+SpirallusExplicit2
+SpirallusExplicit
 Spirallus
 SpirallusDynTypes
 SpirallusFixedSource
 SpirallusGeneric
 SpirallusGenericLinLog
-SpirallusStatic
+SpirallusExplicit3

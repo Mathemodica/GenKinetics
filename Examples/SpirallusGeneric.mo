@@ -1,6 +1,6 @@
 within GenKinetics.Examples;
 model SpirallusGeneric
-  "An abstraction of the TCA cycle implemented with one type of reaction component"
+  "An abstraction of the TCA cycle using the Generic package"
   extends Modelica.Icons.Example;
   import GenKinetics.Substances.Auto.*;
   import GenKinetics.Reactions.Convenience.Generic.Kinetic;
