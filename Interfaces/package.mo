@@ -1,10 +1,6 @@
 within GenKinetics;
-package Interfaces
+package Interfaces "basic interfaces used across the library"
   extends Modelica.Icons.InterfacesPackage;
-
-
-
-
 
 
 

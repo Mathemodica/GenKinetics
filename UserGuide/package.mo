@@ -1,5 +1,5 @@
 ﻿within GenKinetics;
-package UserGuide
+package UserGuide "user guide"
   extends Modelica.Icons.Information;
 
   model Overview
@@ -74,7 +74,6 @@ modelica://GenKinetics.Interfaces.Dynamic.Dimension.ReactionDimension\">GenKinet
 <p>Atiyah Elsheikh :&nbsp;atiyah.m.g.elsheikh at gmail.com </p>
 </html>"));
   end Contact;
-
 
   model ReleaseNotes
     extends Modelica.Icons.ReleaseNotes;

@@ -1,24 +1,6 @@
 within GenKinetics;
-package UnitTests
+package UnitTests "unit tests"
   extends Modelica.Icons.Package;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

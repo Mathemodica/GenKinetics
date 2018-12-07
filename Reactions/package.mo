@@ -1,5 +1,5 @@
 within GenKinetics;
-package Reactions
+package Reactions "Reaction components"
   extends Modelica.Icons.VariantsPackage;
 
   annotation (

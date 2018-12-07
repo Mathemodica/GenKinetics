@@ -1,5 +1,5 @@
 within GenKinetics;
-package Units
+package Units "all physical units used across the library"
   extends Modelica.Icons.TypesPackage;
 
   type Concentration = Modelica.Icons.TypeReal(final quantity="Concentration",final unit = "mol/l", min = 0)

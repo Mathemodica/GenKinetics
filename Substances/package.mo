@@ -1,5 +1,5 @@
 within GenKinetics;
-package Substances
+package Substances "Substances components"
   extends Modelica.Icons.Package;
 
   annotation (

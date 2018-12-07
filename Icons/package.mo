@@ -1,39 +1,6 @@
 within GenKinetics;
-package Icons
+package Icons "all icons used across the library"
   extends Modelica.Icons.IconsPackage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

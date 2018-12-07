@@ -1,5 +1,5 @@
 within GenKinetics;
-package Examples
+package Examples "set of examples"
   extends Modelica.Icons.ExamplesPackage;
 
   model SpirallusLinLog "An abstraction of the TCA cycle with dynamic arbitrary number of connections implemented "
@@ -59,26 +59,6 @@ package Examples
       experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.02),
       __OpenModelica_simulationFlags(lv = "LOG_STATS", maxIntegrationOrder = "4", s = "dassl"));
   end SpirallusLinLog;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
