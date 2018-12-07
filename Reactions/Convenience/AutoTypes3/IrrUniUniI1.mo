@@ -1,7 +1,7 @@
 within GenKinetics.Reactions.Convenience.AutoTypes3;
 model IrrUniUniI1
   extends GenKinetics.Reactions.Convenience.Auto.InhIrrKinetic(redeclare final
-      model Dimensionality =
+      model       Dimensionality =
         GenKinetics.Interfaces.Reactions.Basics.Auto.Dimension.UniUni,
       redeclare final model Inhibition =
         GenKinetics.Interfaces.Reactions.Modifiers.Auto.Inhibitor);

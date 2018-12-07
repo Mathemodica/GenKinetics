@@ -1,5 +1,5 @@
 within GenKinetics.Reactions.Convenience;
-package Explicit "Another implementation with fixed number of connection"
+package Explicit "Reaction components suitable for graphical modeling"
   extends Modelica.Icons.VariantsPackage;
 
 end Explicit;

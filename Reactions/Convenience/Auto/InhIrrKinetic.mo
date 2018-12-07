@@ -4,7 +4,8 @@ model InhIrrKinetic "S1 + S2 + ... ==I1,I2,...==> P1 + P2 + ... "
       replaceable model Modifiers = Convenience.InhibitionTerm (redeclare
           final model Activation =
             Interfaces.Reactions.Modifiers.Auto.NoActivation), redeclare final
-      model Reversibility = Interfaces.Reactions.Reversible.OneWay);
+      model       Reversibility =
+                            Interfaces.Reactions.Reversible.OneWay);
 
 equation
 

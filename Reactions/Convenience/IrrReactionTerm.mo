@@ -1,6 +1,6 @@
 within GenKinetics.Reactions.Convenience;
 partial model IrrReactionTerm
-  "basic implementation of an irreversible reaction "
+  "The term of forward reaction rate within the kinetic law"
   extends GenKinetics.Reactions.BasicReaction;
 
   parameter Units.AffinityConst KmS[NS] = ones(NS) "affinity constants of the substrate nodes";

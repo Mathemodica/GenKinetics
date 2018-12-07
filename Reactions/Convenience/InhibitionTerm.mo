@@ -1,5 +1,5 @@
 within GenKinetics.Reactions.Convenience;
-partial model InhibitionTerm "Interface for inhibiting a reaction"
+partial model InhibitionTerm "Inhibition term within the kinetic law"
   extends GenKinetics.Reactions.ModifiersTerm;
   extends Interfaces.Reactions.Modifiers.Auto.InhibitionConnections;
   parameter Units.AffinityConst KI[NI] = ones(NI) "affinity constant of the Inhibitors";

@@ -1,5 +1,5 @@
 within GenKinetics.Reactions.LinLog;
-partial model ActivationTerm "Interface for activating a reaction"
+partial model ActivationTerm "Activation term within the kinetic law"
   extends Interfaces.Reactions.Modifiers.Auto.ActivationConnections;
   extends Reactions.ModifiersTerm;
 

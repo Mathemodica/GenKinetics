@@ -1,27 +1,6 @@
 within GenKinetics.Reactions.Convenience;
-package Explicit2
+package Explicit2 "Alternative implementation of the package Explicit"
   extends Modelica.Icons.VariantsPackage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

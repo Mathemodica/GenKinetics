@@ -1,6 +1,6 @@
 within GenKinetics.Reactions.LinLog;
 partial model InhibitionTerm
-  "basic implementation of inhibiting a reaction"
+  "Inhibition term within the kinetic law"
   extends Interfaces.Reactions.Modifiers.Auto.InhibitionConnections;
   extends Reactions.ModifiersTerm;
 

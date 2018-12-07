@@ -1,6 +1,6 @@
 within GenKinetics.Reactions.Convenience;
 partial model RevReactionTerm
-  "basic declaration of a reversible reaction "
+  "The term of backward reaction rate within the kinetic law"
   extends GenKinetics.Reactions.Convenience.IrrReactionTerm;
 
   parameter Units.AffinityConst KmP[NP] = ones(NP) "affinity constants of the product node";

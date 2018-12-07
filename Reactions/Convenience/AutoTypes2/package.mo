@@ -1,16 +1,6 @@
 within GenKinetics.Reactions.Convenience;
-package AutoTypes2 "Re-implementation of the package DynamicType"
+package AutoTypes2 "Alternative implementation of the package AutoType"
   extends Modelica.Icons.VariantsPackage;
-
-
-
-
-
-
-
-
-
-
 
 
 
