@@ -11,12 +11,11 @@ A Modelica library for descriptive modeling of biochemical reaction networks usi
 
 #### Release notes
 
-ToDo 
+(7.12.2018) v1.0-alpha : Initial implementation containing Biochem-like structure and implementation of Convenience and LinLog kinetics 
 
-## License
+#### License
 
-This Modelica package is free software and the use is completely at your own risk;
-it can be redistributed and/or modified under the terms of the [Modelica License 2](https://modelica.org/licenses/ModelicaLicense2).
+This library can be redistributed and/or modified under the terms of the [Modelica 3 clased BSD License](https://www.modelica.org/licenses/modelica-3-clause-bsd).
 
 ## Development and contribution
 Main developer: [Atiyah Elsheikh](mailto:a.m.g.elsheikh@gmail.com)
