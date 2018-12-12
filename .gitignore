@@ -6,3 +6,4 @@ buildlog.txt
 dsmodel.c
 dymosim.exe
 dsfinal.txt
+*.new-mo

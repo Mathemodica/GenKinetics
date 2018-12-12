@@ -1,4 +1,4 @@
-﻿within GenKinetics;
+within GenKinetics;
 package UserGuide "user guide"
   extends Modelica.Icons.Information;
 
@@ -62,9 +62,10 @@ modelica://GenKinetics.Interfaces.Dynamic.Dimension.ReactionDimension\">GenKinet
   model Contributors
     extends Modelica.Icons.Information;
     annotation (
-      Documentation(info = "<html><head></head><body><p>Author: Atiyah Elsheikh </p>
-<p>Contact details: <i><a href=\"GenKinetics.UsersGuide.Contact\">GenKinetics.UsersGuide.Contact</a></i></p>
-</body></html>"));
+      Documentation(info="<html>
+<p>Author: Atiyah Elsheikh </p>
+<p>Contact details: <i><a href=\"modelica://GenKinetics.UserGuide.Contact\">GenKinetics.UserGuide.Contact</a></i></p>
+</html>"));
   end Contributors;
 
   model Contact
@@ -79,7 +80,7 @@ modelica://GenKinetics.Interfaces.Dynamic.Dimension.ReactionDimension\">GenKinet
     extends Modelica.Icons.ReleaseNotes;
     annotation (
       Documentation(info="<html>
-<p>Coming soon!</p>
+<p><span style=\"font-family: Verdana; color: #24292e; background-color: #ffffff;\">V1.0-alpha (7.12.2018) : First version containing Biochem-like structure and implementation of Convenience and LinLog kinetics</span></p>
 </html>"));
   end ReleaseNotes;
 
@@ -90,7 +91,11 @@ modelica://GenKinetics.Interfaces.Dynamic.Dimension.ReactionDimension\">GenKinet
   model CopyRight
     extends Modelica.Icons.Information;
     annotation (
-      Documentation(info = "<html><head></head><body><p><span style=\"font-size: 12px;\">Licensed under the Modelica License 2</span></p><p><b style=\"color: rgb(170, 0, 0); font-size: x-large;\">Copyright © &lt;2018&gt;, &lt;Atiyah Elsheikh&gt;.</b></p><p><i>This Modelica package is&nbsp;<u>free</u>&nbsp;software and the use is completely at&nbsp;<u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the disclaimer of warranty) see&nbsp;<a href=\"modelica://Modelica.UsersGuide.ModelicaLicense2\">Modelica.UsersGuide.ModelicaLicense2</a>&nbsp;or visit<a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></body></html>"));
+      Documentation(info="<html>
+<p>Licensed under the Modelica License 2</p>
+<p><b><span style=\"font-size: 18pt; color: #aa0000;\">Copyright &copy; &lt;2018&gt;, &lt;Atiyah Elsheikh&gt;.</span></b></p>
+<p><i>This Modelica package is&nbsp;<u>free</u>&nbsp;software and the use is completely at&nbsp;<u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica BSD 3-Clause License. For license conditions (including the disclaimer of warranty) see&nbsp;<a href=\"modelica://GenKinetics.UserGuide.License\">Modelica.UsersGuide.License&nbsp;</a></i></p>
+</html>"));
   end CopyRight;
 
   annotation (
