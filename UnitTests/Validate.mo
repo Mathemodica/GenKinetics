@@ -19,12 +19,6 @@ equation
   T1 = check.T1;
   T2 = check.T2;
   Area = check.Area;
-  
-  when terminal() then
-   assert(Area < MaxAccErr, (if name <> "" then "Test " + name +
-    " failed.\n" else "") + " The area between the input trajectories was more than " + String(MaxAccErr) + ").") annotation (Inline=true);
- end when;
-
 
   annotation (
     Documentation(info = "<html><head></head><body><div>A testing facitilty for ensuring the correctness of a continuous variabl.</div><div><br></div><div>Modification of the same component implemented in XogenyTest with additional icons from MSL for visual modeling since XogenyTest does not employ MSL.&nbsp;</div><div><br></div><br></body></html>"),
