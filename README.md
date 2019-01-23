@@ -18,7 +18,7 @@ A Modelica library for descriptive modeling of biochemical reaction networks usi
 This library can be redistributed and/or modified under the terms of the [Modelica 3 clased BSD License](https://www.modelica.org/licenses/modelica-3-clause-bsd).
 
 ## Development and contribution
-Main developer: [Atiyah Elsheikh](mailto:a.m.g.elsheikh@gmail.com)
+Main developer: [Atiyah Elsheikh](mailto:Atiyah.Elsheikh@mathemodica.com)
 
 You may report any issues with using the [Issues](../../issues) button.
 
