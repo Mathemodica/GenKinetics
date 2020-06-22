@@ -12,6 +12,7 @@ A Modelica library for descriptive modeling of biochemical reaction networks usi
 #### Release notes
 
 (22.06.2020) v1.0.1-alpha : starting the progress again, MSL 3.2.3
+
 (7.12.2018)  v1.0-alpha   : Initial implementation containing Biochem-like structure and implementation of Convenience and LinLog kinetics 
 
 #### License
