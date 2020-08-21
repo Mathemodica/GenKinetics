@@ -27,7 +27,7 @@ execute the following commands:
 
 >>>  loadModel(Biochem)
 
->>>  cd("/path/to/GenKinetics/scropts")
+>>>  cd("/path/to/GenKinetics/scripts")
 
 >>>  runScirpt("executeUnitTestsOMC.mos")
 
