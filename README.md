@@ -22,9 +22,13 @@ This library can be redistributed and/or modified under the terms of the [Modeli
 ## Running the unit tests with OpenModelica OMShell
 
 execute the following commands:
+
 >>>  loadModel(Modelica)
+
 >>>  loadModel(Biochem)
+
 >>>  cd("/path/to/GenKinetics/scropts")
+
 >>>  runScirpt("executeUnitTestsOMC.mos")
 
 ## Development and contribution
