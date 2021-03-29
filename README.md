@@ -11,14 +11,28 @@ A Modelica library for descriptive modeling of biochemical reaction networks usi
 
 #### Release notes
 
-(7.12.2018) v1.0-alpha : Initial implementation containing Biochem-like structure and implementation of Convenience and LinLog kinetics 
+(22.06.2020) v1.0.1-alpha : starting the progress again, MSL 3.2.3
+
+(7.12.2018)  v1.0-alpha   : Initial implementation containing Biochem-like structure and implementation of Convenience and LinLog kinetics 
 
 #### License
 
 This library can be redistributed and/or modified under the terms of the [Modelica 3 clased BSD License](https://www.modelica.org/licenses/modelica-3-clause-bsd).
 
+## Running the unit tests with OpenModelica OMShell
+
+execute the following commands:
+
+>>>  loadModel(Modelica)
+
+>>>  loadModel(Biochem)
+
+>>>  cd("/path/to/GenKinetics/scripts")
+
+>>>  runScirpt("executeUnitTestsOMC.mos")
+
 ## Development and contribution
-Main developer: [Atiyah Elsheikh](mailto:a.m.g.elsheikh@gmail.com)
+Main developer: [Atiyah Elsheikh](mailto:Atiyah.Elsheikh@mathemodica.com)
 
 You may report any issues with using the [Issues](../../issues) button.
 
