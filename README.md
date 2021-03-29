@@ -19,6 +19,18 @@ A Modelica library for descriptive modeling of biochemical reaction networks usi
 
 This library can be redistributed and/or modified under the terms of the [Modelica 3 clased BSD License](https://www.modelica.org/licenses/modelica-3-clause-bsd).
 
+## Running the unit tests with OpenModelica OMShell
+
+execute the following commands:
+
+>>>  loadModel(Modelica)
+
+>>>  loadModel(Biochem)
+
+>>>  cd("/path/to/GenKinetics/scripts")
+
+>>>  runScirpt("executeUnitTestsOMC.mos")
+
 ## Development and contribution
 Main developer: [Atiyah Elsheikh](mailto:Atiyah.Elsheikh@mathemodica.com)
 
