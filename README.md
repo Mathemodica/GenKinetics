@@ -39,3 +39,16 @@ Main developer: [Atiyah Elsheikh](mailto:Atiyah.Elsheikh@mathemodica.com)
 You may report any issues with using the [Issues](../../issues) button.
 
 Contributions in shape of [Pull Requests](../../pulls) are always welcome.
+
+## Financial Support / Donation  
+
+The progress and completion of this library enables another small progress step for Modelica in Systems Biology field. Current plans include: 
+
+- Unifying GenKinetics with the Biochem Library 
+- Showing examples for switching between mechanistic kinetics and generalized kinetics in a flexible way 
+- Establishing a new version of the ADGenKinetics Library that supports the evaluation of dynamic control coefficients 
+- among others ... 
+
+Consider supporting this project via GitHub or Patreon
+
+
