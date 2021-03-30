@@ -50,6 +50,12 @@ The progress and completion of this library enables another small progress step 
 - Implementing Modelica-based technologies based on dynamic control coefficients 
 - among others ... 
 
-Supporting this project via GitHub or [Patreon](https://www.patreon.com/mathemodica) is highly appreciable 
+Supporting this project via 
+
+- [Paypal](https://www.paypal.com/paypalme/mathemodica) (one time payment)
+- GitHub (periodic payment) or 
+- [Patreon](https://www.patreon.com/mathemodica) (periodic payment) 
+
+is highly appreciable 
 
 
