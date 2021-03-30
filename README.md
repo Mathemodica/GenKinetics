@@ -53,7 +53,7 @@ The progress and completion of this library enables another small progress step 
 Supporting this project via 
 
 - [Paypal](https://www.paypal.com/paypalme/mathemodica) (one time payment)
-- GitHub (periodic payment) or 
+- [GitHub](https://github.com/sponsors/AtiyahElsheikh) (periodic payment) or 
 - [Patreon](https://www.patreon.com/mathemodica) (periodic payment) 
 
 is highly appreciable 
