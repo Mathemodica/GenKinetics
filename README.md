@@ -44,11 +44,12 @@ Contributions in shape of [Pull Requests](../../pulls) are always welcome.
 
 The progress and completion of this library enables another small progress step for Modelica in Systems Biology field. Current plans include: 
 
-- Unifying GenKinetics with the Biochem Library 
+- Unifying GenKinetics with [the Biochem Library](https://github.com/OpenModelica/BioChem) 
 - Showing examples for switching between mechanistic kinetics and generalized kinetics in a flexible way 
 - Establishing a new version of the ADGenKinetics Library that supports the evaluation of dynamic control coefficients 
+- Implementing Modelica-based technologies based on dynamic control coefficients 
 - among others ... 
 
-Consider supporting this project via GitHub or Patreon
+Supporting this project via GitHub or [Patreon](https://www.patreon.com/mathemodica) is highly appreciable 
 
 
