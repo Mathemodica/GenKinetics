@@ -11,6 +11,8 @@ A Modelica library for descriptive modeling of biochemical reaction networks usi
 
 #### Release notes
 
+(29.3.2021)  v1.0.2-alpha : MSL 4.0.0 
+
 (22.06.2020) v1.0.1-alpha : starting the progress again, MSL 3.2.3
 
 (7.12.2018)  v1.0-alpha   : Initial implementation containing Biochem-like structure and implementation of Convenience and LinLog kinetics 
@@ -37,3 +39,23 @@ Main developer: [Atiyah Elsheikh](mailto:Atiyah.Elsheikh@mathemodica.com)
 You may report any issues with using the [Issues](../../issues) button.
 
 Contributions in shape of [Pull Requests](../../pulls) are always welcome.
+
+## Financial Support / Donation  
+
+The progress and completion of this library enables another small progress step for Modelica in Systems Biology field. Current plans include: 
+
+- Unifying GenKinetics with [the Biochem Library](https://github.com/OpenModelica/BioChem) 
+- Showing examples for switching between mechanistic kinetics and generalized kinetics in a flexible way 
+- Establishing a new version of the ADGenKinetics Library that supports the evaluation of dynamic control coefficients 
+- Implementing Modelica-based technologies based on dynamic control coefficients 
+- among others ... 
+
+Supporting this project via 
+
+- [Paypal](https://www.paypal.com/paypalme/mathemodica) (one time payment)
+- [GitHub](https://github.com/sponsors/AtiyahElsheikh) (periodic payment) or 
+- [Patreon](https://www.patreon.com/mathemodica) (periodic payment) 
+
+is highly appreciable 
+
+

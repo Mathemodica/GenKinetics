@@ -1,11 +1,11 @@
-within GenKinetics;
+﻿within GenKinetics;
 package UserGuide "user guide"
   extends Modelica.Icons.Information;
 
   model Overview
     extends Modelica.Icons.Information;
     annotation (
-      Documentation(info="<html>
+      Documentation(info = "<html>
 <h4><span style=\"color: #008000\">About</span></h4>
 <p><br><i>GenKinetics</i> contains an implementation of a specific set of reaction kinetics, namely, generalized simplified kinetic formats. It follows many of the guidelines recommended by the <a href=\"https://github.com/OpenModelica/BioChem\">Biochem library</a>. The underlying simplified kinetics formats are represented by generalized structured kinetics formulas suitable for arbitrary biochemical reactions with arbitrary number of substrates, products, inhibitors and activators. In this way, matabolic reaction networks can be easily assembled using a few number of reaction kinetics.</p>
 <p><br><b><span style=\"color: #008000;\">Structure of the Library</span></b></p>
@@ -62,8 +62,8 @@ modelica://GenKinetics.Interfaces.Dynamic.Dimension.ReactionDimension\">GenKinet
   model Contributors
     extends Modelica.Icons.Information;
     annotation (
-      Documentation(info="<html>
-<p>Author: Atiyah Elsheikh </p>
+      Documentation(info = "<html>
+<p>Author: Atiyah Elsheikh, Mathemodca.com </p>
 <p>Contact details: <i><a href=\"modelica://GenKinetics.UserGuide.Contact\">GenKinetics.UserGuide.Contact</a></i></p>
 </html>"));
   end Contributors;
@@ -71,17 +71,15 @@ modelica://GenKinetics.Interfaces.Dynamic.Dimension.ReactionDimension\">GenKinet
   model Contact
     extends Modelica.Icons.Contact;
     annotation (
-      Documentation(info="<html>
-<p>Atiyah Elsheikh :&nbsp;atiyah.m.g.elsheikh at gmail.com </p>
-</html>"));
+      Documentation(info = "<html><head></head><body><p>Atiyah Elsheikh :&nbsp;atiyah.elsheikh at mathemodica.com</p>
+</body></html>"));
   end Contact;
 
   model ReleaseNotes
     extends Modelica.Icons.ReleaseNotes;
     annotation (
-      Documentation(info="<html>
-<p><span style=\"font-family: Verdana; color: #24292e; background-color: #ffffff;\">V1.0-alpha (7.12.2018) : First version containing Biochem-like structure and implementation of Convenience and LinLog kinetics</span></p>
-</html>"));
+      Documentation(info = "<html><head></head><body><p><ul><li><font color=\"#24292e\" face=\"Verdana\">V1.0.1-alpha (22.06.2020) : Restarting , MSL 3.2.3</font></li><li><span style=\"color: rgb(36, 41, 46); font-family: Verdana; background-color: rgb(255, 255, 255);\">V1.0.0-alpha (07.12.2018) : First version containing Biochem-like structure and implementation of Convenience and LinLog kinetics</span></li></ul></p>
+</body></html>"));
   end ReleaseNotes;
 
   model References
@@ -91,14 +89,13 @@ modelica://GenKinetics.Interfaces.Dynamic.Dimension.ReactionDimension\">GenKinet
   model CopyRight
     extends Modelica.Icons.Information;
     annotation (
-      Documentation(info="<html>
-<p>Licensed under the Modelica License 2</p>
-<p><b><span style=\"font-size: 18pt; color: #aa0000;\">Copyright &copy; &lt;2018&gt;, &lt;Atiyah Elsheikh&gt;.</span></b></p>
+      Documentation(info = "<html><head></head><body><p>Licensed under the Modelica License 2</p>
+<p><b><span style=\"font-size: 18pt; color: #aa0000;\">Copyright © &lt;2018-2020&gt;, &lt;Mathemodica.com&gt;.</span></b></p>
 <p><i>This Modelica package is&nbsp;<u>free</u>&nbsp;software and the use is completely at&nbsp;<u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica BSD 3-Clause License. For license conditions (including the disclaimer of warranty) see&nbsp;<a href=\"modelica://GenKinetics.UserGuide.License\">Modelica.UsersGuide.License&nbsp;</a></i></p>
-</html>"));
+</body></html>"));
   end CopyRight;
+
 
   annotation (
     Documentation);
-
 end UserGuide;
