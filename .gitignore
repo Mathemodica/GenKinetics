@@ -10,7 +10,7 @@ dsfinal.txt
 *.exe
 *.makefile
 *.o
-*.initdata
+*.intdata
 *.realdata
 *.c
 *.json
