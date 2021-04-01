@@ -40,7 +40,7 @@ You may report any issues with using the [Issues](../../issues) button.
 
 Contributions in shape of [Pull Requests](../../pulls) are always welcome.
 
-## Financial Support / Donation  
+## Financial Support / Sponsorship 
 
 The progress and completion of this library enables another small progress step for Modelica in Systems Biology field. Current plans include: 
 
