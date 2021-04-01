@@ -7,3 +7,13 @@ dsmodel.c
 dymosim.exe
 dsfinal.txt
 *.new-mo
+*.exe
+*.makefile
+*.o
+*.initdata
+*.realdata
+*.c
+*.json
+*.xml
+*.libs
+*.log
