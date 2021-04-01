@@ -1,6 +1,6 @@
 within GenKinetics;
 package Units "all physical units used across the library"
-  extends Modelica.Icons.TypesPackage;
+  extends Modelica.Icons.TypesPackage; // To make use of BioChem.Icons.UnitsPackage once it is fixed 
 
   type Concentration = Modelica.Icons.TypeReal(final quantity="Concentration",final unit = "mol/l", min = 0)
     " Concentration of a metabolite [mol/l]";

@@ -1,5 +1,5 @@
 ﻿package GenKinetics
-  extends Modelica.Icons.Library;
+  extends Modelica.Icons.Package; // To make use of BioChem.Icons.Library once it is fixed
 
 
 
