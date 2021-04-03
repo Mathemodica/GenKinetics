@@ -54,8 +54,7 @@ Supporting this project via
 
 - [Paypal](https://www.paypal.com/paypalme/mathemodica) (one time payment)
 - [GitHub](https://github.com/sponsors/AtiyahElsheikh) (periodic payment) or 
-- [Patreon](https://www.patreon.com/mathemodica) (periodic payment) 
 
-is highly appreciable 
+is appreciable 
 
 
