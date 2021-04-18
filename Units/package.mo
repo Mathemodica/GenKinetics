@@ -1,31 +1,33 @@
 within GenKinetics;
 package Units "all physical units used across the library"
-  extends BioChem.Icons.Units.PackageIcon; 
+  extends BioChem.Icons.Units.PackageIcon;
 
-  type Concentration = Modelica.Icons.TypeReal(final quantity="Concentration",final unit = "mol/l", min = 0)
+  type AffinityConst = BioChem.Icons.Units.TypeRealBase(final unit = "mol/l")
+    "Affinity constant [mol/l]";
+ 
+
+  type Concentration = BioChem.Units.Concentration
     " Concentration of a metabolite [mol/l]";
-
-  type VolumetricReactionRate =
-     Modelica.Icons.TypeReal(final quantity="Volumetric reaction rate",final unit = "mol/(s.l)")
-     "Volumetric reaction rate [mol/(l.s)}";
 
   type MolarFlowRate = Modelica.Icons.TypeReal(final unit = "mol/s")
     "Molar flow rate [mol/s]";
 
-  type ReactionCoef = Modelica.Icons.TypeReal(final unit = "1/s")
+  type ReactionCoef = BioChem.Units.ReactionCoefficient(final unit = "1/s")
    "Reaction coefficient [1/s]";
-
-  type StoichiometricCoef = Modelica.Icons.TypeReal(final unit = "1")
-    " Stoichiometric Coefficient [unitless]";
 
   type ReactionCoef1st = Units.ReactionCoef
     "Reaction coefficient first order";
 
-  type ReactionCoef2nd = Modelica.Icons.TypeReal(final unit = "l/(mol.s)")
+  type ReactionCoef2nd = BioChem.Icons.Units.TypeRealBase(final unit = "l/(mol.s)")
     "Reaction coefficient second order [1/(mol.s)]";
 
-  type AffinityConst = Modelica.Icons.TypeReal(final unit = "mol/l")
-    "Affinity constant [mol/l]";
+  type StoichiometricCoef = BioChem.Units.StoichiometricCoefficient(final unit = "1")
+    " Stoichiometric Coefficient [unitless]";
+
+
+  type VolumetricReactionRate = BioChem.Units.VolumetricReactionRate
+     "Volumetric reaction rate [mol/(l.s)}";
+
 
   annotation (
     Documentation(info="<html>
