@@ -1,6 +1,6 @@
 within GenKinetics.UsersGuide;
 
-model Overview
+class Overview
   extends Modelica.Icons.Information;
   annotation(
     Documentation(info = "<html>
