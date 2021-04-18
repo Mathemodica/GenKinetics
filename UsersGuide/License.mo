@@ -1,4 +1,4 @@
-within GenKinetics.UserGuide;
+within GenKinetics.UsersGuide;
 class License "3-Clause BSD License "
   extends Modelica.Icons.Information;
   annotation (
