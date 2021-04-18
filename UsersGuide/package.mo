@@ -1,5 +1,5 @@
 ﻿within GenKinetics;
-package UserGuide "user guide"
+package UsersGuide "user guide"
   extends Modelica.Icons.Information;
 
   model Overview
@@ -98,4 +98,4 @@ modelica://GenKinetics.Interfaces.Dynamic.Dimension.ReactionDimension\">GenKinet
 
   annotation (
     Documentation);
-end UserGuide;
+end UsersGuide;
