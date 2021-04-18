@@ -1,6 +1,6 @@
 within GenKinetics.UsersGuide;
 
-model CopyRight
+class CopyRight
   extends Modelica.Icons.Information;
   annotation(
     Documentation(info = "<html><head></head><body><p>Licensed under the Modelica License 2</p>

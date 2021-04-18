@@ -1,6 +1,6 @@
 within GenKinetics.UsersGuide;
 
-model Contributors
+class Contributors
   extends Modelica.Icons.Information;
   annotation(
     Documentation(info = "<html>
