@@ -8,6 +8,9 @@ package Units "all physical units used across the library"
 
   type Concentration = BioChem.Units.Concentration
     " Concentration of a metabolite [mol/l]";
+    
+  type Elasticity = BioChem.Icons.Units.TypeRealBase(final quantity="Elasticity",final unit = "1")
+  "Elasticity [unitless]";
 
   type MolarFlowRate = Modelica.Icons.TypeReal(final unit = "mol/s")
     "Molar flow rate [mol/s]";
@@ -24,6 +27,7 @@ package Units "all physical units used across the library"
   type StoichiometricCoef = BioChem.Units.StoichiometricCoefficient(final unit = "1")
     " Stoichiometric Coefficient [unitless]";
 
+  type Volume = BioChem.Units.Volume "Volume [l]";
 
   type VolumetricReactionRate = BioChem.Units.VolumetricReactionRate
      "Volumetric reaction rate [mol/(l.s)}";
