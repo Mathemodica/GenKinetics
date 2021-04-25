@@ -1,6 +1,6 @@
 within GenKinetics;
 package Substances "Substances components"
-  extends BioChem.Icons.Substances.PackageIcon;
+  extends BioChem.Icons.Substances;
 
   annotation (
     Documentation(info="<html>

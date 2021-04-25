@@ -1,6 +1,6 @@
 within GenKinetics;
 package Units "all physical units used across the library"
-  extends BioChem.Icons.Units.PackageIcon;
+  extends BioChem.Icons.Units;
 
   type AffinityConst = BioChem.Icons.Units.TypeRealBase(final unit = "mol/l")
     "Affinity constant [mol/l]";

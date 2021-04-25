@@ -1,6 +1,6 @@
 within GenKinetics;
 package Icons "all icons used across the library"
-  extends Modelica.Icons.IconsPackage;
+  extends BioChem.Icons;
 
 
 

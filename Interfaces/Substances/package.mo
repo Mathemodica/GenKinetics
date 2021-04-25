@@ -1,6 +1,6 @@
 within GenKinetics.Interfaces;
 package Substances "Interfaces for substances "
-extends Modelica.Icons.BasesPackage;
+extends BioChem.Icons.Interfaces.Substances;
 
 annotation (Documentation(info="<html>
 <p><br><br><span style=\"font-family: MS Shell Dlg 2;\">From Biochem Library: </span></p>
