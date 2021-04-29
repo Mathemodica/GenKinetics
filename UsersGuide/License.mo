@@ -1,8 +1,9 @@
-within GenKinetics.UserGuide;
+within GenKinetics.UsersGuide;
+
 class License "3-Clause BSD License "
   extends Modelica.Icons.Information;
-  annotation (
-    Documentation(info="<html>
+  annotation(
+    Documentation(info = "<html>
 <p><span style=\"font-family: Lucida Grande,Verdana,Lucida,Helvetica,Arial,sans-serif; background-color: #ffffff;\">Copyright &copy; 1998-2018 Modelica Association,</span></p><p>All rights reserved.</p>
 <p><span style=\"font-family: Lucida Grande,Verdana,Lucida,Helvetica,Arial,sans-serif; background-color: #ffffff;\">Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</span></p>
 <p><span style=\"font-family: Lucida Grande,Verdana,Lucida,Helvetica,Arial,sans-serif; background-color: #ffffff;\">1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</span></p>

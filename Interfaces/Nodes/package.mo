@@ -1,41 +1,6 @@
 within GenKinetics.Interfaces;
 package Nodes "Connectors"
-  extends Modelica.Icons.BasesPackage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  extends BioChem.Icons.Interfaces.Nodes;
 
 
 

@@ -1,6 +1,6 @@
 within GenKinetics;
 package Substances "Substances components"
-  extends Modelica.Icons.Package;
+  extends BioChem.Icons.Substances;
 
   annotation (
     Documentation(info="<html>
