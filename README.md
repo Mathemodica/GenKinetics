@@ -40,7 +40,7 @@ You may report any issues with using the [Issues](../../issues) button.
 
 Contributions in shape of [Pull Requests](../../pulls) are always welcome.
 
-## Financial Support / Donation  
+## Financial Support / Sponsorship 
 
 The progress and completion of this library enables another small progress step for Modelica in Systems Biology field. Current plans include: 
 
@@ -54,8 +54,7 @@ Supporting this project via
 
 - [Paypal](https://www.paypal.com/paypalme/mathemodica) (one time payment)
 - [GitHub](https://github.com/sponsors/AtiyahElsheikh) (periodic payment) or 
-- [Patreon](https://www.patreon.com/mathemodica) (periodic payment) 
 
-is highly appreciable 
+is appreciable 
 
 
