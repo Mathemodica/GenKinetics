@@ -10,6 +10,9 @@ A Modelica library for descriptive modeling of biochemical reaction networks usi
 
 
 #### Release notes
+(5.5.2021)   v1.0.3-alpha : BioChem 1.1.0 
+                            Warning this version does not work with the new frontend of OMC. 
+                            Currently a new working BioChem-conform is aimed
 
 (29.3.2021)  v1.0.2-alpha : MSL 4.0.0 
 
@@ -42,7 +45,7 @@ Contributions in shape of [Pull Requests](../../pulls) are always welcome.
 
 ## Financial Support / Sponsorship 
 
-The progress and completion of this library enables another small progress step for Modelica in Systems Biology field. Current plans include: 
+The progress and completion of this library enables another small progress step for Modelica in the Systems Biology field. Current plans include: 
 
 - Unifying GenKinetics with [the Biochem Library](https://github.com/OpenModelica/BioChem) 
 - Showing examples for switching between mechanistic kinetics and generalized kinetics in a flexible way 
